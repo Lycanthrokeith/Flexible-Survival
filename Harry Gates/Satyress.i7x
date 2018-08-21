@@ -1,4 +1,4 @@
-Version 1 of Satyress by Harry Gates begins here.
+Version 1 of Satyress by Harry Gates, written by Lycanthrokeith begins here.
 
 "Adds Satyress infections / monsters to infection based games."
 
@@ -125,6 +125,6 @@ Example: * Lillith the Satyress - Adds Lillith to Your Apartment.
 
 	*: "Lillith the Satyress"
 
-	Include Satyress by Harry Gates.
+	Include Satyress by Harry Gates, written by Lycanthrokeith.
 
 	Lillith is a satyress. Lillith is in Your Apartment.
