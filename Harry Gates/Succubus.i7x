@@ -1,4 +1,4 @@
-Version 1 of Succubus by Harry Gates begins here.
+Version 1 of Succubus by Harry Gates, written by Lycanthrokeith begins here.
 
 "Adds Succubus infections / monsters to infection based games."
 
@@ -131,6 +131,6 @@ Example: * Lillith the Succubus - Adds Lillith to Your Apartment.
 
 	*: "Lillith the Succubus"
 
-	Include Succubus by Harry Gates.
+	Include Succubus by Harry Gates, written by Lycanthrokeith.
 
 	Lillith is a succubus. Lillith is in Your Apartment.
