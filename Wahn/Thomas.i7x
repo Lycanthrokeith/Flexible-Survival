@@ -41,6 +41,10 @@ Version 1 of Thomas by Wahn begins here.
 
 Section 1 - Meeting Event
 
+Table of GameEventIDs (continued)
+Object	Name
+Centaur Gangbang	"Centaur Gangbang"
+
 Centaur Gangbang is a situation. The level of Centaur Gangbang is 5.
 The sarea of Centaur Gangbang is "Plains".
 when play begins:
@@ -111,14 +115,17 @@ Instead of resolving a Centaur Gangbang:
 						now HP of Thomas is 1;
 						move Thomas to Dry Plains;
 						now ThomasSaved is turns;
+						now Resolution of Centaur Gangbang is 3; [told Thomas he is a herm]
 					else if calcnumber is 2:[lie about it]
 						say "     You tell Thomas you don't see anything special about him - well, except being a centaur stallion. Visibly relieved, Thomas says 'Ok, thanks. I guess I'm just not used to this new body.' Turning his upper body, he takes a look at his equine body. 'Damn. Looking like this, I can't even get away out of the city anymore.' He growls to himself. 'But I'll show those fuckers - since they made me a centaur, let's see how they like it when I use this bad-boy on 'their' mares.' His black horsecock emerges from its sheath, dangling below his equine body and dribbling a bit of pre-cum.";
 						now HP of Thomas is 51;
 						move Thomas to Dry Plains;
+						now Resolution of Centaur Gangbang is 4; [didn't tell Thomas he is a herm (and he becomes a male)]
 						now ThomasSaved is turns;
 					else:[finger him]
 						say "     Stepping forward, you reach out and stroke over Thomas's moist pussy lips, then push a finger in between them. That brings out a surprised gasp and moan out of the black centaur herm - followed by a kick of his hind legs. Literally kicked by a horse, you sail a fair bit through the air, then find yourself on your back, aching all over. 'So you're just another of those sex freaks after all! Fuck off, I'm out of here.' is the last you hear from Thomas as he gallops away.";
 						now HP of Thomas is 100;
+						now Resolution of Centaur Gangbang is 99; [fingered Thomas, got kicked]
 	increase score by 20;
 	now Centaur Gangbang is resolved;
 
@@ -130,17 +137,23 @@ to say LoseToCentaurs:
 	LineBreak;
 	say "     Meanwhile Raul keeps fucking the black man with deep thrusts and soon he gives a lust-filled shout as he fills the human's ass with creamy centaur cum. Danny the centaur calls to him 'Wanna switch? I want to fuck that hole too and my bitch can clean you up.' Grinning, Raul agrees and pulls out of the human's ass with a wet slurping sound, then walks over to you and takes Danny's place. Presented with his long cock wet with the mare's juices and his cum, you take hold of it and start licking it all up. Grunts and moans from somewhere nearby tell you when Danny plunges his shaft into the black man's freshly fucked hole and starts thrusting...";
 	WaitLineBreak;
-	say "     The three centaurs take turns fucking the mare and human male, as well as getting blowjobs from you. Before too much longer, it's two mares as their other captive transforms further and further with each load of cum dumped into his hole. Soon he's fully female, sporting a nice pair of breasts and a deep pussy undoubtedly already bearing a developing foal. Finally when they are too exhausted to get their cocks up another time, the stallions have a short discussion if they should take you along too. 'Nah, we've got enough to do keeping an eye on this mare' - Raul says and slaps the former black man's equine ass and laughs as she whinnys - 'while we fully train her. Taking two and having them both run off in the night would just be stupid.' They herd their well-fucked mares away from the ruins, out into the wide plains where you lose sight of them. You're left behind, covered in centaur cum drying on your skin.";
+	say "     The three centaurs take turns fucking the mare and human male, as well as getting blowjobs from you. Before too much longer, it's two mares as their other captive transforms further and further with each load of cum dumped into his hole. Soon he's fully female, sporting a nice pair of breasts and a deep pussy undoubtedly already bearing a developing foal. Finally when they are too exhausted to get their cocks up another time, the stallions have a short discussion if they should take you along too. 'Nah, we've got enough to do keeping an eye on this mare' - Raul says and slaps the former black man's equine ass and laughs as she whinnies - 'while we fully train her. Taking two and having them both run off in the night would just be stupid.' They herd their well-fucked mares away from the ruins, out into the wide plains where you lose sight of them. You're left behind, covered in centaur cum drying on your skin.";
 	infect "Centaur Mare"; [from the pussy juices]
 	infect "Centaur Stallion";
 	infect "Centaur Stallion";
 	infect "Centaur Mare";
 	infect "Centaur Stallion";
+	now Resolution of Centaur Gangbang is 1; [lost to centaurs]
 
 to say RunFromCentaurs:
 	say "     Recognizing a lost fight, you abruptly turn and run as fast as you can. You can only guess what happened to the man you left behind with the centaurs. Most likely, he's another breeding mare by now...";
+	now Resolution of Centaur Gangbang is 2; [fled from centaurs]
 
 Section 2 - Thomas, the herm centaur
+
+Table of GameCharacterIDs (continued)
+object	name
+Thomas	"Thomas"
 
 Thomas is a man. The HP of Thomas is normally 0.
 The description of Thomas is "[ThomasDesc]".
@@ -293,13 +306,9 @@ to say ThomasTalkMenu:
 					say "[ThomasTalk9]";
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if player consents:
-				now sextablerun is 1;
-				say "     You step back from the black centaur, shaking your head slightly as he gives a questioning look.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You step back from the black centaur, shaking your head slightly as he gives a questioning look.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options].";
 	clear the screen and hyperlink list;
@@ -545,7 +554,7 @@ instead of navigating Dry Plains while ((libido of Thomas is 1 or libido of Thom
 	else:
 		LineBreak;
 		say "     Apologizing and saying it's not your fight, you run away. Somehow you doubt that they'll be able to make a stand without you... so you likely won't see Thomas anymore.";
-		remove Thomas from play;
+		now Thomas is nowhere;
 		now HP of Thomas is 100;
 
 to say LoseToCentaurs2:
@@ -554,20 +563,20 @@ to say LoseToCentaurs2:
 	say "     While the rest of the party is busy raping Thomas, a bearded centaur takes Jill to the side and starts shouting at her. 'You ruined everything, you stupid bitch - no matter how good you look, no one will want to pay much for a mare that might run off! I'll have to use you as breeding stock - maybe you'll at least give me a strong son, or some more obedient girls with your looks.' With that, the centaur moves behind her and thrusts his hard horsecock into her pussy, mounting her hard and forcefully. Holding her down, he pounds into her, creating loud slapping noises as his balls hit her ass. Soon, he gives a lust-filled grunt and his balls pump a huge load into her womb. 'Not bad, little bitch. I should have done this sooner.' He walks to her front and pulls her head to his crotch. 'Why don't you clean me off and get me hard again for another round.'";
 	LineBreak;
 	say "     After the gangbang around Thomas runs its course and Jill gets fucked again several times by the bearded centaur, the hunting party moves back out into the plains, taking their thoroughly fucked mares with them.";
-	remove Thomas from play;
+	now Thomas is nowhere;
 	now HP of Thomas is 100;
 
 to say RunFromCentaurs2:
 	say "     Deciding that this is a lost fight, you run like hell, getting yourself to safety. You don't know what exactly happened to Thomas and Jill after that, but a good guess is that they were taken away with the hunting party and both used as breeding mares...";
-	remove Thomas from play;
+	now Thomas is nowhere;
 	now HP of Thomas is 100;
 
 Section 3 - Fucking Thomas
 
 Instead of fucking the Thomas:
 	[puts Centaur Stallion as lead monster in case of impregnation]
-	repeat with y running from 1 to number of filled rows in table of random critters:
-		choose row y in table of random critters;
+	repeat with y running from 1 to number of filled rows in Table of Random Critters:
+		choose row y in Table of Random Critters;
 		if name entry is "Centaur Stallion":
 			now monster is y;
 			break;
@@ -676,13 +685,9 @@ to say ThomasSexMenu:
 					say "[ThomasSex9]";
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if player consents:
-				now sextablerun is 1;
-				say "     You step back from the black centaur, shaking your head slightly as he gives a questioning look.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You step back from the black centaur, shaking your head slightly as he gives a questioning look.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options].";
 	clear the screen and hyperlink list;

@@ -89,12 +89,12 @@ to say Great Danedesc:
 
 Section 2 - Monster Insertion
 
-Table of random critters (continued)
-name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	nocturnal (truth state)	altcombat (text)
---	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
+Table of Random Critters (continued)
+name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	DayCycle	altcombat (text)	BannedStatus (truth state)
+--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
 
 When Play begins:
-	Choose a blank row from Table of random critters;
+	Choose a blank row from Table of Random Critters;
 	now name entry is "Great Dane"; [ Infection/Creature name. Capitalized. ]
 	now enemy title entry is "Great Dane Rogue";
 	now enemy name entry is "Rogue";
@@ -123,7 +123,7 @@ When Play begins:
 	now HP entry is 118; [ The monster's starting HP. ]
 	now lev entry is 13; [ Monster level. (Level x 2) XP for victory. (Level / 2) XP for losing. ]
 	now wdam entry is 20; [ Monster's average damage when attacking. ]
-	now area entry is "nowhere"; [ "Outside" "Mall" "Park" "Beach" etc... Check an existing creature in the area. ]
+	now area entry is "Nowhere"; [ "Outside" "Mall" "Park" "Beach" etc... Check an existing creature in the area. ]
 	now cocks entry is 0; [ Number of cocks the infection will try to cause if sex entry is 'Male' or 'Both'. ]
 	now cock length entry is 0; [ Length infection will make cock grow to if cocks. ]
 	now cock width entry is 0; [ Cock width, more commonly used for ball size. ]
@@ -142,8 +142,9 @@ When Play begins:
 	now magic entry is false;
 	now resbypass entry is false;
 	now non-infectious entry is false;
-	blank out the nocturnal entry; [ True=Nocturnal (night encounters only), False=Diurnal (day encounters only), blank for both. ]
+	now DayCycle entry is 0; [ 0 = Up at all times; 1 = Diurnal (day encounters only); 2 = Nocturnal (night encounters only);]
 	now altcombat entry is "powerstrike1"; [ Row used to designate any special combat features, "default" for standard combat. ]
+	now BannedStatus entry is false;
 
 
 Table of Game Objects (continued)
@@ -157,10 +158,10 @@ The usedesc of bandage is "The strip of cloth you won off of a Great Dane fighte
 when play ends:
 	if bodyname of player is "Great Dane":
 		if humanity of player < 10:
-			say "Losing all sense of time and place you run off back towards Tyr's club in order to join the rest of the girls in order to rejoin with the rest of the pack. It's a little hard for you to traverse the city in your current condition, but your instinctive fighting skills help you to progress without much incident. The skunkbeast you ran across in the park will probably be sore for a few weeks from the beating you gave it, but que sera sera as they say. Once you find Tyr's little underground fight club you are somberly embraced by the Doberman before being shown to the rest area where the rest of the Great Dane's are.";
-			say "At seeing you the other Dane bitches immediately pounce on top of you in order to shower you in licks and kisses. Each of the females is pleased to see you in her own way[if player is male]especially with the fine piece of meat growing hard between your legs. Knowing that they can trust another of their own the Great Dane's allow you to mount each of them in turn before washing your face down with their oozing cunts. By the time they are finished you barely remember anything about before now as your mind fully descends into that of a Great Dane[else]and to show you this the others gently lay you down onto the ground and then go to work making you feel welcomed within your new home with lips, tongues, noses and teeth. As they drench your face down in their combined sexual juices you find your own cunt gushing out onto your thighs as you are licked and suckled on like crazy[end if]. Soon you forget everything but this time at this moment with your pack of rouges surrounding you.";
+			say "Losing all sense of time and place, you run off back towards Tyr's club in order to join the rest of the girls in order to rejoin with the rest of the pack. It's a little hard for you to traverse the city in your current condition, but your instinctive fighting skills help you to progress without much incident. The skunkbeast you ran across in the park will probably be sore for a few weeks from the beating you gave it, but que sera sera as they say. Once you find Tyr's little underground fight club, you are somberly embraced by the Doberman before being shown to the rest area where the rest of the Great Dane's are.";
+			say "Upon seeing you, the other Dane bitches immediately pounce on top of you in order to shower you in licks and kisses. Each of the females is pleased to see you in her own way[if player is male]especially with the fine piece of meat growing hard between your legs. Knowing that they can trust another of their own the Great Dane's allow you to mount each of them in turn before washing your face down with their oozing cunts. By the time they are finished you barely remember anything about before now as your mind fully descends into that of a Great Dane[else]and to show you this the others gently lay you down onto the ground and then go to work making you feel welcomed within your new home with lips, tongues, noses and teeth. As they drench your face down in their combined sexual juices you find your own cunt gushing out onto your thighs as you are licked and suckled on like crazy[end if]. Soon you forget everything but this time at this moment with your pack of rouges surrounding you.";
 		else:
-			say "Having survived the fall of the city you find yourself stumbling onto Tyr during one of the military sweeps as the Doberman leads some of the men in uniform through the infectious metropolis. When the Dobie sees you he bays you to come with him to get checked out. Not really wanting to disobey the other man, especially since he's done so much for you in the past, you follow the Doberman to a strange bunker and then go through the testing process set up by the jarheads and their white coat wearing lackeys, but only after collecting your companions from the bunker. When the military finds that you are still infectious they give you a somewhat painful shot to cure you of this little [']problem[']. After that you resignedly go through more examinations and other physical and mental checkups before finding yourself released out into Tyr's care, at the behest of the Dobie of course. With no clear direction, but still feeling a burning need to kick ass, Tyr gives you some money, a small card with an address scribbled on it and then a bus ticket to a new city with the promise that you'll [']find a new start['] there. Not having anything better to do you decide to go, after collecting your friends of course.";
+			say "Having survived the fall of the city, you find yourself stumbling onto Tyr during one of the military sweeps as the Doberman leads some of the men in uniform through the infectious metropolis. When the Dobie sees you he bays you to come with him to get checked out. Not really wanting to disobey the other man, especially since he's done so much for you in the past, you follow the Doberman to a strange bunker and then go through the testing process set up by the jarheads and their white coat wearing lackeys, but only after collecting your companions from the bunker. When the military finds that you are still infectious they give you a somewhat painful shot to cure you of this little [']problem[']. After that you resignedly go through more examinations and other physical and mental checkups before finding yourself released out into Tyr's care, at the behest of the Dobie of course. With no clear direction, but still feeling a burning need to kick ass, Tyr gives you some money, a small card with an address scribbled on it and then a bus ticket to a new city with the promise that you'll [']find a new start['] there. Not having anything better to do you decide to go, after collecting your friends of course.";
 			say "Amazingly enough after getting to the city the Dobie had pointed you towards you come to realize that Tyr was right. The new city is quiet, but lively in a way that seems almost imperceptible to an untrained eye and you are quick to integrate yourself into the workings of your new territory, after you get a job working at a local gymnasium/sports bar. Interesting enough the card Tyr had given you is forgotten days after your arrival as you go about settling yourself into a routine of training, working and building up relations until several weeks later when one of your roommates stumbles over it.";
 			LineBreak;
 			say "Going to the address one night you find out exactly why Tyr gave you the little card as you stumble across an underground fight arena teeming with powerful opponents. Entering into a series of battles you find yourself defeating opponent after opponent after opponent, until [italic type]she[roman type] comes along. Your first time fighting against her you end up losing, almost embarrassingly so at that, but that only made you hungry to come back to fight the unnamed mutant again.";

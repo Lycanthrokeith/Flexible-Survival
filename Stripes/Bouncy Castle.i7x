@@ -23,12 +23,16 @@ Section 1 - Starting Event
 
 vixcountdown is a number that varies. [Amount of turns allotted before the vixen (Bubble) can no longer be saved]
 dolphinbundle is a number that varies. [Increases the difficulty of escaping the Inflatable Dolphin bound state, ranging from 0-2]
-dolphinlist is a list of text that varies. [Creates a quasi-random pool of dolphins to check while searching for Bubble]
+dolphinlist is a list of text that varies.[@Tag:NotSaved] [Creates a quasi-random pool of dolphins to check while searching for Bubble]
 dolcastlefight is a number that varies. [Determines Bottlenose Toy scenes. 1 = win, 2 = loss (normal), 3 = loss (in castle)]
 bclatearrival is a number that varies. [Normally 0, set to 1 when visiting the castle after vixcountdown ends while away. Hides initial prompt after agreeing]
 bcuntethered is a number that varies. [Determines whether or not the Bouncy Castle is still tethered]
 bcending is a number that varies. [Determines bad ends]
 [Previously included dolcastleturn, which elapses 1 hour (turn/3) per empty dolphin suit checked. Since this was unrealistically long for something that would take a minute to do at most, I've removed the stat entirely]
+
+Table of GameEventIDs (continued)
+Object	Name
+Snared Vixen	"Snared Vixen"
 
 Snared Vixen is a situation. The level of Snared Vixen is 5.
 the sarea of Snared Vixen is "Beach".
@@ -63,8 +67,10 @@ Instead of resolving a Snared Vixen:
 		now entry 5 of dolphinlist is entry 2 of templist;
 		now entry 9 of dolphinlist is entry 3 of templist;
 		now entry 11 of dolphinlist is entry 4 of templist;
+		now Resolution of Snared Vixen is 1;	[Vixen was taken to Bouncy Castle]
 	else: [Aborts finding the Bouncy Castle entirely]
 		say "     Deciding that it's not of interest to you, you turn away and head back the way you came.";
+		now Resolution of Snared Vixen is 99;	[Ignored Vixen]
 	now Snared Vixen is resolved;
 
 
@@ -110,7 +116,7 @@ to say bcnavigate:
 		now battleground is "Outside";
 		if a random number from 1 to 20 < 10 minus bonus:
 			say ", encountering an enemy on the way there.";
-			if there is a area of Battleground in the table of random critters:
+			if there is a area of Battleground in the Table of Random Critters:
 				Fight;
 				if ( ( hardmode is true and a random chance of 1 in 10 succeeds ) or ( "Bad Luck" is listed in feats of player and a random chance of 1 in 12 succeeds ) ) and battleground is not "void":
 					say "As you are trying to recover from your last encounter, another roving creature finds you.";
@@ -125,7 +131,7 @@ to say bcnavigate:
 		say "     Returning to the rowboat you found, you drag it into the water and start your journey. It is hard work rowing the boat, but it certainly beats swimming the whole way. As you're making your way through the rocking outcroppings on your way to the floating castle, you watch warily for any signs of the creatures infesting these waters.";
 		now rowing is true;
 		if a random number between 1 and 20 > the perception of the player:
-			swimmingfight; [details in Hellerhound\underwater zone.i7x]
+			swimmingfight; [details in Hellerhound\Underwater Zone.i7x]
 		now rowing is false;
 		say "     Eventually, you make it out to the buoyant castle, rowing up close to it. Your arms are sore from all the rowing, but you have managed to arrive at your destination. Worried your boat might scrape a hole in its rubbery hide, you moor your boat to one of the tethers tying the castle between the rocks. You swim the short distance to the floating castle and make your way inside.";
 		let dam be 16 - ( strength of player / 2 ) - (stamina of player / 2 );
@@ -135,7 +141,7 @@ to say bcnavigate:
 		follow the turnpass rule;
 	else if hasgills is 1: [swam there]
 		say "     Returning to the section of beach near the floating castle, you swim out into the waters. While your aquatic affinity makes the swim easier, you still struggle against the turbulent waters in this area. As you're making your way through the rocky outcroppings on your way to the floating castle, you watch warily for any signs of the creatures infesting these waters.";
-		swimmingfight; [details in Hellerhound\underwater zone.i7x]
+		swimmingfight; [details in Hellerhound\Underwater Zone.i7x]
 		say "     Eventually, you make it to the buoyant castle, managing to swim to one of the lines that is keeping it tethered between the rocky outcroppings. You follow that line up to the castle and climb inside, quite tired, but having reached your destination.";
 		let dam be 20 - ( strength of player / 2 ) - (stamina of player / 2 );
 		if dam < 0, now dam is 0;
@@ -161,56 +167,131 @@ bcduofightlost is a truth state that varies. bcduofightlost is usually false.
 bcduofightfled is a truth state that varies. bcduofightfled is usually false.
 bcseenthroneroom is a truth state that varies. bcseenthroneroom is usually false.
 
+Table of GameRoomIDs (continued)
+Object	Name
+Bouncy Castle	"Bouncy Castle"
+
 The Bouncy Castle is a room. Bouncy Castle is fasttravel. Bouncy Castle is unknown. Bouncy Castle is private.
 The description of Bouncy Castle is "[bcentrance]".
+
+Table of GameRoomIDs (continued)
+Object	Name
+Fencing Room	"Fencing Room"
 
 The Fencing Room is a room. The Fencing Room is east of Bouncy Castle.
 The description of Fencing Room is "[bcfencingroom]".
 
+Table of GameRoomIDs (continued)
+Object	Name
+Bouncing Play Room	"Bouncing Play Room"
+
 The Bouncing Play Room is a room. The Bouncing Play Room is south of Fencing Room. The Bouncing Play Room is east of Ball Pit Room.
 The description of Bouncing Play Room is "[bcplayroom]".
+
+Table of GameRoomIDs (continued)
+Object	Name
+Ball Pit Room	"Ball Pit Room"
 
 The Ball Pit Room is a room. The Ball Pit Room is south of Toy Room.
 The description of Ball Pit Room is "[bcballpitroom]".
 
+Table of GameRoomIDs (continued)
+Object	Name
+Toy Room	"Toy Room"
+
 The Toy Room is a room. The Toy Room is west of Bouncy Castle.
 The description of Toy Room is "[bctoyroom]".
+
+Table of GameRoomIDs (continued)
+Object	Name
+Punching Pillars	"Punching Pillars"
 
 The Punching Pillars is a room. The Punching Pillars is west of Ball Pit Room.
 The description of Punching Pillars is "[bcpunchingpillars]".
 
+Table of GameRoomIDs (continued)
+Object	Name
+Knight's Chambers	"Knight's Chambers"
+
 The Knight's Chambers is a room. The Knight's Chambers is north of Punching Pillars.
 The description of Knight's Chambers is "[bcknightschambers]".
+
+Table of GameRoomIDs (continued)
+Object	Name
+Great Hall	"Great Hall"
 
 The Great Hall is a room. The Great Hall is east of Bouncing Play Room.
 The description of Great Hall is "[bcgreathall]".
 
+Table of GameRoomIDs (continued)
+Object	Name
+King's Chambers	"King's Chambers"
+
 The King's Chambers is a room. The King's Chambers is north of Great Hall.
 The description of King's Chambers is "[bckingschamber]".
+
+Table of GameRoomIDs (continued)
+Object	Name
+Lower Tower	"Lower Tower"
 
 The Lower Tower is a room. The Lower Tower is southeast of Ball Pit Room.
 The description of Lower Tower is "[bclowertower]".
 
-The Upper Tower is a room. The Upper Tower is up of Lower Tower.
+Table of GameRoomIDs (continued)
+Object	Name
+Upper Tower	"Upper Tower"
+
+The Upper Tower is a room. The Upper Tower is above Lower Tower.
 The description of Upper Tower is "[bcuppertower]".
 
-The Tower Turret is a room. The Tower Turret is up of Upper Tower.
+Table of GameRoomIDs (continued)
+Object	Name
+Tower Turret	"Tower Turret"
+
+The Tower Turret is a room. The Tower Turret is above Upper Tower.
 The description of Tower Turret is "[bctowerturret]".
+
+Table of GameRoomIDs (continued)
+Object	Name
+Upper Hall	"Upper Hall"
 
 The Upper Hall is a room. The Upper Hall is north of Upper Tower.
 The description of Upper Hall is "[bcupperhall]".
 
+Table of GameRoomIDs (continued)
+Object	Name
+Western Parapets	"Western Parapets"
+
 The Western Parapets is a room. The Western Parapets is west from Upper Hall.
 The description of Western Parapets is "[bcwestparapets]".
+
+Table of GameRoomIDs (continued)
+Object	Name
+Eastern Parapets	"Eastern Parapets"
 
 The Eastern Parapets is a room. The Eastern Parapets is east from Upper Hall.
 The description of Eastern Parapets is "[bceastparapets]".
 
+Table of GameRoomIDs (continued)
+Object	Name
+Castle Throne Room	"Castle Throne Room"
+
 The Castle Throne Room is a room. The Castle Throne Room is northeast of Western Parapets. The Castle Throne Room is northwest of Eastern Parapets.
 The description of Castle Throne Room is "[bcthroneroom]".
 
-BouncyCastleExit is a room. "Leaving the bouncy castle."  BouncyCastleSlideExit is east of Eastern Parapets. BouncyCastleSlideExit is west of Western Parapets. BouncyCastleExit is north of Bouncy Castle.
+Table of GameRoomIDs (continued)
+Object	Name
+BouncyCastleExit	"BouncyCastleExit"
 
+BouncyCastleExit is a room. "Leaving the bouncy castle."
+BouncyCastleExit is north of Bouncy Castle.
+
+Table of GameRoomIDs (continued)
+Object	Name
+BouncyCastleSlideExit	"BouncyCastleSlideExit"
+
+BouncyCastleSlideExit is a room.
+BouncyCastleSlideExit is east of Eastern Parapets. BouncyCastleSlideExit is west of Western Parapets.
 
 the scent of Bouncy Castle is "This place smells of rubber and the ocean.".
 
@@ -647,7 +728,7 @@ to say bckingchair_accept:
 Chapter 8 - Punching Pillars
 
 bcseenpunchingpillars is a truth state that varies. bcseenpunchingpillars is usually false.
-primarycolorlist is a list of text that varies. primarycolorlist is usually {"red", "yellow", "blue"}.
+primarycolorlist is a list of text that varies.[@Tag:NotSaved] primarycolorlist is usually {"red", "yellow", "blue"}.
 ppcolor is a text that varies. ppcolor is usually "green".
 bcfinalpillarform is a text that varies. bcfinalpillarform is usually "black knight".
 
@@ -954,8 +1035,8 @@ to chairboundstate:
 	if companion of player is not nullpet, increase compnumber by 1;
 	now lustatt is libido of player;
 	now calcnumber is -1;
-	let trixieexit be 0;
-	while trixieexit is 0:
+	let Trixieexit be 0;
+	while Trixieexit is 0:
 		if clearnomore is 0, clear the screen;
 		if tempnum2 is 5 or humanity of player < 50:
 			now obliging is true;
@@ -1026,7 +1107,7 @@ to chairboundstate:
 			now cockname of player is "Captured";
 			now humanity of player is 0;
 			end the story saying "You are imprisoned by the Bouncy Castle.";
-			now trixieexit is 1;
+			now Trixieexit is 1;
 		else:
 			let k be 0;
 			now keychar is "INVALID";
@@ -1047,7 +1128,7 @@ to chairboundstate:
 					say "     Your effort[if boundsegment > 1] finally[end if] pays off as you're able to pull a [if boundsegment > 0]hand[else]leg[end if] free[if boundsegment > 1]. You grab the back of the mask and pull it from your face, popping the thick, rubbery phallus from your mouth. Gasping in the fresh sea air, your head starts to clear and you turn your focus to getting out of this trap[end if]. [if boundsegment > 0]Grabbing the inflated tube around your other hand, you squeeze it firmly, partially deflating it. When you release it, it is loose momentarily, allowing you to pull your arm free. You do the same for your legs and push yourself off the seat before it can devise some new means to hold you[else]With a little work, you're able to pull your other leg free, scrambling to put some distance between you and the holes[end if][if boundsegment > 2]. There is a wet, slick sound as you pull your groin free of the sticky seat and its stimulating devices[end if][if compnumber > 1]. You quickly rush over and assist your companions, who have been making headway in freeing themselves thanks to the distraction your escape has caused and finish pulling them free[end if][if weapon object of player is not journal]. Moving quickly, you grab your weapon and consider your possible exits from the room[end if].";
 					LineBreak;
 					cleanboundmemory;
-					now trixieexit is 1;
+					now Trixieexit is 1;
 					say "     A quick glances shows none of the red spots located in the other rooms. Shall you head [link]northeast (1)[as]1[end link] to the [if bcseenthroneroom is true]throne room[else]next room[end if], [link]east (2)[as]2[end link] back to the upper hall or [link]take the slide (3)[end link] to leave this place?";
 					now calcnumber is 0;
 					while calcnumber < 1 or calcnumber > 3:
@@ -1472,15 +1553,15 @@ carry out dolchecking: [Picks events from dolphinlist, defined earlier in the do
 
 to dolboundstate:
 	let partialengulf be 0;
-	repeat with y running from 1 to number of filled rows in table of random critters:
-		choose row y in table of random critters;
+	repeat with y running from 1 to number of filled rows in Table of Random Critters:
+		choose row y in Table of Random Critters;
 		if name entry is "Bottlenose Toy":
 			now monster is y;
 			break;
 	now lustatt is libido of player;
 	now calcnumber is -1;
-	let trixieexit be 0;
-	while trixieexit is 0:
+	let Trixieexit be 0;
+	while Trixieexit is 0:
 		if clearnomore is 0, clear the screen;
 		if tempnum2 is 5 or humanity of player < 50:
 			now obliging is true;
@@ -1507,7 +1588,7 @@ to dolboundstate:
 			say "     After [if dolphinbundle is 0]a very brief[else if dolphinbundle is 1]a brief[else]some[end if] while [if dolphinbundle < 2]you're ejected from the suit, perhaps not able to handle your form on it's own -- for now, at least -- but you imagine if you get caught in there too often that will no longer be the case[else]you manage to pry yourself free of the suit, its overwhelming influence still addling your lust-filled mind[end if]...";
 			if dolphinbundle < 2, increase dolphinbundle by 1;
 			cleanboundmemory;
-			now trixieexit is 1;
+			now Trixieexit is 1;
 		else:
 			if partialengulf is 0:
 				say "     Enveloped entirely within the vinyl suit's confines, your vision blurred and tinted green through the eyes of this form-fitting attire. [one of]You can barely move, aroused, [if player is male][cock size desc of player] dick[smn] grinding firmly against the precum-slicked[else]sweat-slicked body grinding against the slippery[end if] walls, you can barely contain yourself[or]These tight, movement-restricting walls command such an overwhelming influence on your arousal, barely able to hold yourself back[or]The sounds of your moans and panting muffled and vibrating against the constricting walls, forcing you to face your intense need[at random]. You imagine your only active option is to [bold type]S[roman type]truggle enough until you can pull yourself free, else you can [if obliging is true][bold type]O[roman type]blige[else][bold type]A[roman type]bide[end if], or [if boundrecover is true][bold type]R[roman type]ecover from[else][bold type]E[roman type]ndure[end if] these questionable circumstances.";
@@ -1537,7 +1618,7 @@ to dolboundstate:
 				now scalevalue of player is 3;
 				now bodydesc of player is "inflatable";
 				now bodytype of player is "dolphin";
-				now daycycle of player is 0;
+				now SleepRhythm of player is 0;
 				now breasts of player is 2;
 				now breast size of player is 0;
 				if hellHoundLevel is 0:
@@ -1548,7 +1629,7 @@ to dolboundstate:
 				now battleground is "void";
 				now combat abort is 1;
 				WaitLineBreak;
-				now trixieexit is 1;
+				now Trixieexit is 1;
 				end the story saying "Trapped in the inflatable dolphin suit, your mind slowly fades away until there are no thoughts left in your air-filled head but that of playing at the beach.";
 			else:
 				let k be 0;
@@ -1598,7 +1679,7 @@ to dolboundstate:
 							if dolphinbundle < 2, increase dolphinbundle by 1;
 							cleanboundmemory;
 							WaitLineBreak;
-							now trixieexit is 1;
+							now Trixieexit is 1;
 					if dolphinbundle is 0:
 						increase boundmod by 1;
 					else if dolphinbundle is 1 and a random chance of 1 in 2 succeeds:
@@ -1683,8 +1764,8 @@ to say bottlestrugglebar:
 
 to say dolcheckA:		[empty]
 	[puts Bottlenose Toy as lead monster in case of impregnation]
-	repeat with y running from 1 to number of filled rows in table of random critters:
-		choose row y in table of random critters;
+	repeat with y running from 1 to number of filled rows in Table of Random Critters:
+		choose row y in Table of Random Critters;
 		if name entry is "Bottlenose Toy":
 			now monster is y;
 			break;
@@ -1780,7 +1861,7 @@ to say dolcheckA:		[empty]
 		now scalevalue of player is 3;
 		now bodydesc of player is "inflatable";
 		now bodytype of player is "dolphin";
-		now daycycle of player is 0;
+		now SleepRhythm of player is 0;
 		now breasts of player is 2;
 		now breast size of player is 0;
 		if hellHoundLevel is 0:
@@ -2189,7 +2270,7 @@ Section 6 - Rules Modifications and Everyturn Rule
 Instead of exploring while player is in Bouncy Castle:
 	say "There is nowhere to explore out here.";
 
-Instead of scavenging while player is in Bouncy Castle:
+Instead of ScavengingAction while player is in Bouncy Castle:
 	say "There is nowhere to scavenge out here.";
 
 an everyturn rule:

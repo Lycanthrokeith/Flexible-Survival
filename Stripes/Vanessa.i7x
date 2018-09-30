@@ -36,7 +36,11 @@ Version 2 of Vanessa by Stripes begins here.
 
 Section 0 - Event
 
-Paratrooper is a situation. Paratrooper is resolved.		[unlocked after 3rd stage of 'Military presence']
+Table of GameEventIDs (continued)
+Object	Name
+Paratrooper	"Paratrooper"
+
+Paratrooper is a situation. Paratrooper is inactive.		[unlocked after 3rd stage of 'Military presence']
 The sarea of Paratrooper is "Plains".
 when play begins:
 	add Paratrooper to badspots of girl;
@@ -79,16 +83,21 @@ Instead of resolving a Paratrooper:
 			add "water bottle" to invent of Back Of The Library;
 			add "food" to invent of Back Of The Library;
 		increase score by 20;
-		now battleground is "void";
+		now Resolution of Paratrooper is 1; [Vanessa brought in]
 		now HP of Vanessa is 1;
 	else:
 		say "     'Well, thanks anyhow then,' she says, turning around and heading back towards the infected city.";
+		now Resolution of Paratrooper is 99; [disinterest]
 		now HP of Vanessa is 50;
 		increase score by 1;
-	Now Paratrooper is resolved;
+	now Paratrooper is resolved;
 
 
 Section 1 - Vanessa the Centaur
+
+Table of GameCharacterIDs (continued)
+object	name
+Vanessa	"Vanessa"
 
 Vanessa is a woman.
 The description of Vanessa is "[Vanessadesc]".
@@ -171,7 +180,7 @@ to say Vanessa_Meredith_msg:
 		say "     [one of]'My sweet Mare[if XP of Meredith is 0] tells me she's ready to get pregnant again[else if XP of Meredith is 1][']s pregnancy is just starting to show[else] looks so lovely as a pregnant mare[end if],' she says with a smile.[or]'I'm glad we were able to get Meredith safely back here. While I can't fulfill my orders to escort her around the city, it's great she's able to continue her research thanks to your help. Not that I can understand most of what she's saying when she talks about her results, but they're certainly getting more interesting to watch.'[or]'I know Meredith getting infected was an accident, but we're both really happy with how things have turned out. She's my cute Mare now and loving it. And she should start having even more fun now that she's getting bred like the horny mare she is.'[or]'Meredith's even more adorable now that she's my pretty Mare.'[or][Vanessa_Meredith_pregmsg][in random order]";
 	else if HP of Meredith is 100:
 		say "ERROR-Vanessa-100M: You should not be able to discuss her with me.";
-		remove Meredith from play;
+		now Meredith is nowhere;
 		now HP of Meredith is 0;
 
 

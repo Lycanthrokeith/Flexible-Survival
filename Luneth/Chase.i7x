@@ -79,6 +79,10 @@ ChaseOffspring is a number that varies.
 
 Section 1 - NPC
 
+Table of GameCharacterIDs (continued)
+object	name
+Chase	"Chase"
+
 Chase is a man.
 The description of Chase is "[ChaseDesc]".
 The conversation of Chase is { "mew" }.
@@ -190,13 +194,9 @@ to say RegularChaseTalkMenu:
 					say "[RegularChaseRyoTalk]";
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if the player consents:
-				now sextablerun is 1;
-				say "     You step back from the anthro tiger, shaking your head slightly as he gives a questioning look.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You step back from the anthro tiger, shaking your head slightly as he gives a questioning look.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
 	clear the screen and hyperlink list;
@@ -216,7 +216,7 @@ to say RegularChaseTalk1: [just casual conversation]
 to say RegularChaseHelp:
 	if RegChaseHelp is 0:
 		say "     'Hey, I'm sorry to ask this of a friend, but could you do me a small favor?' Not sure what the tiger is on about, you ask Chase what he needs. 'Well, we're kind of running low on food and water around here. I was kind of hoping that if you happened to come across some extra supplies, you wouldn't mind sharing some with us?' Not seeing any reason why not as long as you can keep yourself supplied too, you nod and then ask Chase how much in the way of provisions he and the others would need. 'Not much maybe just 20 pounds of food (8 units) and maybe a couple gallons of water (5 units). The waters not that necessary though, but the food would be really appreciated.' The tiger smiles at you somewhat sheepishly. Gaping and then nodding somewhat bewilderedly at the feline man you tell Chase that you'll see what you can do. 'Thanks and sorry about the inconvenience.' Chase saunters up next to you and then licks his raspy tongue across your [facename of player] face.";
-		Now RegChaseHelp is 1;
+		now RegChaseHelp is 1;
 	else if RegChaseHelp is 1:
 		if carried of water bottle < 5 or carried of food < 8:
 			say "     [one of]'Hey, sorry to bug, but did you ever get that food? We need like 8 things of food and maybe 5 liters of water, if you can spare that much.'[or]'Did you have any luck finding those supplies I'd asked about?'[or]'Don't forget to keep your eyes open for some of the supplies we need here.'[or]'Did you see those small packs of rabbits roaming around? God they always make my mouth water...'[at random]";
@@ -225,7 +225,7 @@ to say RegularChaseHelp:
 			decrease carried of food by 8;
 			say "     'Whoa, thanks a lot for this! This should keep the rest of us going for a while longer!' Chase nuzzles the side of your neck and then licks you across your throat. A shiver racks down your spine from the rough wet feel of the tiger's tongue sliding along your [facename of player] throat. When the feline pulls back Chase says, 'Hey why don't I show you some neat tricks we tigers like to pull off? It may help you to fight and run away better when your outside foraging or whatever.";
 			Increase XP of player by 40 + ( 3 * level of player );
-			Now RegChaseHelp is 2;
+			now RegChaseHelp is 2;
 	else if RegChaseHelp is 2:
 		say "     Chase turns to you with beaming smile. 'I think we are good for now. You pulled us out of the fire that's for sure. We should be ok, as long as we stay vigilante with our scavenging.' Raising his fist up at you, the tiger raises an eyebrow in question. 'Pound it?' Smiling a bit to yourself, you raise your fist as well, meeting him in a pound.";
 
@@ -285,13 +285,9 @@ to say DomChaseTalkMenu:
 					say "[DomChaseRyoTalk]";
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if the player consents:
-				now sextablerun is 1;
-				say "     You step back from the anthro tiger, shaking your head slightly as he gives a questioning look.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You step back from the anthro tiger, shaking your head slightly as he gives a questioning look.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
 	clear the screen and hyperlink list;
@@ -312,7 +308,7 @@ to say DomChaseRelationshipTalk:
 	if player consents: [monogamous mate with dom-Chase]
 		LineBreak;
 		say "     Worried that he might not like your answer, you cuddle up close to the tiger's chest, whispering your choice. Out of nowhere a booming laugh echoes across the Tiger Den, causing many of the residents to look over in curiosity. 'Awesome! I think that's a great choice!' Feeling your mates furred arms wrap you up snugly, you're a little surprised by his reaction. You had expected him to be angry or annoyed, instead, he is still laughing lightly. Glancing up at his face, it appears that he is actually happy by your choice, and you can't help but ask why he's taking all of this so well. 'Hmm? I told you that you're the most important thing to me. That means what makes you happy, makes me happy!' The answer is so simple, you can't be sure if he is being serious or not.";
-		say "     'Don't get me wrong. This also means more work for you! I want a big family and if we aren't going to have any helpers, well, I think you can see where I'm going with this, can't you?' You can't help but roll your eyes at his implication, but a smile still spreads across your face. 'I can't wait to start making that family with you[if player is not defaultnamed] [name of player][end if]! Just the idea of stuffing my cock into you constantly, watching your belly grow big with our children, our family...' Being able to feel exactly the kind of reaction Chase is having to the imagery, you grind down against the tiger, causing a growl to erupt from within his throat. Feeling wetness against your belly you glance down to see your king leaking pre all over both of you. Dipping your fingers against his slit, you bring them to you lips, licking up his offering. 'Babe, you keep that up, and I might just have to take you right here and now. Jeez, now I can't wait to have you all to myself, filling you with our future. I will build us a dynasty that will make you proud to have chosen me!'";
+		say "     'Don't get me wrong. This also means more work for you! I want a big family and if we aren't going to have any helpers, well, I think you can see where I'm going with this, can't you?' You can't help but roll your eyes at his implication, but a smile still spreads across your face. 'I can't wait to start making that family with you[if player is not defaultnamed] [name of player][end if]! Just the idea of stuffing my cock into you constantly, watching your belly grow big with our children, our family...' Being able to feel exactly the kind of reaction Chase is having to the imagery, you grind down against the tiger, causing a growl to erupt from within his throat. Feeling wetness against your belly you glance down to see your king leaking pre all over both of you. Dipping your fingers against his slit, you bring them to your lips, licking up his offering. 'Babe, you keep that up, and I might just have to take you right here and now. Jeez, now I can't wait to have you all to myself, filling you with our future. I will build us a dynasty that will make you proud to have chosen me!'";
 		WaitLineBreak;
 		say "     'I'm glad that we figured out a solution to that problem, but I should probably get back to discussing with my advisers on better ways to protect our borders.' Getting off of his lap, you go to get ready to head out, only to be grabbed from behind and pulled up against the soft fur of his broad chest. 'Just remember though, anytime that you want me to put a kitten inside of this sexy body of yours you come to me on the double. I don't care what I'm doing at the moment, I will always [italic type]make[roman type] time for you!' With a parting smack on your ass the king makes his way back to his advisers.";
 		now Dexterity of Chase is 1;
@@ -496,13 +492,9 @@ to say ChaseSexMenu:
 					now lastfuck of Chase is turns;
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if the player consents:
-				now sextablerun is 1;
-				say "     You step back from the anthro tiger, shaking your head slightly as he gives a questioning look.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You step back from the anthro tiger, shaking your head slightly as he gives a questioning look.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
 	clear the screen and hyperlink list;
@@ -611,13 +603,9 @@ to say DomChaseSexMenu:
 					now lastfuck of Chase is turns;
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if the player consents:
-				now sextablerun is 1;
-				say "     You step back from the tiger king, shaking your head slightly as he gives a questioning look.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You step back from the tiger king, shaking your head slightly as he gives a questioning look.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
 	clear the screen and hyperlink list;
@@ -684,7 +672,7 @@ to say DomChaseSex2: [Fucked by Chase anal]
 		say "     Taking your hand, Chase makes you get up and stand before him. 'Strip!' That single command growled out at you is enough to make you reach for the hem of your clothing without even thinking. Wanting to show the great cat that he made the right choice in choosing you to be his mate, you decide to try and make him lose control. You slowly begin to undress, making a point of caressing each patch of flesh that is revealed.";
 		say "     The tiger's barbed cock fully hardens as you reveal more of yourself. 'Put a show on for me! I want to see if you [italic type]deserve[roman type] to have me fuck my load into you!' Following his orders, you begin to move your body in a sultry motion, trying your best to be a obedient slut for your king. As you continue, Chase reaches over and grabs one of the other tigers watching your show. Forcing the lesser tiger-man to his knees, the master of the den only gives one short command, 'Suck it!' You can't help the pang of jealousy that erupts from within you, at the very idea that your king's load may go into the other male's throat instead of inside of you! Upping the ante, you stroke your dick to full hardness, making a show of all the pre dripping from the head. [if cock length of player < 4]'Aww, is my little slut wanting to show me his [cock size desc of player] boy clit? It's a very pretty clitty, baby. Why don't you show daddy that special little ass of yours, slut?' You can't help but get excited by the idea that your master is happy with your presentation.[else if cock length of player > 30]Sadly that was the wrong move to make. 'What the fuck do you think your doing showing me that? That kinda cock doesn't belong on a slut. You had better find a way to shrink that thing down and get a proper boy clit, or else! Now show me the only thing you have I care about - that special little ass of yours!'[else]Unfortunately the feline isn't all that amused by your cock play. 'I don't care about your dick, slut! What the hell am I gonna do with that? Turn around and show me that special little ass of yours!'[end if]";
 		WaitLineBreak;
-		say "     Quickly turning around, you begin to rub your ass, accentuating the curve of you buttocks. Hoping to throw the tiger king off of his game, even for a moment, you give yourself one harsh smack right on your ass cheek. Hearing a loud growl in response is all the incentive that you need. Keeping your back to your master you get down on all fours, placing your head to the ground and raising your butt high into the air, the very picture of a perfectly presenting slut. While using one hand to pull your cheeks apart showing off your hole, the other is eagerly spanking yourself. Hearing heavy gagging behind you is enough to let you know that Chase is thoroughly enjoying the spectacle that you are performing for him. Giving yourself one last smack on the ass, you decide to further entice the studly tiger into taking you. Using one hand to keep your butt open to view, you bring the other hand to your mouth quickly licking each finger.";
+		say "     Quickly turning around, you begin to rub your ass, accentuating the curve of your buttocks. Hoping to throw the tiger king off of his game, even for a moment, you give yourself one harsh smack right on your ass cheek. Hearing a loud growl in response is all the incentive that you need. Keeping your back to your master you get down on all fours, placing your head to the ground and raising your butt high into the air, the very picture of a perfectly presenting slut. While using one hand to pull your cheeks apart showing off your hole, the other is eagerly spanking yourself. Hearing heavy gagging behind you is enough to let you know that Chase is thoroughly enjoying the spectacle that you are performing for him. Giving yourself one last smack on the ass, you decide to further entice the studly tiger into taking you. Using one hand to keep your butt open to view, you bring the other hand to your mouth quickly licking each finger.";
 		say "     Reaching underneath yourself, you bring the lubricated fingers to your hole. Applying a decent amount of pressure, you are able slip one in, moaning at the feeling of being penetrated. Going in and out, you quickly become accustomed to the feeling and add a second finger. With each sweep across your sweet spot, a needy moan escapes your lips. A thump comes from behind you. Glancing backwards you see that the tiger-man that was blowing his king has been pushed to the ground. Chase looks deep into your eyes, and you can see the desire and hunger within those primal, metallic eyes. 'Bring him to me!' The smaller feline jumps up, rushing over to you, grabbing you and lifting you up easily, before bringing you directly before your mate. The man holding you doesn't even get the chance to set you down on the floor before your master is scooping you up. With your back to his chest, the tiger king places his paws underneath the back of your thighs.";
 		WaitLineBreak;
 		say "     'You did a good job servicing me, boy. For that you may stay and watch as I breed my number one slut.' The smaller man gives a simple nod, eyes taking in your spread legs, revealing your hole. 'So my slutty lil bottom boy, you proved how much that you want me fuck you. I'm sure that you don't mind this lesser male watching, do you?' Whispering to your king, you explain that you only want to please him. 'Such a good boy! All that you want is to keep me happy, don't you, my pretty lil slut?' The only answer given is a whimper, almost begging your master to take you. 'MINE!' The roar is enough to attract the rest of the dens attention, however you are preoccupied by Chase's huge 11 inch cock being rammed into your hole in a single hard thrust. Eyes rolling back, your head falls to the tiger king's shoulder due to the rapid penetration. You attempt to gain back some control so that you may better please your master, but that endeavor is in vain however as your mate has other plans.";
@@ -907,7 +895,7 @@ to say TigertaurQuestBattle: [conversation to begin tigertaur battle mission]
 				now Lust of Chase is 3;
 				move player to Maintenance Closet;
 		else if fightoutcome is 30: [fled, reg-Chase locked]
-			say "     Turning your back to the battle, you attempt to escape through the dense foliage. Right before you are able to hit it however you feel a paw grab the back of your head, next thing you know the ground rushing up at your face just before everything goes dark. Every part of your body hurts once you are finally able to sit up, looking around everything appears to be in haze at first. Slowly but surely you are able get back to your feet, you can see blood on the ground... a lot of it. The first thing that enters your mind is that the blood your looking at could be Chase's. 'It's not mine. Well at least most of it isn't,' The voice behind you has a cold edge to it, not the usual upbeat air that the tiger exudes.";
+			say "     Turning your back to the battle, you attempt to escape through the dense foliage. Right before you are able to hit it however you feel a paw grab the back of your head, next thing you know the ground rushing up at your face just before everything goes dark. Every part of your body hurts once you are finally able to sit up, looking around everything appears to be in haze at first. Slowly but surely you are able get back to your feet, you can see blood on the ground... a lot of it. The first thing that enters your mind is that the blood you're looking at could be Chase's. 'It's not mine. Well at least most of it isn't,' The voice behind you has a cold edge to it, not the usual upbeat air that the tiger exudes.";
 			say "     Turning around you open your mouth to speak but are abruptly cut off. 'Do you know why I'm here?' Once again you open your mouth but are silenced again. 'No! This is the part where you listen, you were the one that convinced me to fight back! [italic type]YOU[roman type]! I wasn't even supposed to get feelings for you, but yeah shit happens right? When I told you what was at stake... you just got up and acted like you were getting ready to fight off whatever came your way for [italic type]ME[roman type]! I trusted you[if player is not defaultnamed], [name of player][end if] and then the next thing I know I see you making a run for it! You were ready to... abandon me.' Chase's words cut you worse than his claws ever could, the final nail in the coffin is when you meet his electric-blue eyes and see them wet, filled with betrayal.";
 			WaitLineBreak;
 			say "     'Do you know how it feels to care for someone you can't trust? No, you probably don't, since I would have taken anything they had to offer for you without a second thought. At the very least you sure as hell don't love me! Not the same way that I lo... it doesn't matter!' Everything finally comes to a head and without warning a tear drips down your cheek, and the only answer you can give is that you were scared. 'I was scared too, but I focused on you. That's what gave [italic type]me[roman type] strength! I hoped that I was enough to give you that same strength...' The two of you stand there in silence before a loud bang overhead rumbles signifying thunder. Still unsteady from the head injury, you jump from the booming sound. Before you know it Chase has you wrapped in his arms, you take in his scent and immediately start to feel better. Looking up you see Chase quickly looking in all directions, more than likely still on an adrenaline rush.";

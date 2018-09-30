@@ -3,6 +3,10 @@ Lizard Parlor by Kaleem mcintyre begins here.
 
 Section 1 - Lizard Parlor
 
+Table of GameRoomIDs (continued)
+Object	Name
+Lizard Parlor	"Lizard Parlor"
+
 Lizard Parlor is a room. Lizard Parlor is fasttravel. It is private.
 
 The description of Lizard Parlor is "Knocking onto a door marked 1616, you find yourself being let into a large and well furnished condominium. Stepping through the doorway once it opens, you nod to Dan and then watch as the naked, four-armed iguana goes over to where an equally naked Greg is sitting in a lotus position while meditating[if findwires is 2 and fixedgens is 2]. With the power turned back on the hybrid raptor/komodo dragon has the patio windows of the condo opened wide to allow the summer heat to billow inside of the room while a large fan hums quietly onside of the mixed breed reptile. At seeing you, or rather sensing you, the raptor grunts and then gets himself up after uncoiling his legs from their crossed position[else]. Without the power to the city the hybrid raptor/komodo dragon has left the patio open so as to draw in as much heat as he can manage. It would seem that his new inherent nature makes it so that Greg needs a lot of heat to be able to function. So when the other slowly begins to rise, his bones both popping and creaking audibly, you feel right sorry for the guy[end if]. Watching as Dan moves over and then begins to nuzzle and flick his tongue over and across the orange and yellow scales of his lover you find yourself blushing from the obvious fondness shared between the two. Turning to look around the place you notice that the living area of the condominium has a kitchenette area to the left side of the room, an home entertainment system on the right facing a large futon sofa, stairs leading up to the visible bedroom and on further back two doors that probably led to a bathroom and a guest room. The walls of the place are painted with a soft forest green to offset the brown of the hardwood flooring though from the smell you can tell that the paint is somewhat fresh. With a bookshelf sitting over by the window and a few out of place coloring books mapped out across the floor the entire condo has a quaint homey feel to it.".
@@ -16,6 +20,10 @@ Instead of sniffing Lizard Parlor:
 
 
 Section 2 - Dan
+
+Table of GameCharacterIDs (continued)
+object	name
+Dan	"Dan"
 
 Dan is a man.
 The description of Dan is "The four-armed iguana moves himself around the loft with slow and measured steps while rolling his four arms around somewhat anxiously. Humming to himself all the while you wonder how the other can stay perpetually happy as he moves around the loft[if findwires is 2 and fixedgens is 2]. With the power back on the green and black scaled reptile works at both cleaning up the condo while at the same time making something to eat for himself and Greg, but it's easy to tell that Dan wants to be doing something more [italic type]vigorous[roman type] with his lover[else]. With the power not working properly the iguana can only work at drawing in several coloring books to stave off his boredom. Though, from the way he is moving his tail about almost anxiously it's easy to see that Dan wants to be outside doing something[end if]. As strong and muscular as he is you have to wonder how much the virus has enhanced what the iguana had already had developed from his Academy training. Toned and limber with green and black scales shimmering in the light of the[if daytimer is day]sun shining in from the patio window[else]lights from the solar powered glow lamps surrounding the condo along with the waning moon light from outside[end if] Dan is quite a handsome specimen to behold. The sight of the naked reptile's genital slit leaking precum down his thighs makes for an interesting spectacle and mildly you wonder how Greg keeps his claws off of the other.".
@@ -79,6 +87,10 @@ Instead of fucking the Dan:
 
 Section 3 - Greg
 
+Table of GameCharacterIDs (continued)
+object	name
+Greg	"Greg"
+
 Greg is a man.
 The description of Greg is "The taller and more powerfully built raptor/komodo dragon hybrid grunts while trying to find a warm patch of heat to rest in. Given that his much bigger build probably requires the necessary heat since he's gone from mammalian to reptilian the orange and yellow mottled scalie does everything in his power to try and stay warm[if the daytimer is day]. With the sun out it's much easier for Greg to lounge while reading a book as he keeps an eye out on Dan[else]. Without the sun the raptor hybrid has little choice save to wrap himself up with a large and fluffy comforter as he tries to conserve body heat[end if]. The older man's tail lashes beside him somewhat jubilantly as the raptor hisses while flicking his long tongue out to catch the scent of his boyfriend. Dan often comes over to help keep the older man warm by cuddling and nuzzling into Greg's scaly form. It's somewhat plain to see that the two would probably be mating if you weren't here right now as Greg's genital slit is almost drooling down in between his legs.".
 The conversation of Greg is { "Time for a nap????" }.
@@ -90,7 +102,7 @@ instead of sniffing Greg:
 instead of conversing the Greg:
 	If HP of greg is 0:
 		say "'So I see you survived this place another day. Not bad, even for a rookie like you.' Greg's words are mild, but carry enough of a sting to them to make you pause for a second in afterthought. 'Don't take it the wrong way.' The raptor flicks his tongue out from between his lips and then chuckles at you. 'I'm just surprised by your tenacity. Not many have [']survived['] this place. Well, if you take the general census from before the epidemic and compare it to what we have now as being considered [']citizens['].' Any annoyed growl slips free from Greg's muzzle and mildly you have to wonder what's gotten him into such a snit.";
-		say "Asking the other on his thoughts about what may happen after the military rolls into the clean up the city you find yourself getting a somewhat unanticipated reply. 'When/if the military comes then not much will change - other than the population of mutants here increasing with the influx of new blood.' Blinking you ask the other about his bleak outlook. 'Bleak? I'm being realistic.' The other man shrugs before rolling his head from side to side in an effort to pop the bones in his neck. 'Come on, wake up some of those latent brain cells for a moment and think outside the box. If you were a top commander leading a group of people into an assured danger zone, how would you handle this situation, seeing as all other alternatives and possibilities have, as of currently, been ineffective in solving the crisis?' At that you pause to think.";
+		say "Asking the other on his thoughts about what may happen after the military rolls into the clean up the city, you find yourself getting a somewhat unanticipated reply. 'When/if the military comes then not much will change - other than the population of mutants here increasing with the influx of new blood.' Blinking you ask the other about his bleak outlook. 'Bleak? I'm being realistic.' The other man shrugs before rolling his head from side to side in an effort to pop the bones in his neck. 'Come on, wake up some of those latent brain cells for a moment and think outside the box. If you were a top commander leading a group of people into an assured danger zone, how would you handle this situation, seeing as all other alternatives and possibilities have, as of currently, been ineffective in solving the crisis?' At that you pause to think.";
 		WaitLineBreak;
 		say "The obvious answer would be to try and get as many people out and quarantine off the city, however, that's what's being done already. The results of such actions speak for themselves in this case. 'If I were in charge I'd have the whole place sanitized and then pick off whatever was left with a couple of airstrikes, but that's just because I'm more practical when dealing with problems.' Hearing this your [facename of player] eyes widen in disbelief. Asking the other if [']sanitize['] means what you think you find Greg suddenly looking at you with an unwavering gaze.";
 		WaitLineBreak;

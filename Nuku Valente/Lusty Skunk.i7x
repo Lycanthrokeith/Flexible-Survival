@@ -6,6 +6,10 @@ Version 2 of Lusty Skunk by Nuku Valente begins here.
 
 Section 1 - The Situation
 
+Table of GameEventIDs (continued)
+Object	Name
+Lusty Skunk	"Lusty Skunk"
+
 Lusty Skunk is a situation.
 The sarea of Lusty Skunk is "Forest".
 
@@ -24,8 +28,8 @@ Skunkform is an action applying to nothing.
 To Skunkform:
 	if skunkbeaststatus is 1:
 		[puts Skunkbeast Lord as lead monster]
-		repeat with y running from 1 to number of filled rows in table of random critters:
-			choose row y in table of random critters;
+		repeat with y running from 1 to number of filled rows in Table of Random Critters:
+			choose row y in Table of Random Critters;
 			if name entry is "Skunkbeast Lord":
 				now monster is y;
 				break;
@@ -42,7 +46,7 @@ To Skunkform:
 		now scalevalue of player is 4;
 		now bodydesc of player is "tauric";
 		now bodytype of player is "[one of]mephit[or]skunk-like[or]mustelid[at random]";
-		now daycycle of player is 0;
+		now SleepRhythm of player is 0;
 
 
 Instead of Resolving a Lusty Skunk:
@@ -114,8 +118,8 @@ to say doubleskunk:		[separated to edit and remove 'stop the action']
 				now skrp is 1;
 				add "Skunkbeast Lord" to infections of Taurlist;
 				[scale up the Skunkbeast Lord by 1]
-				repeat with y running from 1 to number of filled rows in table of random critters:
-					choose row y in table of random critters;
+				repeat with y running from 1 to number of filled rows in Table of Random Critters:
+					choose row y in Table of Random Critters;
 					if name entry is "Skunkbeast Lord":
 						increase scale entry by 1;
 						break;
@@ -138,8 +142,8 @@ to say doubleskunk:		[separated to edit and remove 'stop the action']
 				now skrp is 1;
 				add "Skunkbeast Lord" to infections of Taurlist;
 				[scale up the Skunkbeast Lord by 1]
-				repeat with y running from 1 to number of filled rows in table of random critters:
-					choose row y in table of random critters;
+				repeat with y running from 1 to number of filled rows in Table of Random Critters:
+					choose row y in Table of Random Critters;
 					if name entry is "Skunkbeast Lord":
 						increase scale entry by 1;
 						break;

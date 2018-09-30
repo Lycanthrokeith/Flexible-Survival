@@ -2,7 +2,12 @@ Version 1 of HellHound by Speedlover begins here.
 
 Section 1 - Basic setup
 
-Northwest of Dirty Sheds is Overgrown Area.
+Overgrown Area is northwest of Dirty Sheds.
+
+Table of GameRoomIDs (continued)
+Object	Name
+Overgrown Area	"Overgrown Area"
+
 Overgrown Area is a Room.
 The description of Overgrown Area is "[OvergrownBlockDesc]";
 
@@ -116,7 +121,7 @@ to Hellhound infect female:
 	now scalevalue of player is 3;
 	now bodydesc of player is "[one of]average[or]normal[or]unchanged[at random]";
 	now bodytype of player is "human";
-	now daycycle of player is 0;
+	now SleepRhythm of player is 0;
 	now cunts of player is 1;
 	now cunt length of player is 6;
 	now cunt width of player is 4;
@@ -150,7 +155,7 @@ to Hellhound infect male:
 	now scalevalue of player is 3;
 	now bodydesc of player is "[one of]average[or]normal[or]unchanged[at random]";
 	now bodytype of player is "human";
-	now daycycle of player is 0;
+	now SleepRhythm of player is 0;
 	now cocks of player is 1;
 	now cock length of player is 6;
 	now the cock width of the player is 4;
@@ -237,13 +242,13 @@ every turn (This is the check Hellhound rule):
 					now scalevalue of player is 3;
 					now bodydesc of player is "[one of]average[or]normal[or]unchanged[at random]";
 					now bodytype of player is "human";
-					now daycycle of player is 0;
+					now SleepRhythm of player is 0;
 				else:
 					now body of player is "appears perfectly human at first. But on your belly there are six nipples, and between your legs rests a swollen, permanently in-heat Hellhound twat";
 					now scalevalue of player is 3;
 					now bodydesc of player is "[one of]average[or]normal[or]unchanged[at random]";
 					now bodytype of player is "human";
-					now daycycle of player is 0;
+					now SleepRhythm of player is 0;
 				say "     Your body doubles over, not in pain, but simply as muscles spasm and reshape. Your form returns to the human body you were born with, plus the additions you sport due to the Hellhound's [']gift['].";
 			if maleHound is True:
 				if player is female:
@@ -297,13 +302,13 @@ every turn (This is the check Hellhound rule):
 					now scalevalue of player is 3;
 					now bodydesc of player is "[one of]bipedal[or]altered[or]twisted[or]animalistic[at random]";
 					now bodytype of player is "[one of]canine[or]dog-like[at random]";
-					now daycycle of player is 0;
+					now SleepRhythm of player is 0;
 				else:
 					now body of player is "that of a bipedal dog, paw-like feet, and stubby-fingered hands with pawpads and dull black claws.";
 					now scalevalue of player is 3;
 					now bodydesc of player is "[one of]bipedal[or]altered[or]twisted[or]animalistic[at random]";
 					now bodytype of player is "[one of]canine[or]dog-like[at random]";
-					now daycycle of player is 0;
+					now SleepRhythm of player is 0;
 				say "     Your body doubles over, not in pain but simply because you can't remain upright as muscles spasm and reshape, your body reforming into a bipedal version of the infernal mutt you submitted to.";
 			if maleHound is True:
 				if player is female:
@@ -355,13 +360,13 @@ every turn (This is the check Hellhound rule):
 					now scalevalue of player is 3;
 					now bodydesc of player is "[one of]quadrapedal[or]altered[or]twisted[or]animalistic[at random]";
 					now bodytype of player is "[one of]canine[or]dog-like[at random]";
-					now daycycle of player is 2;
+					now SleepRhythm of player is 2;
 				else:
 					now body of player is "that of an uncommon mutt, four paw-like feet with wicked black claws, and no hands";
 					now scalevalue of player is 3;
 					now bodydesc of player is "[one of]quadrapedal[or]altered[or]twisted[or]animalistic[at random]";
 					now bodytype of player is "[one of]canine[or]dog-like[at random]";
-					now daycycle of player is 2;
+					now SleepRhythm of player is 2;
 				say "     Your bones seem to heat and grow soft, the action making you collapse onto the ground as they no longer seem to be able to bear your weight. You are forced to lie there for a few minutes as muscles shift and joints pop. Eventually, the changes seem to complete and you're able to pull yourself to your feet, all four feet. You now wear the form of the foul demonic hound that tainted you.";
 			if maleHound is True:
 				if player is female:
@@ -408,7 +413,7 @@ When Play begins:
 Section 3 - Return to the Church
 
 churchenter is a number that varies.
-lastchurchattempt is a number that varies. lastchurchattempt is normally 248.
+lastchurchattempt is a number that varies. lastchurchattempt is usually 248.
 
 instead of going north from the Beach Plaza while hellhoundlevel > 0:
 	if churchenter is 0:
@@ -441,21 +446,21 @@ When play ends:
 		else if bodyname of player is "Wolverine Guard" and facename of player is "Wolverine Guard" and cockname of player is "Wolverine Guard" and skinname of player is "Wolverine Guard" and tailname of player is "Wolverine Guard":		[succumbed to wolverine sex]
 			say "     Your bond as guardian to the Central Library and to your new mate is too strong for the Hellhound's curse, breaking it and allowing you to become a new protector for the library.";
 		else if bodyname of player is "Tigress Hooker" and facename of player is "Tigress Hooker" and cockname of player is "Tigress Hooker" and skinname of player is "Tigress Hooker" and tailname of player is "Tigress Hooker":			[claimed at the tigress motel]
-			Now T is 0; [do nothing statement]
+			now T is 0; [do nothing statement]
 		else if bodyname of player is "Big Tiger" and facename of player is "Big Tiger" and cockname of player is "Big Tiger" and skinname of player is "Big Tiger" and tailname of player is "Big Tiger":							[victory at tigress motel]
-			Now T is 0; [do nothing statement]
+			now T is 0; [do nothing statement]
 		else if bodyname of player is "Big Tigress" and facename of player is "Big Tigress" and cockname of player is "Big Tigress" and skinname of player is "Big Tigress" and tailname of player is "Big Tigress":					[victory at tigress motel]
-			Now T is 0; [do nothing statement]
+			now T is 0; [do nothing statement]
 		else if bodyname of player is "Chocolate Lab" and facename of player is "Chocolate Lab" and cockname of player is "Chocolate Lab" and skinname of player is "Chocolate Lab" and tailname of player is "Chocolate Lab":				[made into Chocolate Lab]
-			Now T is 0; [do nothing statement]
+			now T is 0; [do nothing statement]
 		else if vinetrapped is 1 or vinetrapped is 2:						[full plant TF]
-			Now T is 0; [do nothing statement]
+			now T is 0; [do nothing statement]
 		else if foodvendor is 4:											[food vendor's sex slave]
-			Now T is 0; [do nothing statement]
+			now T is 0; [do nothing statement]
 		else if centrallib is 7:											[captured by librarian harpies]
-			Now T is 0; [do nothing statement]
+			now T is 0; [do nothing statement]
 		else if skunkbeaststatus is 2:										[lost to Skunkbeast Lord]
-			Now T is 0; [do nothing statement]
+			now T is 0; [do nothing statement]
 		else if mousecurse is 1:											[chosen by the mouse-collective]
 			say "     As your mind fades, more and more of your infernal taint comes to the fore, hands becoming paws, face stretching out into a muzzle, coarse dirty fur spreading all over your body. But then Rachel is there, holding you tightly in her small arms, somehow her weak arms able to hold back the powerful force of your infernal pact. As your mate clutches to you, you can feel her mind pushing against that dark power. Soon you can feel somewhere above her mind, greater than it, the collective hive-mind of all the mice, focused on this. Your body starts changing again, becoming more mouse-like this time until you are fully a mouse like your loving mate and the other mice of the collective, though of the same gender as you were before. The darkness fades as the bond of the dark pact is shattered by their mental might, freeing you to become fully one of them instead.";
 			say "[fullmousification]";

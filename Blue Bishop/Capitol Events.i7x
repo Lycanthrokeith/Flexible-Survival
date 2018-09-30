@@ -7,6 +7,10 @@ Version 1 of Capitol Events by Blue Bishop begins here.
 
 Section 1 - Pre-existing events by Sweraptor
 
+Table of GameEventIDs (continued)
+Object	Name
+dragatorspot	"dragatorspot"
+
 dragatorspot is a situation.
 The sarea of dragatorspot is "Capitol".
 
@@ -15,6 +19,9 @@ Instead of resolving dragatorspot:
 	increase score by 1;
 	now dragatorspot is resolved;
 
+Table of GameEventIDs (continued)
+Object	Name
+whelpspot	"whelpspot"
 
 whelpspot is a situation.
 The sarea of whelpspot is "Capitol".
@@ -28,6 +35,10 @@ Instead of resolving whelpspot:
 
 
 Section 2 - Ebonflame Nest
+
+Table of GameEventIDs (continued)
+Object	Name
+Ebonflame Nest	"Ebonflame Nest"
 
 Ebonflame Nest is a situation.
 The sarea of Ebonflame Nest is "Capitol".
@@ -53,6 +64,7 @@ Instead of resolving Ebonflame Nest:
 			say "[ebonflamegauntlet]";
 		else:
 			say "     You decide that it's not worth the trouble, stepping back and departing before you're potentially forced to contend with these creatures or whatever might have birthed them.";
+			now Resolution of Ebonflame Nest is 4; [didn't fight]
 	else:
 		say "suddenly feel off-balance as the cracked asphalt below you begins to crumble";
 		let bonus be ( dexterity of player - 10 ) / 2;
@@ -73,6 +85,7 @@ Instead of resolving Ebonflame Nest:
 				say "[ebonflamegauntlet]";
 			else:
 				say "     You decide that it's not worth the trouble, stepping back and departing before you're potentially forced to contend with these creatures or whatever might have birthed them.";
+				now Resolution of Ebonflame Nest is 4; [didn't fight]
 		else:
 			say ". Too slow to react, the pavement gives way, you following in its wake as you descend into a shallow cave, landing on the broken earth with an audible thud";
 			let dam be a random number between 1 and 8;
@@ -93,6 +106,7 @@ Instead of resolving Ebonflame Nest:
 				infect "Ebonflame Whelp";
 				infect "Ebonflame Whelp";
 				infect "Ebonflame Whelp";
+				now Resolution of Ebonflame Nest is 5; [fell into the nest]
 	now Ebonflame Nest is resolved;
 
 to say ebonflamegauntlet:
@@ -114,30 +128,41 @@ to say ebonflamegauntlet:
 			infect "Ebonflame Whelp";
 			infect "Ebonflame Whelp";
 			infect "Ebonflame Whelp";
+			now Resolution of Ebonflame Nest is 2; [fought and lost]
 			break;
 		else if fightoutcome >= 30:
 			say "     Deciding you'll have none of this, you turn tail and quickly scramble back up the hole, managing to outrun the whelps with relative ease. Thankfully, your escape isn't all that difficult, and you can return to the matters you had at hand.";
+			now Resolution of Ebonflame Nest is 3; [fought and fled]
 			break;
 	if fightoutcome >= 10 and fightoutcome <= 19:
 		say "     Finishing yet another off, what couple stragglers remain scatter and flee from you. Eyeing some food and water left in their wake, you grab it before departing, returning to the wrecked city.";
 		increase carried of food by 1;
 		increase carried of water bottle by 1;
+		now Resolution of Ebonflame Nest is 1; [fought and won]
 
 
 Section 3 - Strange Meeting
+
+Table of GameEventIDs (continued)
+Object	Name
+Strange Meeting	"Strange Meeting"
 
 Strange Meeting is a situation.
 The sarea of Strange Meeting is "Capitol".
 
 Instead of resolving Strange Meeting:
 	say "     Traveling through the ruined area, you happen upon what appears to be a set of ebonflame dragonkin in the distance. Thankfully not being spotted, you duck behind some rubble, watching what they do.";
-	say "     They appear to just be standing there, one draken flanked by a pair of dragators, their intent soon made somewhat clear when a new party - a set of dark elves - calmly advance upon them. You imagine this would be rather odd for the two to meet in this manner, and it's clear that they share this sentiment as they look none too fond of this arrangement.";
+	say "     They appear to just be standing there, one drake flanked by a pair of dragators, their intent soon made somewhat clear when a new party - a set of dark elves - calmly advance upon them. You imagine this would be rather odd for the two to meet in this manner, and it's clear that they share this sentiment as they look none too fond of this arrangement.";
 	say "     Too far to hear what they actually say, they seem to be arguing over something, tossing accusations left and right and not really coming to any agreement. It would appear that tension is running high enough that they might turn on each other before they're interrupted when a sound from the open area, opposite to you, draws their attention.";
 	say "     You're not exactly sure what has them so ill at ease, both parties conceding into retreating. Chances are, you don't want to stay and find out, and thusly you move to depart yourself.";
 	now Strange Meeting is resolved;
 
 
 Section 4 - Failed Escape
+
+Table of GameEventIDs (continued)
+Object	Name
+Failed Escape	"Failed Escape"
 
 Failed Escape is a situation.
 The sarea of Failed Escape is "Capitol".
@@ -148,6 +173,10 @@ Instead of resolving Failed Escape:
 
 
 Section 5 - Charred Pickets
+
+Table of GameEventIDs (continued)
+Object	Name
+Charred Pickets	"Charred Pickets"
 
 Charred Pickets is a situation.
 The sarea of Charred Pickets is "Capitol".

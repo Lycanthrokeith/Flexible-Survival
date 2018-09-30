@@ -43,14 +43,18 @@ Version 5 of Icarus by Stripes begins here.
 
 Section 1 - Icarus the Blue Chaffinch
 
+Table of GameCharacterIDs (continued)
+object	name
+Icarus	"Icarus"
+
 Icarus is a person.
 The description of Icarus is "[Icarusdesc]".
 The conversation of Icarus is { "Wilder!" }.
 icarusscene1 is a truth state that varies. icarusscene1 is usually false.
 icarusscene2 is a truth state that varies. icarusscene2 is usually false.
 tti_scene is a number that varies.
-ttIcarus is a number that varies. ttIcarus is normally 255.
-icarussex6_variant is a number that varies. icarussex6_variant is normally 1.
+ttIcarus is a number that varies. ttIcarus is usually 255.
+icarussex6_variant is a number that varies. icarussex6_variant is usually 1.
 icarus_cumstuff is a number that varies.
 icarus_cbt is a number that varies. icarus_cbt is usually 2.
 icarus_lastpred is a number that varies. icarus_lastpred is usually 1.
@@ -349,20 +353,20 @@ to say icarussex1_fel:		[first time - oral - feline version]
 	now HP of Icarus is 3;
 
 to say icarussex2:		[oral]
-	say "     Motioning for Icarus to come down, you grope and fondle the bird as he lands. After stroking him to get him excited, you pull out your own erection and tell him to get sucking. There is an eagerness in his eyes as he looks at your shaft and is soon on his knees, nuzzling and licking at your cock[smn] and balls. Showing more flair than his first attempt at it, his licking is accompanied by the soft stroking of his soft feathers against you sensitive flesh, sending shivers of delight through you.";
+	say "     Motioning for Icarus to come down, you grope and fondle the bird as he lands. After stroking him to get him excited, you pull out your own erection and tell him to get sucking. There is an eagerness in his eyes as he looks at your shaft and is soon on his knees, nuzzling and licking at your cock[smn] and balls. Showing more flair than his first attempt at it, his licking is accompanied by the soft stroking of his soft feathers against your sensitive flesh, sending shivers of delight through you.";
 	say "     Pleased with his improvement, you rub a hand over his head before pushing it forward with an order to move on to sucking. He nods and opens his beak wide, leaning forward to take your [cock size desc of player] [cock of player] shaft in his mouth. Feeling he's going a little slow after his sensual touches have gotten you worked up, you pull him forward, forcing more of your cock into his open maw[if cock length of player > 10] and down his throat[end if]. He moans in pleasure at this rough treatment of himself and starts sucking down on your shaft[if cock length of player > 20] as he works to get the rest of your impressive manhood into his mouth[end if].";
 	say "     Now that you're in his mouth[if cock length of player > 10] and throat[end if], you pat your birdie slut's head and start thrusting while he works hard to suck you off. You tease him, saying he's learning quickly to be a cock slut. He blushes red under his blue feathers, but also goes down on you all the more eagerly.";
 	say "     With him working eagerly to suck you off, it's only a matter of time before you groan that you're about to cum. He makes no attempt to pull back, knowing you'll want to finish in him, accepting as you thrust harder into his mouth. After a few more hard pushes into him, you orgasm and start pumping your creamy cum into him. This pushes Icarus over the edge and his cock, untouched from earlier, pulses and spurts his avian cum onto the floor as he gulps down your seed[if cock width of player > 35]. Your [cum load size of player] load stuffs the poor songbird so bloated and full of your cum that eventually leaks out of the edges of his beak as he overflows. His body is left rounded like a feathery balloon from it all. He can only give a wet, gurgling chirp as you pull out and a gush of your hot cum pours of his mouth before he manages to swallow and hold back the flow[else if cock width of player > 25]. Your [cum load size of player] load stuffs the poor songbird until he's rounded like a feathery balloon. When you pull out, he gives a wet, gurgling chirp as a little of your hot cum trickles from his beak before he manages to swallow and hold the rest inside[else if cock width of player > 15]. Your [cum load size of player] load leaves the poor songbird somewhat chubbier looking than before, his belly stuffed quite full with your seed. When you pull out, he gives a weak chirp and licks his beak[else]. He gives a weak chirp when you pull out, then licks his beak[end if]. Before leaving him there on the floor to recover, you tell him that he did well and that you look forward to giving him plenty more training at it, which has him blush, grin and lick his beak.";
 
 to say icarussex2_ap:		[oral - avian pred version]
-	say "     Motioning for Icarus to come down, you grope and fondle the bird as he lands. After stroking him to get him excited, you pull out your own erection and tell him to get sucking. There is an eagerness in his eyes as he looks at your shaft and is soon on his knees, nuzzling and licking at your cock[smn] and balls. Showing more flair and eagerness than his first attempt at it, his licking is accompanied by the soft stroking of his soft feathers against you sensitive flesh, sending shivers of delight through you.";
+	say "     Motioning for Icarus to come down, you grope and fondle the bird as he lands. After stroking him to get him excited, you pull out your own erection and tell him to get sucking. There is an eagerness in his eyes as he looks at your shaft and is soon on his knees, nuzzling and licking at your cock[smn] and balls. Showing more flair and eagerness than his first attempt at it, his licking is accompanied by the soft stroking of his soft feathers against your sensitive flesh, sending shivers of delight through you.";
 	say "     Pleased with his improvement, you place a hand at the back of his head while guiding your cock into his beak with an order to move on to sucking. He nods and opens his beak wider as you press his head down overtop of your [cock size desc of player] [cock of player] shaft. In the mood to get on with it after his sensual touches have gotten you worked up, you pull him forward, forcing more and more of your cock into his open maw[if cock length of player > 10] and down his throat[end if]. He moans in pleasure at this rough treatment of himself and sucking down on your shaft[if cock length of player > 20] as you work to get the whole of your impressive manhood into his mouth[end if].";
 	say "     Now that you're in his mouth[if cock length of player > 10] and throat[end if], you grip your birdie slut's head in both hands and start thrusting firmly into it while he works hard to suck you off. You tease him, saying that your tasty treat is learning quickly to be a cock slut. He blushes red under his blue feathers, but also goes down on you all the more eagerly.";
 	say "     With him working eagerly to suck you off, it's only a matter of time before you groan that you're about to cum. He makes no attempt to pull back from the impressive hunter's cock, knowing you'll want to finish in him, accepting as you thrust all the harder into his mouth. After a few more slams into him, you orgasm and start pumping your creamy cum into him. This pushes Icarus over the edge and his cock, untouched from earlier, pulses and spurts his avian cum onto the floor in large splatters as he gulps down your seed[if cock width of player > 35]. Your [cum load size of player] load stuffs the poor songbird so bloated and full of your cum that eventually leaks out of the edges of his beak as he overflows. His body is left rounded like a feathery balloon from it all. He can only give a wet, gurgling chirp as you pull out and a gush of your hot cum pours of his mouth before he manages to swallow and hold back the flow[else if cock width of player > 25]. Your [cum load size of player] load stuffs the poor songbird until he's rounded like a feathery balloon. When you pull out, he gives a wet, gurgling chirp as a little of your hot cum trickles from his beak before he manages to swallow and hold the rest inside[else if cock width of player > 15]. Your [cum load size of player] load leaves the poor songbird somewhat chubbier looking than before, his belly stuffed quite full with your seed. When you pull out, he gives a weak chirp and licks his beak[else]. He gives a weak chirp when you pull out, then licks his beak[end if]. Before leaving him there on the floor now that you're done with him, you tell him that he did well and that you look forward to giving him plenty more training at it, which has him blush, grin and lick his beak.";
 	if HP of Icarus is 3, now HP of Icarus is 4;
 
 to say icarussex2_fel:		[oral - feline version]
-	say "     Motioning for Icarus to come down, you grope and fondle the bird as he lands. After stroking him with your paw to get him excited, you pull out your own erection and tell him to get sucking. There is an eagerness in his eyes as he looks at your shaft and is soon on his knees, nuzzling and licking at your cock[smn] and balls. Showing more flair and eagerness than his first attempt at it, his licking is accompanied by the soft stroking of his soft feathers against you sensitive flesh, sending shivers of delight through you.";
+	say "     Motioning for Icarus to come down, you grope and fondle the bird as he lands. After stroking him with your paw to get him excited, you pull out your own erection and tell him to get sucking. There is an eagerness in his eyes as he looks at your shaft and is soon on his knees, nuzzling and licking at your cock[smn] and balls. Showing more flair and eagerness than his first attempt at it, his licking is accompanied by the soft stroking of his soft feathers against your sensitive flesh, sending shivers of delight through you.";
 	say "     Pleased with his improvement, you place a paw at the back of his head while guiding your cock into his beak with an order to move on to sucking. He nods and opens his mouth wider as you press his head down overtop of your [cock size desc of player] [cock of player] shaft. In the mood to get on with it after his sensual touches have gotten you worked up, you pull him forward, forcing more and more of your cock into his open maw[if cock length of player > 10] and down his throat[end if]. He moans in pleasure at this rough treatment of himself and sucking down on your shaft[if cock length of player > 20] as you work to get the whole of your impressive manhood into his mouth[end if].";
 	say "     Now that you're in his mouth[if cock length of player > 10] and throat[end if], you grip your birdie slut's head in both paws and start thrusting firmly into it while he works hard to suck you off. You keep your claws out, lightly poking beneath his feathers. You tease him, saying that your tasty treat is learning quickly to be a cock slut. He blushes red under his blue feathers, but also goes down on you all the more eagerly.";
 	say "     With him working eagerly to suck you off, it's only a matter of time before you growl that you're about to cum. He makes no attempt to pull back from the impressive feline's cock, knowing you'll want to finish in him, accepting as you thrust all the harder into his mouth. After a few more slams into him, you orgasm and start pumping your creamy cum into him. This pushes Icarus over the edge and his cock, untouched from earlier, pulses and spurts his avian cum onto the floor in large splatters as he gulps down your seed[if cock width of player > 35]. Your [cum load size of player] load stuffs the poor songbird so bloated and full of your cum that eventually leaks out of the edges of his beak as he overflows. His body is left rounded like a feathery balloon from it all. He can only give a wet, gurgling chirp as you pull out and a gush of your hot cum pours of his mouth before he manages to swallow and hold back the flow[else if cock width of player > 25]. Your [cum load size of player] load stuffs the poor songbird until he's rounded like a feathery balloon. When you pull out, he gives a wet, gurgling chirp as a little of your hot cum trickles from his beak before he manages to swallow and hold the rest inside[else if cock width of player > 15]. Your [cum load size of player] load leaves the poor songbird somewhat chubbier looking than before, his belly stuffed quite full with your seed. When you pull out, he gives a weak chirp and licks his beak[else]. He gives a weak chirp when you pull out, then licks his beak[end if]. Before leaving him there on the floor now that you're done with him, you tell him that he did well and that you look forward to giving him plenty more training at it, which has him blush, grin and lick his beak.";
@@ -442,7 +446,7 @@ to say icarussex5_ap_x:	[extreme version of scene 5]
 	PlayerEat 6;
 	now libido of player is libido of player / 2;
 	now humanity of player is humanity of player / 2;
-	remove Icarus from play;
+	now Icarus is nowhere;
 	now HP of Icarus is 7;
 	now ttIcarus is turns;
 	now tti_scene is 0;
@@ -457,7 +461,7 @@ to say icarussex5_ap_x2:	[repeating extreme version of scene 5]
 	PlayerEat 6;
 	decrease libido of player by libido of player / 5;
 	SanLoss 20;
-	remove Icarus from play;
+	now Icarus is nowhere;
 	now HP of Icarus is 9;
 	now ttIcarus is turns;
 
@@ -500,7 +504,7 @@ to say icarussex5_fel_x:	[extreme version of scene 5 - feline]
 	PlayerEat 6;
 	now libido of player is libido of player / 2;
 	now humanity of player is humanity of player / 2;
-	remove Icarus from play;
+	now Icarus is nowhere;
 	now HP of Icarus is 7;
 	now ttIcarus is turns;
 	now tti_scene is 0;
@@ -515,7 +519,7 @@ to say icarussex5_fel_x2:	[repeating extreme version of scene 5 - feline]
 	PlayerEat 6;
 	decrease libido of player by libido of player / 5;
 	decrease humanity of player by 20;
-	remove Icarus from play;
+	now Icarus is nowhere;
 	now HP of Icarus is 9;
 	now ttIcarus is turns;
 
@@ -588,7 +592,7 @@ to say icarussex6_ap:		[violent avian sex]
 		PlayerEat 6;
 		decrease libido of player by libido of player / 5;
 	decrease humanity of player by 20;
-	remove Icarus from play;
+	now Icarus is nowhere;
 	now HP of Icarus is 9;
 	now ttIcarus is turns;
 
@@ -685,7 +689,7 @@ to say icarussex6_fel:		[violent feline sex]
 		PlayerEat 6;
 		decrease libido of player by libido of player / 5;
 	decrease humanity of player by 20;
-	remove Icarus from play;
+	now Icarus is nowhere;
 	now HP of Icarus is 9;
 	now ttIcarus is turns;
 
@@ -717,7 +721,7 @@ to say icarussex1_dom_fel:		[oral - feline version]
 
 to say icarussex2_dom:		[m/f]
 	setmonster "Blue Chaffinch";
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	if a random chance of 1 in 3 succeeds:
 		say "     Your desire for it has you stretch out on one of the tables, longing for him to take you again. He grins as he sees your juicy cunt already on display for him and [one of]leans in to take a quick lick[or]gives your ass a possessive squeeze[or]nips at your thigh as he rubs his fingers across your pussy[at random]. After some light teasing of his slutty pet, he brings his stiff cock into position, lining it up with your needy hole.";
 		say "     Wanting no more delays, he thrusts firmly into you, driving [if cunt length of player > 7]his full length into you in one thrust[else]his cock to the full depths of your vagina in one thrust[end if], causing you to moan and gasp at his overzealous penetration. His talons dig into your rump a little as he keeps a firm grip on your ass while fucking you. You grind your hips back into every thrust he makes[if breast size of player > 0] while you shamelessly play with your breasts[end if], proving yourself to be the wanton slut for his cock that he reminds you again you are. Despite your being stronger than him, something about letting the little fellow dominate you so thoroughly is very arousing to you, leaving you unable to resist being his slutty plaything.";
@@ -738,7 +742,7 @@ to say icarussex2_dom:		[m/f]
 
 to say icarussex2_dom_ap:		[m/f - avian pred version]
 	setmonster "Blue Chaffinch";
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	if a random chance of 1 in 3 succeeds:
 		say "     Your desire for it has you stretch out on one of the tables, longing for him to take you again. He grins as he sees your juicy cunt already on display for him and [one of]roughly pushes your legs further apart before taking a quick lick[or]digs his talons into your ass as he gives it a possessive squeeze[or]bites firmly on your thigh, drawing blood, as he rubs his fingers across your pussy[at random]. After some rough teasing of his slutty pet, he brings his stiff cock into position, lining it up with your needy hole.";
 		say "     Wanting no more delays, he digs his talons into your thighs and thrusts firmly into you, driving [if cunt length of player > 7]his full length into you in one thrust[else]his cock to the full depths of your vagina in one thrust[end if], causing you to moan and gasp as his overzealous penetration. His talons claw into your rump as he keeps a firm grip on your ass while fucking you. You grind your hips back into every thrust he makes[if breast size of player > 0] while you shamelessly play with your breasts[end if], proving yourself to be the wanton slut for his cock that he reminds you again you are. Despite being a strong, predatory bird, something about letting the little passarine dominate you so thoroughly is very arousing to you, leaving you unable to resist being his slutty plaything.";
@@ -759,7 +763,7 @@ to say icarussex2_dom_ap:		[m/f - avian pred version]
 
 to say icarussex2_dom_fel:		[m/f - feline version]
 	setmonster "Blue Chaffinch";
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	if a random chance of 1 in 3 succeeds:
 		say "     Your desire for it has you stretch out on one of the tables, longing for him to take you again. He grins as he sees your juicy cunt already on display for him and [one of]roughly pushes your legs further apart before taking a quick lick[or]digs his talons into your ass as he gives it a possessive squeeze[or]bites firmly on your thigh, drawing blood, as he rubs his fingers across your pussy[at random]. After some rough teasing of his slutty kitty, he brings his stiff cock into position, lining it up with your needy hole.";
 		say "     Wanting no more delays, he digs his talons into your thighs and thrusts firmly into you, driving [if cunt length of player > 7]his full length into you in one thrust[else]his cock to the full depths of your vagina in one thrust[end if], causing you to mrowl and gasp as his overzealous penetration. His talons claw into your rump as he keeps a firm grip on your ass while fucking you. You grind your hips back into every thrust he makes[if breast size of player > 0] while you shamelessly play with your breasts[end if], proving yourself to be the wanton slut for his cock that he reminds you again you are. Despite being a strong, predatory feline, something about letting the little passarine dominate you so thoroughly is very arousing to you, leaving you unable to resist being his slutty plaything.";
@@ -780,7 +784,7 @@ to say icarussex2_dom_fel:		[m/f - feline version]
 
 to say icarussex3_dom:		[m/m]
 	setmonster "Blue Chaffinch";
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	if a random chance of 1 in 3 succeeds:
 		say "     Your desire for it has you stretch out on one of the tables, longing for him to take you again. He grins as he sees you on it with your legs raised and spread for him, your ass and its crinkled hole on display for him. He [one of]leans in and gives your ass a bruising nip[or]gives your ass a possessive squeeze[or]slaps his cock firmly across your [if a random chance of 1 in 2 succeeds and cock length of player > 7]larger shaft[else if a random chance of 1 in 2 succeeds and cock length of player < 7]smaller shaft[else if a random chance of 1 in 2 succeeds and cock length of player is 7]shaft[else]balls[end if][at random] before bringing his avian erection into position. He lines it up with your needy hole with a smirk on his beak.";
 		say "     Wanting no more delays, he thrusts firmly into you, driving his full length into you in one painful thrust, causing you to moan and gasp as his overzealous penetration. His talons dig into your rump a little as he keeps a firm grip on your ass while fucking you. You grind your hips back into every thrust he makes while you shamelessly stroke your [cock of player] penis[esmn][if breast size of player > 0] and squeeze your breasts[end if], proving yourself to be the wanton slut for his cock that he reminds you again you are. Despite your being stronger than him, something about letting the little fellow dominate you so thoroughly is very arousing to you, leaving you unable to resist being his slutty plaything.";
@@ -801,7 +805,7 @@ to say icarussex3_dom:		[m/m]
 
 to say icarussex3_dom_ap:		[m/m - avian pred version]
 	setmonster "Blue Chaffinch";
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	if a random chance of 1 in 3 succeeds:
 		say "     Your desire for it has you stretch out on one of the tables, longing for him to take you again. He grins as he sees you on it with your legs raised and spread for him, your ass and its crinkled hole on display for him. He [one of]leans in and gives your ass several bruising nips[or]digs his talons into your ass as he gives it a possessive squeeze[or]slaps his cock firmly across your [if cock length of player > 7]larger shaft[else if cock length of player < 7]smaller shaft[else]shaft[end if] while giving your balls a painful squeeze[at random] before bringing his avian erection into position. Having reasserted his dominance over his slutty bird of prey, he lines it up with your needy hole with a smirk on his beak.";
 		say "     Wanting no more delays, he thrusts firmly into you, driving his full length into you in one painful thrust, causing you to moan and gasp as his overzealous penetration. His talons claw into your rump as he keeps a firm grip on your ass while fucking you. You grind your hips back into every thrust he makes while you shamelessly stroke your [cock of player] penis[esmn][if breast size of player > 0] and squeeze your breasts[end if], proving yourself to be the wanton slut for his cock that he reminds you again you are. Despite your being a strong, predatory bird, something about letting the little passarine dominate you so thoroughly is very arousing to you, leaving you unable to resist being his slutty plaything.";
@@ -823,7 +827,7 @@ to say icarussex3_dom_ap:		[m/m - avian pred version]
 
 to say icarussex3_dom_fel:		[m/m - feline version]
 	setmonster "Blue Chaffinch";
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	if a random chance of 1 in 3 succeeds:
 		say "     Your desire for it has you stretch out on one of the tables, longing for him to take you again. He grins as he sees you on it with your legs raised and spread for him, your ass and its crinkled hole on display for him. He [one of]leans in and gives your ass several bruising nips[or]digs his talons into your ass as he gives it a possessive squeeze[or]slaps his cock firmly across your [if cock length of player > 7]larger shaft[else if cock length of player < 7]smaller shaft[else]shaft[end if] while giving your balls a painful squeeze[at random] before bringing his avian erection into position. Having reasserted his dominance over his slutty feline, he lines it up with your needy hole with a smirk on his beak.";
 		say "     Wanting no more delays, he thrusts firmly into you, driving his full length into you in one painful thrust, causing you to mrowl and gasp as his overzealous penetration. His talons claw into your rump as he keeps a firm grip on your ass while fucking you. You grind your hips back into every thrust he makes while you shamelessly stroke your [cock of player] penis[esmn][if breast size of player > 0] and squeeze your breasts[end if], proving yourself to be the wanton slut for his cock that he reminds you again you are. Despite your being a strong feline, something about letting the little passarine dominate you so thoroughly is very arousing to you, leaving you unable to resist being his slutty plaything.";
@@ -930,7 +934,7 @@ to say icarussex6_dom_fel:
 
 to say icarussex6_dom:		[Used for both special preds - not open to regular]
 	setmonster "Blue Chaffinch";
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	let formcheck be 0;
 	if bodyname of player is listed in infections of Avianpredlist and facename of player is listed in infections of Avianpredlist:
 		now formcheck is 1;
@@ -974,7 +978,7 @@ to say icarussex6_dom:		[Used for both special preds - not open to regular]
 
 to say icarussex6a_dom:		[Repeatable rough scene A]
 	setmonster "Blue Chaffinch";
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	let formcheck be 0;
 	if bodyname of player is listed in infections of Avianpredlist and facename of player is listed in infections of Avianpredlist:
 		now formcheck is 1;
@@ -1005,7 +1009,7 @@ to say icarussex6a_dom:		[Repeatable rough scene A]
 
 to say icarussex6b_dom:		[Repeatable rough scene B]
 	setmonster "Blue Chaffinch";
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	let formcheck be 0;
 	if bodyname of player is listed in infections of Avianpredlist and facename of player is listed in infections of Avianpredlist:
 		now formcheck is 1;
@@ -1037,7 +1041,7 @@ to say icarussex6b_dom:		[Repeatable rough scene B]
 
 to say icarussex6c_dom_ap:		[Repeatable rough scene C - avian pred only]
 	setmonster "Blue Chaffinch";
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	say "     Having attracted your bird master with your wanton display, you are grabbed and pushed towards the basement door. It must be an unusual sight to see an powerful avian predator such as yourself cowed by the little passarine, but you know your place and go through the door. Once the door is shut, he shoves you even as you're descending the dark stairs. Again, you stumble and half-fall down the stairs before hitting the wall ahead.";
 	say "     Before you can recover your footing, Icarus grabs you by the back of the neck and yanks you towards the middle of the floor. 'How pathetic. What kind of a bird are you if you can't even fly?' he says, grabbing one of your wings and twisting on it. You groan in pain only to have him laugh and shove you back to the ground. He instead grabs your ass and grinds his stiff cock against it.";
 	WaitLineBreak;
@@ -1122,7 +1126,7 @@ Section 4 - Icarus Dominance
 
 to say icarussex0_dom:
 	setmonster "Blue Chaffinch";
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	say "     Icarus seems to sigh when you signal for him to come down. He's rather slow at coming down to join you, taking his time before flying down to the ground floor. He preens one of his wings as he gives you a sidelong glance.";
 	say "     'I'm not quite sure what you had in mind, but you're not giving me what I thought was coming. You get me all worked up to be the songbird pet to a big, strong, male predator and you go and change on me. I might've been better off the way things were before,' he says to you, his demeanor and posture changing as his voice changes pitch towards the end, returning to his previous, tough-guy attitude. Moving in closer, he runs his taloned hands over your body, gripping your shoulders quite firmly. 'Maybe you'd rather be on the bottom from now on,' he says, pushing you firmly back onto one of the tables.";
 	say "     The smaller bird's burst of frustration-driven dominance is exciting, tempting you into letting him fuck you. Shall you let him (Y) or will you reassert your dominance (N)?";
@@ -1170,7 +1174,7 @@ to say icarussex0_sub_m:
 
 to Icarusinfect:
 	setmonster "Blue Chaffinch";
-	choose row monster from table of random critters;
+	choose row monster from Table of Random Critters;
 	if "Male Preferred" is listed in feats of player:
 		now sex entry is "Male";
 	else if "Herm Preferred" is listed in feats of player:

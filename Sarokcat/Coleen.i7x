@@ -5,6 +5,10 @@ Version 3 of Coleen by Sarokcat begins here.
 
 Section 1 - Coleen Events
 
+Table of GameEventIDs (continued)
+Object	Name
+WomanFruitTree	"WomanFruitTree"
+
 WomanFruitTree is a situation.
 The sarea of WomanFruitTree is "Park".
 ColeenDeclined is a number that varies.
@@ -49,7 +53,7 @@ Instead of resolving a WomanFruitTree:
 			say "     You decide not to interfere with the dangling woman. After all, the military is obviously not doing much for you right now - so why should you climb a tree for one of them. You could fall down, or some sort of critter could arrive while you're up in the branches. Turning your back on the woman and tuning her calls for help out, you keep walking. As you wander through the woods, you do find yourself rather curious as to just what creature will eventually manage to reach that woman up in the tree and just what she will look like afterwards. Maybe you should come back and see later...";
 			now ColeenDeclined is 1;
 	else:
-		say "     Traveling through the park you come across a rather large tree, its branches spreading out to cover a wide area and providing excellent shade and protection from the elements. You stop for a minute to enjoy the nice shady cover the tree provides as you look out over the park. Eventually though, you realize you need to keep moving and continue on down the trail, leaving the tree behind.";
+		say "     Traveling through the park, you come across a rather large tree, its branches spreading out to cover a wide area and providing excellent shade and protection from the elements. You stop for a minute to enjoy the nice shady cover the tree provides as you look out over the park. Eventually, though, you realize you need to keep moving and continue on down the trail, leaving the tree behind.";
 
 
 Section 2 - Coleen the Husky Paratrooper
@@ -60,6 +64,10 @@ ColeenCollared is a number that varies.
 ColeenAlpha is a number that varies.
 ColeenSlut is a number that varies.
 ColeenSpray is a number that varies.
+
+Table of GameCharacterIDs (continued)
+object	name
+Coleen	"Coleen"
 
 Coleen is a woman.
 The description of Coleen is "[CollenStatus]".
@@ -200,7 +208,7 @@ to say Coleen_Vanessa_msg:
 to say Coleen_Meredith_msg:
 	if HP of Meredith is 0 or HP of Meredith is 100:
 		say "ERROR-Coleen-[HP of Meredith]M: We should not be able to discuss Meredith!";
-		remove Meredith from play;
+		now Meredith is nowhere;
 	if ColeenAlpha > 0 or ColeenSlut > 0 or ColeenCollared > 0:
 		if a random chance of 4 in 6 succeeds:
 			say "     [one of]'Thanks for helping to rescue [if HP of Meredith < 6]Mere[else]Mare[end if]. I feel much better knowing our mission wasn't a complete failure.'[or]'I'm glad Meredith's somewhere safe. Her research is apparently important, not that a slutty husky like me can make heads or tails of any of it.'[or][if HP of Meredith < 4]'It'd be fun to play around a bit with Mere, but she's trying to avoid infection. She's been treated to be resistant so it should be safe for her to get some husky lovin['],' Coleen says, pouting a bit.[else if HP of Meredith is 4]'I couldn't help noticing that Mere's become a bit horsey, but she's still refusing to play around. She's been treated to be resistant so it should be safe for her to get some husky lovin['],' Coleen says, pouting a bit. 'Say, maybe you could get her to relax and have some fun. You've got a bit of a knack for it, hot stuff,' she says, running a paw down your chest before reaching around to grope your ass.[else if HP of Meredith is 5]'I've noticed that Mere's gotten transformed some more. I'd like to play around with her, but she's still refusing the husky lovin['] I know she wants,' Coleen says, pouting a bit. 'You should see if you can get in the sack with her again to help her along.'[else if HP of Meredith >= 6]'Mare's so cute as a sexy centaur. You did a good job helping her out of her shell. It's so nice to be able to give her the husky lovin['] she needs. Vanessa and I are going to take good care of our playful Mare,' she says with a happy grin on her doggy face.[end if][cycling]";
@@ -278,7 +286,7 @@ carry out ColeenSpraying:
 					now scalevalue of player is 3;
 					now bodydesc of player is "unchanged";
 					now bodytype of player is "human";
-					now daycycle of player is 0;
+					now SleepRhythm of player is 0;
 					increase humanity of player by 20;
 					increase ColeenSpray by 1;
 				else:
@@ -296,7 +304,7 @@ carry out ColeenSpraying:
 					now scalevalue of player is 3;
 					now bodydesc of player is "unchanged";
 					now bodytype of player is "human";
-					now daycycle of player is 0;
+					now SleepRhythm of player is 0;
 					increase humanity of player by 20;
 					increase ColeenSpray by 1;
 					stop the action;
@@ -319,7 +327,7 @@ carry out ColeenSpraying:
 					now scalevalue of player is 3;
 					now bodydesc of player is "unchanged";
 					now bodytype of player is "human";
-					now daycycle of player is 0;
+					now SleepRhythm of player is 0;
 					increase humanity of player by 20;
 					increase ColeenSpray by 1;
 			else:
@@ -335,7 +343,7 @@ carry out ColeenSpraying:
 					now scalevalue of player is 3;
 					now bodydesc of player is "unchanged";
 					now bodytype of player is "human";
-					now daycycle of player is 0;
+					now SleepRhythm of player is 0;
 					increase humanity of player by 20;
 					increase ColeenSpray by 1;
 				else:
@@ -351,7 +359,7 @@ carry out ColeenSpraying:
 			now scalevalue of player is 3;
 			now bodydesc of player is "unchanged";
 			now bodytype of player is "human";
-			now daycycle of player is 0;
+			now SleepRhythm of player is 0;
 			increase humanity of player by 20;
 			increase ColeenSpray by 1;
 	else if ColeenSpray is 1:
@@ -361,7 +369,7 @@ carry out ColeenSpraying:
 		now scalevalue of player is 3;
 		now bodydesc of player is "unchanged";
 		now bodytype of player is "human";
-		now daycycle of player is 0;
+		now SleepRhythm of player is 0;
 		increase humanity of player by 20;
 		increase ColeenSpray by 1;
 	else if ColeenSpray is 2:
@@ -466,7 +474,7 @@ to say SexWithColeen:
 				if player is male:
 					say "     Coleen's face brightens and her husky muzzle pulls back in a happy smile as you fix the collar around her throat, settling it securely so her new nametag can shine out proudly for all to see. 'Now Coleen's name is Bitch!' the newly collared Bitch proclaims proudly as she stares up at you in adoration. 'Thank you so much for taking me in master! Bitch will work hard to be a good bitch for her master!' the formerly independent husky girl says even as she rubs herself up against your body eagerly. 'How would master like to use his new little bitch?' Your pet asks you as she looks up at you eagerly, her position in front of you giving you an idea of a better use to put her mouth to. You grin as you reach down to stroke your cock, her eyes following your every movement eagerly as your [cock of player] rod quickly grows erect at just a touch, the heat scent of a needy bitch all the encouragement it needs to rise to the occasion.";
 					say "     'Why don't you worship your new master's rod,' you say with a grin. Her face lights up eagerly at your suggestion, as she eagerly crawls forward to nuzzle your cock with her soft nose, before running her tongue along it eagerly. You groan in pleasure as she begins to lick and suck on the tip of your cock, tracing her teeth along the base of your cock lightly and making you squirm and thrust forward into her mouth as she does her best to swallow your entire cock into her muzzle. Your new bitch moans around your cock, loving the taste of your thick meat, even as she applies herself to it with renewed vigor, taking to her new submissive role like she was born to it as she begs for you to fill her mouth with your seed. Soon you reward your newest pet with her treat, as your cock sends its sperm shooting deep into her mouth, while she works hard to swallow every drop. Eventually spent, you relax backwards, your newest bitch licking your cock and balls clean even as she enjoys the feel of your seed filling her stomach. You can feel a smile tugging on your face as you look down on her on all fours before you, happy to have yet another good little pet to keep you company and train.";
-					Now ColeenCollared is 1; [pet Coleen]
+					now ColeenCollared is 1; [pet Coleen]
 					now lastfuck of Coleen is turns;
 					now ColeenFound is 2; [husky Coleen fucked]
 				else:
@@ -474,7 +482,7 @@ to say SexWithColeen:
 					say "     The transformed woman's face lights up happily at your suggestion as she crawls over to you on all fours, quickly lowering her head to stick her muzzle into your damp crotch. Deciding to have some fun involving your other pet in this, you quickly gesture to Sarah to join the fun, even as Coleen runs her tongue across your soft pussy lips. The feeling makes you gasp and pet your newest bitches head in encouragement, as she begins to lick and nip at your outer lips eagerly, her tongue starting to tease its way inside your body with every pass. You groan as your new pet gasps and pushes her tongue into you even further, and you smile as you see your other pet has her own husky muzzle buried between Coleen's legs as well.";
 					WaitLineBreak;
 					say "     Your new bitch renews her assault on your sex even as her own is being licked and teased, the sensations making you moan in pleasure as you rock your hips upward with each probing stroke of her tongue. Your new pet's slutty husky instincts come to the fore as she whines and pants eagerly as she slurps and laps at your pussy, savoring every taste of your body, even as her own hips rock back in time with the tongue licking at her own slit. Your body can only take so much of this wanton assault before you find yourself clenching your fingers in her fur as you orgasm, holding her head down in your crotch as she tries to lick up every bit of your juices even as they coat her muzzle. Panting you can see that your newest pet has had her own orgasm as well, and your other pet is just as happily licking up the mess she made on the floor behind her. You can feel a smile tugging at your face as you look down on your two happily licking pets, glad to have such wonderful company to play with and train...";
-					Now ColeenCollared is 1; [pet Coleen]
+					now ColeenCollared is 1; [pet Coleen]
 					now lastfuck of Coleen is turns;
 					now ColeenFound is 2; [husky Coleen fucked]
 			else:

@@ -6,6 +6,10 @@ Version 1 of Candy Shop by Stripes begins here.
 
 Section 1 - Candy Shop event
 
+Table of GameEventIDs (continued)
+Object	Name
+CandyShop	"CandyShop"
+
 CandyShop is a situation. The level of CandyShop is 9.
 The sarea of CandyShop is "Midway".
 sugarferretfight is a number that varies.
@@ -50,7 +54,7 @@ Instead of resolving a CandyShop:
 		else:
 			say "     Pinned down by a swarm of pointy-toothed ferrets overcome by a rush of manic energy, you find yourself being groped and fondled by numerous little paws. As your lust builds, a pair of blue paws grab your head, guiding it to the crimson cock of another ferret. The taste of his pre is very sweet, exciting you further. You can feel hard cocks and wet pussies grinding against you[if player is male]. Paws grab your erect penis and balls, stroking and fondling them[end if][if player is female]. Furry fingers are stuffed into your pussy, thankfully careful with those sharp claws of theirs[end if]. You are teased and fondled until you the ferret cock stuffed in your mouth throbs and pulses its sticky load down your throat. You are then pushed over and another of the males mounts you, driving his cock into your [if player is female]pussy[else]ass[end if], fucking you wildly. After a quick, but frantic romp, his load is sprayed deep inside you as well. After that, things get hazy, being made to lick pussies, suck cocks and have sex with the ferrets, who seem to have unending energy. Eventually, they tire of you and you're tossed out to make room for another big romp on a pile of candy.[impregchance]";
 			let x be a random number between 1 and 3;
-			choose row monster from table of random critters;
+			choose row monster from Table of Random Critters;
 			if x is 1:
 				say " Your skin [one of]tingles[or]goes flush[or]vibrates with odd pleasure[or]goes cold[or]feels oily[at random] as [skin change entry].";
 				now skinname of player is name entry;
@@ -73,10 +77,14 @@ Instead of resolving a CandyShop:
 
 Section 2 - Sweet Tooth
 
+Table of GameRoomIDs (continued)
+Object	Name
+Sweet Tooth	"Sweet Tooth"
+
 Sweet Tooth is a room. "[Sweet Tooth scene]". It is unknown. It is fasttravel. It is private.
 
 Sweet Tooth has a number called lastcaffeine.
-randomferret is a list of numbers that varies.
+randomferret is a list of numbers that varies.[@Tag:NotSaved]
 ferretvisit is a number that varies.
 
 to say Sweet Tooth scene:
@@ -87,8 +95,8 @@ to say Sweet Tooth scene:
 			say "     Swinging by the shops on the fairgrounds, you take a peek in the candy shop. You can see the ferrets inside are still manic with excess energy. You decide it'd be best to not enter right now.";
 	else if ferretvisit is 1:
 		[puts Sugar Ferret as lead monster for impregnation]
-		repeat with y running from 1 to number of filled rows in table of random critters:
-			choose row y in table of random critters;
+		repeat with y running from 1 to number of filled rows in Table of Random Critters:
+			choose row y in Table of Random Critters;
 			if name entry is "Sugar Ferret":
 				now monster is y;
 				break;
@@ -140,11 +148,11 @@ to say Sweet Tooth scene:
 		say "     An orgy of wild, ferrety sex breaks out as the hobs and jills get aroused in their caffeine-induced excitement. The place if filled with groups of vibrantly colorful ferrets licking, sucking and fucking one another wildly. And you're at the center of this, jills and hobs lustfully welcoming you to their group[if player is herm]. You fuck and are fucked several times over the course of the orgiastic event[else if player is male]. You fuck several of the ferrets over the course of the orgiastic event[else]. You are fucked several times by the hobs over the course of the orgiastic event[end if], though the details all quickly become a blur of bright colors and sweet, sweet soda. Eventually it winds down somewhat when a large mob of ferrets rush outside with plans to scour the fairground for more soda. Still having a little self-control, you bound away with a surplus of energy.[impregchance]";
 		infect "Sugar Ferret";
 		increase ferretvisit by 1;
-		if humorous is not banned, now Caught Glider is unresolved;
+		if humorous is not banned, now Caught Glider is active;
 	else:
 		[puts Sugar Ferret as lead monster for impregnation]
-		repeat with y running from 1 to number of filled rows in table of random critters:
-			choose row y in table of random critters;
+		repeat with y running from 1 to number of filled rows in Table of Random Critters:
+			choose row y in Table of Random Critters;
 			if name entry is "Sugar Ferret":
 				now monster is y;
 				break;

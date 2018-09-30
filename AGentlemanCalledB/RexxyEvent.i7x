@@ -25,15 +25,19 @@ Version 3 of RexxyEvent by AGentlemanCalledB begins here.
 
 Section 1 - Event
 
-ForcedAdoption is a situation.
+Table of GameEventIDs (continued)
+Object	Name
+Forced Adoption	"Forced Adoption"
 
-The sarea of ForcedAdoption is "High".
+Forced Adoption is a situation.
+
+The sarea of Forced Adoption is "High".
 when play begins:
-	add ForcedAdoption to badspots of guy;
-	add ForcedAdoption to badspots of girl;
-	add ForcedAdoption to badspots of furry;
+	add Forced Adoption to badspots of guy;
+	add Forced Adoption to badspots of girl;
+	add Forced Adoption to badspots of furry;
 
-Instead of Resolving a ForcedAdoption:
+Instead of Resolving a Forced Adoption:
 	if HP of Rex is 0:
 		say "     As you walk down the street of what remains of an upscale neighborhood on the outskirts of the high rise district, you spot a figure up ahead and duck out of sight before they spot you. As the figure gets closer you see that she is an attractive female canine with a thick coat of golden fur, much like the other retriever girls you've seen around the district. From your hiding place you can see she is clutching something against her ample chest with both hands.";
 		say "     She glances around nervously as she walks, when suddenly another figure, a large powerful looking male retriever, steps out of a nearby alley into her path, cutting her off. The retriever girl runs into him and stumbles backward, falling to the ground and dropping whatever she was carrying. Without even acknowledging the male's presence, she begins scrambling around on all fours, looking for her prize, until she comes face to face with his erect canine cock. Slowly she looks up over his body until she is staring lustfully into his eyes. The large male then reaches down and picks up the entranced girl, carrying her back down the alley he emerged from as she whimpers needfully.";
@@ -52,7 +56,8 @@ Instead of Resolving a ForcedAdoption:
 			now Rex's Place is known;
 			now HP of Rex is 5;
 			say "[bold type]Rex's Place is now known.[roman type]";
-			now ForcedAdoption is resolved;
+			now Resolution of Forced Adoption is 1; [met Rex]
+			now Forced Adoption is resolved;
 		else:
 			say "     Once again, you find yourself in the neighborhood where you saw the golden retriever girl being abducted by the large male. As you walk by nervously you find your thoughts once again drawn to your beloved doggie sex toy, feeling an overwhelming urge to return to where you left it and play with it again.";
 			increase bonelust by 1;
@@ -64,7 +69,7 @@ Section 2 - Doggy Bone
 Table of Game Objects (continued)
 name	desc	weight	object
 "Dog Bone"	"An unusual looking sex toy with a pointed canine cock on one end, and a bone-shaped handle on the other."	1	Dog Bone
-"Dog Treats"	"A brown paper bag, emblazoned with the logo of François['] bakery, full of delicious, meaty smelling dog treats."	1	Dog Treats
+"Dog Treats"	"A brown paper bag, emblazoned with the logo of Francois['] bakery, full of delicious, meaty smelling dog treats."	1	Dog Treats
 
 Dog Treats is a grab object. It is not temporary.
 Dog Treats has a usedesc "[GourmetDogTreatsUse]".
@@ -139,6 +144,10 @@ An everyturn rule:
 
 Section 3 - Rex's Place
 
+Table of GameRoomIDs (continued)
+Object	Name
+Rex's Place	"Rex's Place"
+
 Rex's Place is a room. It is fasttravel. It is private.
 
 The description of Rex's Place is "     Crawling on all fours through the doggy door, you find yourself in a small but surprisingly tidy single room home. There are even a few pictures still hanging from the walls, mostly featuring an attractive blonde woman and her large Golden Retriever. As you spot Rex sitting in the back with his happy retriever sexpet, there is little doubt in your mind as to what became of the woman in the pictures.".
@@ -175,6 +184,10 @@ the linkaction of Rex is "[rexlinkaction]".
 to say rexlinkaction:
 	say "Possible Actions: [link]talk[as]talk Rex[end link], [link]smell[as]smell Rex[end link], [link]fuck[as]fuck Rex[end link], [link]beg for treat[end link][line break]";
 
+Table of GameCharacterIDs (continued)
+object	name
+Rex	"Rex"
+
 Rex is a man.
 The description of Rex is "[Rexdescribing]".
 The conversation of Rex is { "rextalk" }.
@@ -189,7 +202,7 @@ instead of conversing the Rex:
 		say "     You slowly approach Rex, sliding your bag off your shoulders as you step towards him. As you get close, Rex's ears suddenly perk up and he begins sniffing the air around you. 'Is that wonderful scent what I think it is?' Rex asks, eagerly trying to peer into your bag.";
 		say "     You hesitate a moment before reaching into your sack for the treats. You may only get one shot at this. Are you sure you are ready? (Y-make your escape attempt now! N-hide the cookies from Rex, you're not ready to escape just yet.)";
 		if player consents:
-			say "     With a knowing grin you reach into you backpack, digging out the bag of treats you retrieved from the bakery. Rex begins panting heavily as you pull the brown paper bag out, even drooling a bit from the corner of his mouth. 'My lovely stray bringing ME a treat? And how did you know these were my favorite?' Rex asks happily as you drop the bag into his waiting paws. With a sharp whistle he calls Karen over before digging into the bag. He divides the treats up into a few small piles, pushing one towards Karen, who barks happily in response before digging in. Next he offers one pile to you, which you politely refuse, despite a strong desire to enjoy the share he's offering you. With a confused smirk and a shrug, Rex combines your pile with his own before he begins eating. With the two retrievers seemingly distracted by your gift, you slowly begin creeping around the room, carefully approaching your prize sitting on a side table near Rex's favorite seat. Soon the bone is within your grasp again, and you reach out to take it, only to stop just short when you hear a low growl behind you. Slowly turning around, you find yourself face to face with Rex. Apparently your little distraction wasn't enough to occupy him long. You glance towards the door on the other side of the room, then back to Rex, realizing that it's unlikely you'll be able to get past with him blocking your escape. Trying to flee this situation is probably not an option.";
+			say "     With a knowing grin you reach into your backpack, digging out the bag of treats you retrieved from the bakery. Rex begins panting heavily as you pull the brown paper bag out, even drooling a bit from the corner of his mouth. 'My lovely stray bringing ME a treat? And how did you know these were my favorite?' Rex asks happily as you drop the bag into his waiting paws. With a sharp whistle he calls Karen over before digging into the bag. He divides the treats up into a few small piles, pushing one towards Karen, who barks happily in response before digging in. Next he offers one pile to you, which you politely refuse, despite a strong desire to enjoy the share he's offering you. With a confused smirk and a shrug, Rex combines your pile with his own before he begins eating. With the two retrievers seemingly distracted by your gift, you slowly begin creeping around the room, carefully approaching your prize sitting on a side table near Rex's favorite seat. Soon the bone is within your grasp again, and you reach out to take it, only to stop just short when you hear a low growl behind you. Slowly turning around, you find yourself face to face with Rex. Apparently your little distraction wasn't enough to occupy him long. You glance towards the door on the other side of the room, then back to Rex, realizing that it's unlikely you'll be able to get past with him blocking your escape. Trying to flee this situation is probably not an option.";
 			now HP of Karen is 4;
 			now inasituation is true;
 			challenge "Retriever";
@@ -212,10 +225,11 @@ instead of conversing the Rex:
 				say "     Reaching out to wipe away the tear welling in her eye, you do your best to comfort the poor girl. Leaning into your hand, a smile creeps across Karen's face. 'Thank you,' she says again quietly. 'Do you think... I could come with you? I can't stay here in case Rex comes back, but I don't know if I would fare any better against the other monsters out there. Please?' Wiping the fresh tear from her face, you consider her request for a moment and come to the same conclusion, she's far too vulnerable right now to leave alone, and so you agree to bring her with you.";
 				say "     With an excited squeal, she pulls you in for another quick hug before dashing around the house to collect a small bag of supplies. After gathering your own things and preparing to head out, you pause for a moment, considering finding and bringing that strange bone with you, but when a quick glance around the room doesn't reveal it, you decide it's probably best to leave it behind anyway.'";
 				now Retriever Girl is tamed;
+				add "Tamed" to Traits of Retriever Girl;
 				move Karen to Breakroom;
 				say "     (The Retriever Girl is now tamed! You can make her your active pet by typing [bold type][link]pet Retriever Girl[end link][roman type] and initiate sex with her while active by typing [bold type][link]fuck Retriever Girl[end link][roman type]. You can see all the pets you have tamed with the [bold type][link]pet[end link][roman type] command. Pets will lower the XP you gain from battle, but can gain levels themselves to be more useful in a scrap. Want to get rid of a pet? Use [bold type][link]pet dismiss[end link][roman type], or just [bold type][link]dismiss[end link][roman type])[line break]";
 				now carried of Dog Treats is 0;
-				now KarenTimer is turns;
+				now Libido of Karen is turns;
 				now HP of Rex is 50;
 				now HP of Karen is 5;
 				now Rex's Place is unknown;
@@ -273,8 +287,8 @@ instead of conversing the Rex:
 
 Instead of fucking the Rex:
 	[puts Retriever as lead monster for possible impregnation]
-	repeat with y running from 1 to number of filled rows in table of random critters:
-		choose row y in table of random critters;
+	repeat with y running from 1 to number of filled rows in Table of Random Critters:
+		choose row y in Table of Random Critters;
 		if name entry is "Retriever":
 			now monster is y;
 			break;
@@ -365,8 +379,8 @@ Section 7 - ALL the scenes
 
 to say fullRetrieverTF:
 	[puts Retriever as lead monster in case of impregnation]
-	repeat with y running from 1 to number of filled rows in table of random critters:
-		choose row y in table of random critters;
+	repeat with y running from 1 to number of filled rows in Table of Random Critters:
+		choose row y in Table of Random Critters;
 		if name entry is "Retriever":
 			now monster is y;
 			break;
@@ -477,7 +491,7 @@ to say RexPetLowLustScene:
 
 to say RexTrainHighLustScene:
 	if player is female:
-		say "     Wanting to maintain some semblance of yourself you struggle to control your bodies urges at you approach Rex. The mental battle to control the overpowering urges is a difficult one, requiring all your willpower just to keep yourself from leaping into his arms, begging him to fuck you senseless.";
+		say "     Wanting to maintain some semblance of yourself, you struggle to control your body's urges at you approach Rex. The mental battle to control the overpowering urges is a difficult one, requiring all your willpower just to keep yourself from leaping into his arms, begging him to fuck you senseless.";
 		say "     Apparently recognizing your struggle Rex watches intently, a smug smirk across his muzzle, obviously amused by your losing battle against powerful need caused by the retriever infection and that strange bone.";
 		say "     Finally you can take no more, falling to your hands and knees, giving in to your bodies desires once again. You crawl forward to Rex, begging him to help sate the fiery desire consuming you. He draws his response out for what seems like a lifetime, clearly still enjoying watching you squirm under the influence of the infection. Your already trying to take the edge off yourself, two fingers working deep into your dripping cunt with no avail by the time Rex finally agrees.";
 		WaitLineBreak;
@@ -498,8 +512,8 @@ to say RexTrainMedLustScene:
 		say "     As you approach Rex you become keenly aware of the powerful need burning inside you, and Rex's powerful male musk only serves to increase the desire to submit to him. You know giving in to these urges is exactly what Rex wants you to do, but at the same time the need only seems to becomes more unbearable the longer you resist.";
 		say "     As if sensing your internal struggle Rex steps forward, placing his pawlike hand on your shoulders he leans in close to whisper in your ear, his soft touch sending shivers through your body. 'It's alright,' he whispers. 'You don't need to resist these feelings.' His overwhelming scent is almost intoxicating to your lust-addled mind at this proximity, you barely manage a weak nod before falling into his embrace.";
 		WaitLineBreak;
-		say "     After a few moments, Rex breaks the hug and bends down to pick you up, carrying you to the back room where his bed awaits while you bury your face in the soft fur of his powerful chest, bathing yourself in his arousing scent. By the time you've reached the bed the last of your resistance has long since slipped away and your bodies urges have taken full control, leaving you panting in anticipation as Rex gently lays you on the bed.";
-		say "     Slowly at first, he begins petting and stroking your body, each touch sending electric shivers through your already aroused body. He progresses slowly up your body, rubbing, petting and even scratching in all the right places, eventually reaching your head. He reaches back and begins scratching behind your ears softly as he leans in close once again and licks you cheek.";
+		say "     After a few moments, Rex breaks the hug and bends down to pick you up, carrying you to the back room where his bed awaits while you bury your face in the soft fur of his powerful chest, bathing yourself in his arousing scent. By the time you've reached the bed the last of your resistance has long since slipped away and your body's urges have taken full control, leaving you panting in anticipation as Rex gently lays you on the bed.";
+		say "     Slowly at first, he begins petting and stroking your body, each touch sending electric shivers through your already aroused body. He progresses slowly up your body, rubbing, petting and even scratching in all the right places, eventually reaching your head. He reaches back and begins scratching behind your ears softly as he leans in close once again and licks your cheek.";
 		say "     By this point you realize he's laying almost completely on top of you and without stopping the delicious doggy kisses he reaches down and begins guiding his rod to tease the outer folds of your feminine passage. You can't help but moan in delight as he begins to slowly push himself deeper into you, your legs wrapping around his body trying to speed up his slow, deliberate thrusting. As his pace quickens your body begin to match his rhythm, matching each of his thrusts, trying to force as much of him into you as possible.";
 		say "     With each push you feel more and more of his canine knot pushing into you, only to be pulled back again teasingly. Finally Rex's pace begins to reach its peak and with one final powerful thrust and your bucking back to meet him the entirety of his knot is forced into you, sealing you together as you both howl in pleasure.";
 		say "     You both lay there, locked together for some time, your passage still convulsing around his rod, milking him for all he's worth. As the afterglow finally begins to fade Rex gives you a few final licks on the cheek as he pulls his softening manhood from you, letting your combined juices overflow out onto the bed. He pats you on the head a few times, telling you what a good girl you are before getting up and leaving you to recover on your own.[impregchance]";

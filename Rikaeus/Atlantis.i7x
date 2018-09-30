@@ -52,6 +52,10 @@ LastMarketWalkin is a number that varies. LastMarketWalkin is usually 10000.
 
 Section 1 - Poseidon's Trident?
 
+Table of GameEventIDs (continued)
+Object	Name
+Lost Trident	"Lost Trident"
+
 Lost Trident is a situation. The level of Lost Trident is 9.
 
 The sarea of Lost Trident is "Beach".
@@ -71,6 +75,7 @@ Instead of resolving a Lost Trident:
 	if player consents:
 		LineBreak;
 		say "     Chucking the trident as far as you can you don't stop to watch what happens next with the sea dragons as you continue to swim/run to the shore. Grabbing your backpack and then beating feet as quick as you can you don't turn back even once to see what happens with the feral sea guardians. Had you, you would have seen a half naked male figure rising up out of the sea to take the trident into one of his meaty bronze hands.";
+		now Resolution of Lost Trident is 2; [threw it away]
 	else:
 		LineBreak;
 		say "     Clutching the trident a little tighter into your grip you feel the strongest sense of possessiveness overcome you all of sudden making you unwilling to relinquish your newfound weapon. It would seem that the sea dragons can sense this and are about to make you regret your choice, however.";
@@ -91,6 +96,7 @@ Instead of resolving a Lost Trident:
 						now Lost Trident is resolved;
 		if fightoutcome >= 20:
 			say "     Having lost to one of the feral sea dragons you find yourself being stripped of your newfound weapon and then casually dumped onto the beach by the creature you had just been defeated by. Grunting in utter humiliation you rest on the muddy sands for a minute while lamenting your own weakness. Looks like you know truly understand the meaning about the [italic type]one that got away[roman type] as you listen to the chatter of the feral sea dragons as the reptiles dive back into the sea with your commandeered treasure. Better luck next time.";
+			now Resolution of Lost Trident is 3; [lost]
 
 Section 1a - Trident (Weapon)
 
@@ -105,10 +111,15 @@ instead of sniffing bronze trident:
 
 Section 2 - Areas of Atlantis
 
-West of Atlantis City Entrance is Atlantis City Center.
-East of Atlantis City Market is Atlantis City Center.
-South of Royal Palace Entrance is Atlantis City Center.
-North of Atlantis City Residential is Atlantis City Center.
+Atlantis City Center is west of Atlantis City Entrance.
+Atlantis City Center is east of Atlantis City Market.
+Atlantis City Center is south of Royal Palace Entrance.
+Atlantis City Center is north of Atlantis City Residential.
+
+Table of GameRoomIDs (continued)
+Object	Name
+Atlantis City Center	"Atlantis City Center"
+
 Atlantis City Center is a room.
 The description of Atlantis City Center is "[AtlantisCenter]".
 earea of Atlantis City Center is "Atlantis".
@@ -116,7 +127,12 @@ earea of Atlantis City Center is "Atlantis".
 to say AtlantisCenter:
 	say "     The beautiful city center is teeming with people of all kinds. You see a shark man talking with what looks to be a greenish-toned catfish like man. Also, you are surrounded by a lot of human-looking males and females. Although if you didn't know this already you'd think they were actual humans rather than the mermen and mermaids they are. What really hits you is the fact that the city appears to be so peaceful in such a hectic world, as if the apocalypse changed nothing for them. It really lives up to the legends of being a utopia. Looking around you notice to your north is the Royal Palace of the city, with stairs leading right up to it. To the south is the residential area of Atlantis, where the various citizens live. To your west is the marketplace where everyone trades goods and services. Lastly, to your east is where you came into the city.";
 
-West of Atlantis City Center is Atlantis City Market.
+Atlantis City Market is west of Atlantis City Center.
+
+Table of GameRoomIDs (continued)
+Object	Name
+Atlantis City Market	"Atlantis City Market"
+
 Atlantis City Market is a room.
 The description of Atlantis City Market is "[AtlantisMarket]".
 earea of Atlantis City Market is "Atlantis".
@@ -124,7 +140,12 @@ earea of Atlantis City Market is "Atlantis".
 to say AtlantisMarket:
 	say "     Upon entering the market you are met with sounds of people talking and bartering. At a stall selling weapons you hear a Pirate Shark trying to reduce the price of the sword they're attempting to buy but to no avail. Over towards another one you see what you assume to be a mermaid couple wondering whether or not they should have fish for dinner. You're sure that at some point you can find something to buy here as well. To the east is the city center that you arrived from.";
 
-South of Atlantis City Center is Atlantis City Residential.
+Atlantis City Residential is south of Atlantis City Center.
+
+Table of GameRoomIDs (continued)
+Object	Name
+Atlantis City Residential	"Atlantis City Residential"
+
 Atlantis City Residential is a room.
 The description of Atlantis City Residential is "[AtlantisResidential]".
 earea of Atlantis City Residential is "Atlantis".
@@ -132,14 +153,23 @@ earea of Atlantis City Residential is "Atlantis".
 to say AtlantisResidential:
 	say "     The living area of the city looks nice, just like the rest of the city. The houses are made out of various colors of coral and have a modern yet rustic look to them. Just like the other places in Atlantis there are people wandering around and some even just lounging out in front of their houses or apartment complexes. You're sure that you could meet some people who live here at a point in the future. To the north is the center of the city.";
 
+Table of GameRoomIDs (continued)
+Object	Name
+Kurt's Abode	"Kurt's Abode"
+
 Kurt's Abode is a room.
 The description of Kurt's Abode is "[KurtsAbode]".
 
 to say KurtsAbode:
 	say "     The living room of the shark-musician is rather quaint, though from what you know of the man it's to be expected. The area is decorated with simple paintings of the city as well as various types of guitars, which you're sure he can play. To your right is a doorway that leads to his kitchen which from where you're standing you can see it is rather spick and span. Wandering around a bit more you muse that your friend is a very clean person but you guess that's not exactly a bad thing in any situation really. Though you do have a thought to tell the shark-morph that he needs more furniture or something to spruce up the place.";
 
-North of Atlantis City Center is Royal Palace Entrance.
-South of Royal Throne Room is Royal Palace Entrance.
+Royal Palace Entrance is north of Atlantis City Center.
+Royal Palace Entrance is south of Royal Throne Room.
+
+Table of GameRoomIDs (continued)
+Object	Name
+Royal Palace Entrance	"Royal Palace Entrance"
+
 Royal Palace Entrance is a room.
 The description of Royal Palace Entrance is "[RoyalPalace]".
 earea of Royal Palace Entrance is "Atlantis".
@@ -147,7 +177,12 @@ earea of Royal Palace Entrance is "Atlantis".
 to say RoyalPalace:
 	say "     The entrance to the royal palace of Atlantis is, in your opinion, the most beautiful thing in the world. It's appears to be made of dark blue stone and sapphire gems. The gates to the north are guarded by a couple of mermaid and merman guards, though they appear to be unconcerned about you, as if they were allowing you to go ahead. To the south of the palace is the center of the city.";
 
-North of Royal Palace Entrance is Royal Throne Room.
+Royal Throne Room is north of Royal Palace Entrance.
+
+Table of GameRoomIDs (continued)
+Object	Name
+Royal Throne Room	"Royal Throne Room"
+
 Royal Throne Room is a room.
 The description of Royal Throne Room is "[ThroneRoom]".
 earea of Royal Throne Room is "Atlantis".
@@ -155,7 +190,12 @@ earea of Royal Throne Room is "Atlantis".
 to say ThroneRoom:
 	say "     The throne room of the entire palace is as opulent as the rest of the place, although at the back is a simple sapphire throne, as odd as that sounds. [if Poseidon is in Royal Throne Room]The friendly yet powerful god is sitting on said throne, overlooking the entire area. [end if]Behind it is a large golden trident that is hung on the wall Across the walls are various murals of ocean scenery. To your back is the hallway that leads to the outside, and just like the entrance is guarded by a couple guards.[if Poseidon is not in Royal Throne Room and PoseidonRelationship is 2] It appears that Poseidon is not here, perhaps he is in his room?[end if]";
 
-North of Royal Throne Room is Royal Bed Chambers.
+Table of GameRoomIDs (continued)
+Object	Name
+Royal Bed Chambers	"Royal Bed Chambers"
+
+Royal Bed Chambers is a room.
+Royal Bed Chambers is north of Royal Throne Room.
 The description of Royal Bed Chambers is "[PoseidonBedroom]".
 earea of Royal Bed Chambers is "Atlantis".
 
@@ -178,13 +218,13 @@ instead of going west from Sunken Ship while FirstAtlantisVisit is 0 and Poseido
 
 instead of going to Royal Palace Entrance while PoseidonRelationship is 2:
 	say "     Upon approaching the royal residence of the leader of this city, you are beset upon by two guards. 'Halt! You must be the person that King Poseidon is looking for,' one says, his stance firm, showing that he's going to hold his ground. You tilt your head curiously at them wondering what they're talking about. However, before you can voice your questions, the two step apart and gesture for you to continue on in. Shrugging your shoulders, you continue on into the palace. You soon come to a gorgeous throne room with a sapphire throne whose design could simply pass as a dining chair if the back and armrests weren't so high. Sitting on that seat is a familiar face, the merman you followed to this city, and the king of the place, Poseidon. Upon seeing you the man appears to be rather happy.";
-	say "     'It's you! Perfect,' he says, standing up from his chair. You promptly ask the man why he is so intrigued by you, which causes a laugh to come from him. 'Well, simply put, it's because you past my test,' he says shrugging his shoulders as if it explained everything. You don't recall taking any kind of exam so you vocally request for him to explain. 'The fake trident, getting it was a trial to see if someone was eligible to be my spouse,' he tells you, making your mouth fall open in shock. Before you can regain your composure the kingly man asks you a question. 'Would you allow me to court you?' He asks. Figuring that you better answer now, you do.";
+	say "     'It's you! Perfect,' he says, standing up from his chair. You promptly ask the man why he is so intrigued by you, which causes a laugh to come from him. 'Well, simply put, it's because you past my test,' he says shrugging his shoulders as if it explained everything. You don't recall taking any kind of exam so you vocally request for him to explain. 'The fake trident, getting it was a trial to see if someone was eligible to be my spouse,' he tells you, making your mouth fall open in shock. Before you can regain your composure the kingly man asks you a question. 'Would you allow me to court you?' he asks. Figuring that you better answer now, you do.";
 	say "     [bold type]Do you want to accept the courtship?[roman type][line break]";
 	LineBreak;
 	say "     ([link]Y[as]y[end link]) - Sure, why not, it sounds fun.";
 	say "     ([link]N[as]n[end link]) - No, I'm not a marrying-type of person.";
 	if player consents:
-		say "     Shrugging your shoulders you agree, causing the merman's face to light up. 'Great! It's official then!' He says with a smile. You ask him what this relationship will consist of, something that Poseidon promptly gives a response to. 'Simple, we go on dates. If it turns out well, then perhaps marriage,' the buff male tells you. Well... you guess that was kind of obvious, causing you to wonder out loud when the first date will be. 'Oh, that, don't worry. I'll plan the date and let you know when it's time,' he says, waving your concerns off. With a shrug you figure you should go on your way, heading back out of the palace, to the entrance.";
+		say "     Shrugging your shoulders you agree, causing the merman's face to light up. 'Great! It's official then!' he says with a smile. You ask him what this relationship will consist of, something that Poseidon promptly gives a response to. 'Simple, we go on dates. If it turns out well, then perhaps marriage,' the buff male tells you. Well... you guess that was kind of obvious, causing you to wonder out loud when the first date will be. 'Oh, that, don't worry. I'll plan the date and let you know when it's time,' he says, waving your concerns off. With a shrug you figure you should go on your way, heading back out of the palace, to the entrance.";
 		move player to Royal Palace Entrance;
 		now PoseidonRelationship is 3;
 	else:
@@ -220,7 +260,7 @@ instead of going to Atlantis City Market while MarketVisits is 1 and (LastMarket
 
 instead of going to Atlantis City Residential while ResidentialVisits is 0:
 	say "     Upon your entrance to the residential area you don't really notice much with your sight but with your smell you do. Following the scent that attacks your senses you soon come upon a large entrance leading to someone's backyard in the neighborhood. At the top of the arc is a sign that reads 'Residential Cookout - All Welcome!' Out of curiosity you wander on in and are set upon by what looks to be a female... humanoid cat-fish morph? Upon closer examination she doesn't appear to have any gills but does have a mix of traits from both feline and fish. Redirecting your attention to her face the woman is smiling at you widely, looking pretty inviting.";
-	say "     'Hey there! You must be new to the city! I'm Namazu, but most people call me Nama!' She says, holding out a hand for you to shake. You accept it, the cheerful nature of the woman contagious. You ask her what this event is and if all are really welcome. Nama returns your question with a nod before speaking up. 'This isn't so much an event, as something that's always on. It's a way to give back to the community and feed those who can't eat due to responsibilities they have or because of... well you know. And of course, everyone is welcome!' The cat-fish woman says happily, though her expression changes a bit as she turns towards the direction of the tables which are empty at the moment. ";
+	say "     'Hey there! You must be new to the city! I'm Namazu, but most people call me Nama!' she says, holding out a hand for you to shake. You accept it, the cheerful nature of the woman contagious. You ask her what this event is and if all are really welcome. Nama returns your question with a nod before speaking up. 'This isn't so much an event, as something that's always on. It's a way to give back to the community and feed those who can't eat due to responsibilities they have or because of... well you know. And of course, everyone is welcome!' The cat-fish woman says happily, though her expression changes a bit as she turns towards the direction of the tables which are empty at the moment. ";
 	WaitLineBreak;
 	say "     'Though if you want to get something now, you'll have to wait. We just fed a large group and it exhausted the food we put out. So we're all making new food,' Nama tells you with a sigh. Out of curiosity and a tiny bit of nosiness you ask her who they fed, which causes her to chuckle. 'Oh, the Royal Guard. Apparently they were having a day of long training so they needed all the food they could get,' Is her response, something that makes you simply nod at the answer. With a shrug at having nothing else to do here for now you thank her for letting you know about the place before leaving to the main area of the residential area. She tells you to come back soon and leaves as well, possibly to help cook.";
 	now ResidentialVisits is 1;
@@ -234,6 +274,10 @@ instead of going to Atlantis City Residential while ResidentialVisits is 1 and (
 	PlayerDrink 20;
 
 Section 4 - NPCs
+
+Table of GameCharacterIDs (continued)
+object	name
+Triton	"Triton"
 
 Triton is a man. Triton is in Atlantis City Entrance.
 The description of Triton is "[TritonDesc]".
@@ -292,19 +336,15 @@ to say TritonTalkMenu:
 					say "[TritonTalk3]";
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if player consents:
-				now sextablerun is 1;
-				say "     You shake your head, which simply causes the merman to shrug and return to duty.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You shake your head, which simply causes the merman to shrug and return to duty.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
 	clear the screen and hyperlink list;
 
 to say TritonTalk1:
-	say "     'Atlantis?' He asks, tilting a curious head at you. You nod your head, curious as to the history of the city, off-handedly mentioning the legends. The buff male hums before speaking up, answering your question. 'Well, those legends were true to a degree. Atlantis was a utopian city and still is, but it did not sink. No, rather my father decided to move the city after the Greek Era ended, as he was sure that the many kingdoms would want to attack, despite his strength,' Triton tells you, leaning against the wall by the gate. You nod once more, understanding what he's talking about. Seeing this, the man continues. 'Every century or so he relocated the city to prevent humans from finding us as they were a rather persistent species,' the prince adds on. That confuses you a bit, so you mention the current times, where there are people who used to be human visiting.";
+	say "     'Atlantis?' he asks, tilting a curious head at you. You nod your head, curious as to the history of the city, off-handedly mentioning the legends. The buff male hums before speaking up, answering your question. 'Well, those legends were true to a degree. Atlantis was a utopian city and still is, but it did not sink. No, rather my father decided to move the city after the Greek Era ended, as he was sure that the many kingdoms would want to attack, despite his strength,' Triton tells you, leaning against the wall by the gate. You nod once more, understanding what he's talking about. Seeing this, the man continues. 'Every century or so he relocated the city to prevent humans from finding us as they were a rather persistent species,' the prince adds on. That confuses you a bit, so you mention the current times, where there are people who used to be human visiting.";
 	say "     'Ah, that. Well my father figured that with the human world going down whirlpool, so to speak, that it'd be best to open Atlantis again for an... asylum,' he says. You nod as that makes a bit of sense. Though you wonder out loud as to why he would care about the mortals. 'Well... he's always had a soft spot for you guys,' was his response to you. Shrugging you figure that it's best for you to end the conversation as you don't have anything else to talk about. So instead you turn away from him as the male goes back to guarding the gates to the city.";
 
 to say TritonTalk2:
@@ -316,6 +356,10 @@ to say TritonTalk3:
 
 instead of fucking Triton:
 	say "     The buff male raises a brow at you, not offended by your offer but rather intrigued. 'As much as I would love to, Alana here would murder me if I scampered off to have fun with you,' he says.";
+
+Table of GameCharacterIDs (continued)
+object	name
+Alana	"Alana"
 
 Alana is a woman. Alana is in Atlantis City Entrance.
 The description of Alana is "[AlanaDesc]".
@@ -366,13 +410,9 @@ to say AlanaTalkMenu:
 					say "[AlanaTalk2]";
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if player consents:
-				now sextablerun is 1;
-				say "     You shake your head, which simply causes the mermaid to return back to work.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You shake your head, which simply causes the mermaid to return back to work.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
 	clear the screen and hyperlink list;
@@ -389,9 +429,13 @@ instead of fucking Alana:
 
 An everyturn rule:
 	if daytimer is night:
-		remove Poseidon from play;
+		now Poseidon is nowhere;
 	else if daytimer is day:
 		move Poseidon to Royal Throne Room;
+
+Table of GameCharacterIDs (continued)
+object	name
+Poseidon	"Poseidon"
 
 Poseidon is a man.
 The description of Poseido is "[PoseidonDesc]".
@@ -443,13 +487,9 @@ to say PoseidonTalkMenu:
 					say "[PoseidonTalk2]";
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if player consents:
-				now sextablerun is 1;
-				say "     You shake your head, which simply causes the king to return to whatever he was doing.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You shake your head, which simply causes the king to return to whatever he was doing.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
 	clear the screen and hyperlink list;
@@ -461,7 +501,7 @@ to say PoseidonTalk1:
 	say "     ([link]Y[as]y[end link]) - It wouldn't hurt to give it a try.";
 	say "     ([link]N[as]n[end link]) - No, I'm not a marrying-type of person.";
 	if player consents:
-		say "     Shrugging your shoulders mentally you voice that you want to accept his courtship. This causes the merman's face to light up. 'Great! It's official then!' He says with a smile. You ask him what this relationship will consist of, something that Poseidon promptly gives a response to. 'Simple, we go on dates, if it turns out well then perhaps marriage,' the buff male tells you. Well... you guess that was kind of obvious, causing you to wonder out loud when the first date will be. 'Oh, that, don't worry I'll plan the date and let you know when it's time,' he says, waving your concerns off. With a shrug you figure you should go on your way, heading back out of the palace, to the entrance.";
+		say "     Shrugging your shoulders mentally you voice that you want to accept his courtship. This causes the merman's face to light up. 'Great! It's official then!' he says with a smile. You ask him what this relationship will consist of, something that Poseidon promptly gives a response to. 'Simple, we go on dates, if it turns out well then perhaps marriage,' the buff male tells you. Well... you guess that was kind of obvious, causing you to wonder out loud when the first date will be. 'Oh, that, don't worry I'll plan the date and let you know when it's time,' he says, waving your concerns off. With a shrug you figure you should go on your way, heading back out of the palace, to the entrance.";
 		move player to Royal Palace Entrance;
 		now PoseidonRelationship is 3;
 	else:

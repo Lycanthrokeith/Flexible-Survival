@@ -5,6 +5,10 @@ Version 2 of Hobo by Stripes begins here.
 
 Section 1 - Encounter
 
+Table of GameEventIDs (continued)
+Object	Name
+Mournful Dog	"Mournful Dog"
+
 Mournful Dog is a situation.
 The sarea of Mournful Dog is "Hospital".
 hdog is a number that varies.
@@ -33,6 +37,7 @@ Instead of resolving a Mournful Dog:
 				if total > 21:
 					say "     You are able to coax the dog into letting you come close and pet it. It wags its tail as you pat its head and check its tag, finding only the name 'Hobo'. Reaching over, you pull the sheets over its former master's body, then you both leave together.";
 					now helper dog is tamed;
+					add "Tamed" to Traits of helper dog;
 					say "     (The helper dog is now tamed! You can make it your active pet by typing [bold type][link]pet helper dog[as]pet helper dog[end link][roman type]. You can see all the pets you have tamed with the [bold type][link]pet[as]pet[end link][roman type] command. Pets will lower the XP you gain from battle, but can gain levels themselves to be more useful in a scrap. Want to get rid of a pet? Use [bold type][link]pet dismiss[as]pet dismiss[end link][roman type], or just [bold type][link]dismiss[as]dismiss[end link][roman type])";
 					increase score by 10;
 					now Mournful Dog is resolved;
@@ -60,6 +65,7 @@ Instead of resolving a Mournful Dog:
 				if total > 21:
 					say "     You are able to coax the dog into letting you come close and pet it. It wags its tail as you pat its head. Reaching over, you pull the sheets over its former master's body, then you both leave together.";
 					now helper dog is tamed;
+					add "Tamed" to Traits of helper dog;
 					say "(The helper dog is now tamed! You can make it your active pet by typing [bold type]pet helper dog[roman type]. You can see all the pets you have tamed with the [bold type]pet[roman type] command. Pets will lower the XP you gain from battle, but can gain levels themselves to be more useful in a scrap. Want to get rid of a pet? Use [bold type]pet dismiss[roman type], or just [bold type]dismiss[roman type])";
 					now lastfuck of helper dog is turns;
 					increase score by 10;
@@ -164,7 +170,7 @@ an everyturn rule:
 				say "     After taking a short break, you go to pick up your pack again, finding that your journal's sitting atop it. Hobo, resting beside your pack, looking up at you and barks once.";
 				now hobo-journal is turns;
 				now lastfuck of helper dog is turns;
-			else if HP of doctor matt is 2 and carried of gryphon milk < 2 and hobo-grmilk is false and hobo-grmilkhelp - turns >= 8 and furry is not banned and hermaphrodite is not banned:
+			else if HP of Doctor Matt is 2 and carried of gryphon milk < 2 and hobo-grmilk is false and hobo-grmilkhelp - turns >= 8 and furry is not banned and hermaphrodite is not banned:
 				say "     Before you've even noticed, your helper dog returns to your side carrying something in his mouth. As you take it from him, he gives a meaningful bark. Examining it, you find it to be an old-style glass bottle filled with milk. Surprisingly, it is still cold and smells delicious. You're about to taste a sample of it, when Hobo grabs your sleeve and pulls on your arm, keeping you from doing so. Reminded of the request from Dr. Matt for [bold type]gryphon milk[roman type], you cap the milk and tuck it away, wondering at just how smart this dog really is.";
 				now hobo-grmilk is true;
 				now lastfuck of helper dog is turns;

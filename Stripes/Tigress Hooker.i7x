@@ -21,7 +21,7 @@ mqfightresult is a number that varies.	[ 1 = win / 2 = lose / 3 = fled (unchange
 
 to say tigress_desc:
 	setmongender 5; [creature is herm]
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	let debit be 0;
 	if mqstatus is 3:				[fighting tigresses at the motel]
 		say "     The lovely tigress is quite upset at the intruder to hir motel home. Shi growls angrily and readies to deal with you soundly so shi can have hir way with you and put you in your place. Under hir.";
@@ -224,7 +224,7 @@ to say losetotigress:
 			say "     With one paw between your shoulders, shi holds you down as the other grabs your hip firmly. After shifting hir position a little, you can feel the tigress's hard cock at your [cunt size desc of player] pussy before it sinks into you. You moan your pleasure as you feel the firm piece of meat pushing in, teasing you delightfully with those bumps. Your [cock size desc of player] [cock of player] shaft[smn] dribble[smv] pre onto the mattress as shi mounts you.";
 			say "     Hir hips rock slowly at first, letting hir unusually shaped penis stimulate your sensitive walls. You push your rear back against hir thrusting, matching hir pace. As you moan and press your face into the scent-filled mattress, you lose track of time, only knowing the joy of that softly-barbed cock inside you. Surely it was sculpted to please any lover and you love having it in you, as your own hard cock[smn] and leaking precum show.";
 			say "     After a long session of slow, stimulating thrusting, the tigress rumbles deeply as hir cock throbs in you. Shi takes the back of your neck in her jaws, holding you firmly, but carefully, and starts pounding into you hard and fast. With hir elbows on the mattress, shi's puts a paw on your [breast size desc of player] tits and fondles them while the other moves to stroke your [cock size desc of player] shaft[smn]. As shi drives hirself into you again and again, shi pumps at your throbbing member.";
-			say "     One final, hard thrust into you and shi's growling deeply as hir shaft throbs inside you, pumping hir hot, feline seed deep inside you, sending it flowing into your womb. This sends you into a powerful climax, hot feminine juices flowing from your pussy and thick cum from your cock[smn] as shi fills you with hir seed. You hot seed sprays onto the mattress to join the multitude of others.[impregchance]";
+			say "     One final, hard thrust into you and shi's growling deeply as hir shaft throbs inside you, pumping hir hot, feline seed deep inside you, sending it flowing into your womb. This sends you into a powerful climax, hot feminine juices flowing from your pussy and thick cum from your cock[smn] as shi fills you with hir seed. Your hot seed sprays onto the mattress to join the multitude of others.[impregchance]";
 			if cunts of player > 1 and gestation of child is 0:		[Multi-pussy, not preg]
 				say "     As shi eases hir cock from your cum-slick slit, shi keeps hir grip on your nape and moves hir cock to your second slit, pushing into you again. Shi starts to pound away at you again, filling your second hole. Shi goes hard and fast from the very beginning this time, eager to fill you with more of hir semen to breed you. You moan lustfully beneath hir, having another powerful orgasm as that barbed shaft throbs inside you and seeds you a second time, though with an albeit smaller load this time after such a fast turnaround.[if a random chance of 1 in 2 succeeds][impregchance][end if]"; [half as likely to impreg on 2nd try]
 				increase libido of player by 6; [2nd hole filled - Libido increase of 6...]
@@ -433,9 +433,9 @@ to say paymentcheck:
 	else if dog milk is owned:
 		say "     Finding a container of dog milk, shi smiles happily. 'Ooo! Cream for the kitty.' Shi opens it and sniffs. 'Ugh, it smells of dog. Well, it's still milk, so I'll take it! Maybe we can boil that dog smell out of it,' shi muses. Keeping hir find as payment, shi sets your backpack aside.";
 		delete dog milk;
-	else if Fish is owned:
+	else if Tasty Fish is owned:
 		say "     Finding the fish you've wrapped in old newspaper, shi smiles happily. 'Ooo! Tasty feesh! We'll be eating well back at the motel tonight,' shi rumbles happily. Keeping hir find as payment, shi leans down and gives you a kiss on the cheek for bringing hir such a tasty treat.";
-		delete Fish;
+		delete Tasty Fish;
 	else if soda is owned:
 		say "     Finding a can of soda, shi smiles happily. 'Hey! This is my favorite flavor. I haven't been able to find one for days.' Keeping hir find as payment, shi sets your backpack aside.";
 		delete soda;
@@ -471,12 +471,12 @@ to say paymentcheck:
 
 Section 2 - Monster Insertion
 
-Table of random critters (continued)
-name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	nocturnal (truth state)	altcombat (text)
---	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
+Table of Random Critters (continued)
+name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	DayCycle	altcombat (text)	BannedStatus (truth state)
+--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
 
 When Play begins:
-	Choose a blank row from Table of random critters;
+	Choose a blank row from Table of Random Critters;
 	now name entry is "Tigress Hooker"; [Name of your new Monster]
 	now enemy title entry is "";
 	now enemy name entry is "";
@@ -524,8 +524,9 @@ When Play begins:
 	now magic entry is false;
 	now resbypass entry is false;
 	now non-infectious entry is false;
-	blank out the nocturnal entry; [ True=Nocturnal (night encounters only), False=Diurnal (day encounters only), blank for both. ]
-	now altcombat entry is "default"; [ Row used to designate any special combat features, "default" for standard combat. ]
+	now DayCycle entry is 0; [ 0 = Up at all times; 1 = Diurnal (day encounters only); 2 = Nocturnal (night encounters only);]
+	now altcombat entry is "default";
+	now BannedStatus entry is false;
 
 Table of Game Objects (continued)
 name	desc	weight	object

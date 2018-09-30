@@ -20,13 +20,22 @@ after going to Krampus's Cave while (HP of Krampus is 0): [introduction]
 
 Section 2 - Location
 
-North of Christmas Village is Krampus's Cave.
+Table of GameRoomIDs (continued)
+Object	Name
+Krampus's Cave	"Krampus's Cave"
+
+Krampus's Cave is a room.
+Krampus's Cave is north of Christmas Village.
 The description of Krampus's Cave is "[KrampusCaveDesc]".
 
 to say KrampusCaveDesc:
 	say "     You find yourself in what seems to be a natural cave with rough, rocky walls. The entrance tunnel curves a little bit and leads downwards, separating the inside from the bright, snow-covered Christmas Village. It feels as if you stepped into another world entirely when you came in - a place much more primal and ancient, yet still somehow connected to the laughter and joy you distantly hear from the outside. A softly crackling fire fills a niche in the far wall, illuminating the cave in a flickering, orange glow that makes shadows dance. You can see a few shimmering, red-and-silver Christmas baubles hanging off of the walls on red ribbons, among more grim decorations like chains and manacles, a large, coiled-up whip, and other such gear. A huge, red sack lies on the ground next to a heap of soft furs, piled on top of each other to serve as the goat-demon's bed. With the flickering lighting, it almost appears like something inside the sack is moving from time to time, but that's surely just your imagination.";
 
 Section 3 - NPC
+
+Table of GameCharacterIDs (continued)
+object	name
+Krampus	"Krampus"
 
 Krampus is a man.
 Krampus is in Krampus's Cave.
@@ -91,13 +100,9 @@ instead of conversing the Krampus:
 					say "[KrampusTalk3]";
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off?";
-			if player consents:
-				now sextablerun is 1;
-				say "     You step back from the goat-demon, shaking your head slightly as he gives a questioning look.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You step back from the goat-demon, shaking your head slightly as he gives a questioning look.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options].";
 	clear the screen and hyperlink list;
@@ -185,13 +190,9 @@ to say KrampusSexMenu:
 				now lastfuck of Krampus is turns;
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if player consents:
-				now sextablerun is 1;
-				say "     You step back from the goat-demon, shaking your head slightly as he gives a questioning look.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You step back from the goat-demon, shaking your head slightly as he gives a questioning look.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
 	clear the screen and hyperlink list;
@@ -253,7 +254,7 @@ to say KrampusBondage1:
 	if player is male:
 		say "     Krampus grinds the tip of your cock between his fingers, reveling in your instinctive struggling. 'You have been very naughty, haven't you, slut?' he asks. The goat's hand grabs your [cockname of player in lower case] dick and squeezes. One of his claws plays leisurely with your urethra. 'Look how hard you are from my touch. Very naughty indeed.' Krampus strokes your shaft slowly, going up and down its [cock size desc of player] length with slow and strong movements[if player is knotted]. Upon touching your knot, he envelops it in his charcoal-skinned palm and polishes it, making you howl in pleasure. 'How precious,' Krampus says with a toothy grin[end if]. He pauses for a second, pulling you up by the hair to look at his hand and see it glisten with pre. 'See that, bitch? You love it, don't you dare deny it.'";
 	else:
-		say "     Krampus pinches your clit between his clawed fingers. He pulls it, twists it, flickers it, delighted with your instinctive struggling. 'You have been very naughty, haven't you, slut?' he asks. The goat's middle finger slips into your [cunt size desc of player in lower case] cleft. The finger pushes as far as it can, the claw slowly rubbing at you inner walls near your G-spot. One of his others claws plays leisurely with your urethra. 'Look how hard you are from my touch. Very naughty indeed.' Krampus has his index join the other finger inside your cunt. He pumps them back and forth slowly, occasionally stretching your vagina by moving his digits apart. 'How precious,' Krampus says with a toothy grin. He pauses for a second, pulling you up by the hair to look at his hand and see it glisten with the fluids from your wet pussy. 'See that, bitch? You love it, don't you dare deny it.'";
+		say "     Krampus pinches your clit between his clawed fingers. He pulls it, twists it, flickers it, delighted with your instinctive struggling. 'You have been very naughty, haven't you, slut?' he asks. The goat's middle finger slips into your [cunt size desc of player in lower case] cleft. The finger pushes as far as it can, the claw slowly rubbing at your inner walls near your G-spot. One of his others claws plays leisurely with your urethra. 'Look how hard you are from my touch. Very naughty indeed.' Krampus has his index join the other finger inside your cunt. He pumps them back and forth slowly, occasionally stretching your vagina by moving his digits apart. 'How precious,' Krampus says with a toothy grin. He pauses for a second, pulling you up by the hair to look at his hand and see it glisten with the fluids from your wet pussy. 'See that, bitch? You love it, don't you dare deny it.'";
 	WaitLineBreak;
 	say "     'Now, I'm kind of tired of hearing naughty adults whine and cry as I tend to them,' Krampus grunts, 'So I will give this dirty mouth of yours a better use.' Without warning, you are snatched up from where you are bent over the chest and pivoted upside-down. Krampus lines up his cock with your mouth and lets gravity push it down your throat. You gag noisily, while the goat guides your head so that your nose is crammed against his furry balls. 'How's that for a punishment, little slut?' he demands, giving your ass a couple of additional slaps. You gargle pitifully in response, and he comments amusedly, 'That's what I thought.'";
 	if player is male:
@@ -386,12 +387,12 @@ to say KrampusPunish3:
 
 Section 3 - Infection
 
-Table of random critters (continued)
-name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	nocturnal (truth state)	altcombat (text)
---	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
+Table of Random Critters (continued)
+name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	DayCycle	altcombat (text)	BannedStatus (truth state)
+--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
 
 When Play begins:
-	Choose a blank row from Table of random critters;
+	Choose a blank row from Table of Random Critters;
 	now name entry is "Goat-Demon";
 	now enemy title entry is "";
 	now enemy name entry is "";
@@ -439,7 +440,8 @@ When Play begins:
 	now magic entry is false;
 	now resbypass entry is false;
 	now non-infectious entry is true;
-	blank out the nocturnal entry;     [ True=Nocturnal (night encounters only), False=Diurnal (day encounters only), blank for both. ]
+	now DayCycle entry is 0;     [ 0 = Up at all times; 1 = Diurnal (day encounters only); 2 = Nocturnal (night encounters only);]
 	now altcombat entry is "default";
+	now BannedStatus entry is false;
 
 Krampus ends here.

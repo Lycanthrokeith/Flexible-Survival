@@ -13,16 +13,19 @@ Section 1 - Events
 
 after going to Darius's Crib while (HP of Darius is 0 and Darius is in Darius's Crib):
 	try looking;
+	project the Figure of Darius_face_icon;
 	say "     Entering the apartment, you are greeted by an anthro dalmatian, who grins broadly as he sees you. 'Hey there, I'm Darius.' Some barks coming from the apartment next door distract him after that, and the big male turns his head to shout towards the hole in the wall, 'Keep it down, will ya? Got a customer here!' Chuckling about the noise instantly being reduced, he directs his attention back to you, 'So anyways, want a fix? I got some primo stuff laid out over here.'";
 	now HP of Darius is 1; [player knows his name]
 
 after going west from Boundary Street East while (HP of Darius is 0 and Darius is in Entrance to the Red Light District):
 	try looking;
+	project the Figure of Darius_face_icon;
 	say "     Arriving at the street corner, you see an anthro dalmatian just casually leaning against a nearby wall. He waves at you and calls out, 'Yo homie! I'm Darius.' Seems like the guy is unconcerned about any hostile intent on your part. Looking at the tough guy attitude of the male dog, with his muscled upper body, heavy golden neck chain and only a sagging pair of jeans as a sole item of clothing, you can't help but feel like he can indeed take care of himself no matter what.";
 	now HP of Darius is 1; [player knows his name]
 
 after going east from Boundary Street West while (HP of Darius is 0 and Darius is in Entrance to the Red Light District):
 	try looking;
+	project the Figure of Darius_face_icon;
 	say "     Arriving at the street corner, you see an anthro dalmatian just casually leaning against a nearby wall. He waves at you and calls out, 'Yo homie! I'm Darius.' Seems like the guy is unconcerned about any hostile intent on your part. Looking at the tough guy attitude of the male dog, with his muscled upper body, heavy golden neck chain and only a sagging pair of jeans as a sole item of clothing, you can't help but feel like he can indeed take care of himself no matter what.";
 	now HP of Darius is 1; [player knows his name]
 
@@ -30,6 +33,7 @@ instead of navigating Entrance to the Red Light District while (HP of Darius is 
 	say "[NavCheck Entrance to the Red Light District]";
 	if NavCheckReturn is false, stop the action;
 	move player to Entrance to the Red Light District;
+	project the Figure of Darius_face_icon;
 	say "     Arriving at the street corner, you see an anthro dalmatian just casually leaning against a nearby wall. He waves at you and calls out, 'Yo homie! I'm Darius.' Seems like the guy is unconcerned about any hostile intent on your part. Looking at the tough guy attitude of the male dog, with his muscled upper body, heavy golden neck chain and only a sagging pair of jeans as a sole item of clothing, you can't help but feel like he can indeed take care of himself no matter what.";
 	now HP of Darius is 1; [player knows his name]
 
@@ -91,10 +95,15 @@ after going to Darius's Crib while (Darius is not in Darius's Crib):
 		LineBreak;
 		say "     You keep your hands to yourself, not touching anything in your surroundings.";
 
+Table of GameEventIDs (continued)
+Object	Name
+Joshiro Tales 1	"Joshiro Tales 1"
+
 Joshiro Tales 1 is a situation.
 The sarea of Joshiro Tales 1 is "Nowhere".
 
-after going to Darius's Crib while (Joshiro Tales 1 is not resolved and a random chance of 1 in 3 succeeds and HP of Darius > 0 and Darius is in Darius's Crib):
+after going to Darius's Crib while (Joshiro Tales 1 is active and Joshiro Tales 1 is not resolved and a random chance of 1 in 3 succeeds and HP of Darius > 0 and Darius is in Darius's Crib):
+	project the Figure of Darius_face_icon;
 	say "     As you enter the short hallway to Darius's dingy apartment, you hear voices from ahead. Peeking into the room, it becomes clear that the dalmatian has another visitor right now. A towering doberman is standing next to Darius, sporting a ripped physique with a V shaped torso. He is dressed in little but a bandanna around his neck and a flimsy pair of shorts with a broad belt at the top. The outline of his weighty cock is very clearly visible through the fabric. Both canines are holding bottles of beer in their hands. As Darius's visitor takes a swallow from his, barks from what sounds like puppies come from the apartment next door, through the hole that has been knocked into the connecting wall. 'Man, you're one lucky dude Dar. Just grabbing yourself a bitch right from the street and having all the tail you need at home, all the time.' The spotted canine laughs and grins at his buddy, 'What can I say Tyke, you just gotta know how to pick em. Hannah is a great bitch, even if she started out as a dude. But not for long once she felt my dick of course.'";
 	say "     The doberman's eyes go wide and he makes a choking sound as his beer goes the wrong way, then coughs and gapes at Darius. 'You lucky dog! So she just switched to a babe right away? I'm still not used to how things work these days. Or maybe they don't do so for everyone. Bitches haven't been all that plentiful for myself I have to say.' Tyke is silent for a few seconds, then adds, 'For example, when things were just starting out with all this shit, an Asian dude crossed my path one morning. I thought I'd just threaten him a little bit and get his money, try out my new bod, but nope, even though he was just a human, he was ready to throw down and we tussled. Had crazy moves and all that shit, that guy. And the weirdest part was - he kept rubbing my junk as he passed me. Couldn't help but get hard from the friction. Then he kicked my paws out from under me and before I know it, the freaky faggot was ramming his ass down my dick!'";
 	WaitLineBreak;
@@ -105,6 +114,10 @@ after going to Darius's Crib while (Joshiro Tales 1 is not resolved and a random
 
 Section 2 - NPC
 
+Table of GameCharacterIDs (continued)
+object	name
+Darius	"Darius"
+
 Darius is a man.
 Darius is in Darius's Crib.
 The description of Darius is "[DariusDesc]".
@@ -112,6 +125,7 @@ The conversation of Darius is { "<This is nothing but a placeholder!>" }.
 The scent of Darius is "     Leaning forward to get a sniff of Darius, you find yourself grabbed by the back of your head and pulled in against his chest, burying your nose between the bulging pecs on the tall canine. He chuckles as you can't help but sniff his masculine aroma, with the slight scent of his sweat made oh so very tempting by pheromones that tell you that this is a top dog.".
 
 to say DariusDesc:
+	project the Figure of Darius_face_icon;
 	if debugactive is 1:
 		say "DEBUG -> HP: [HP of Darius] <- DEBUG[line break]";
 	say "     Darius is a proud specimen of an anthro canine, tall and well-built with broad shoulders and a muscled torso. The man clearly knows this quite well, as he happily shows off by keeping his chest bare, a baggy pair of jeans the only article of fabric on his body. Aware of the fact that you're checking him out, he even flexes a little, making the firm bulges of his pecs and bicep twitch suggestively while grinning broadly. Then he lets a hand wander up to his neck, casually stroking along the heavy gold chain he wears, as if to boast that he can afford such accessories.";
@@ -119,6 +133,7 @@ to say DariusDesc:
 an everyturn rule:
 	if TimekeepingVar is 1 or TimekeepingVar is -7: [midnight]
 		if player is in Darius's Crib and Darius is in Darius's Crib:
+			project the Figure of Darius_face_icon;
 			say "     'Getting kinda late,' the dalmatian drug dealer says with a glance at a wall clock, then shoos you out of his apartment. 'Come back tomorrow if you want anything,' he says to you, then pushes the apartment building's front door shut behind you. The lock is still busted, so you could just walk back in, but no doubt Darius will take the time to pack away all his goods before he enjoys himself with his bitches.";
 			wait for any key;
 			move player to Boundary Street East;
@@ -127,20 +142,29 @@ an everyturn rule:
 	[else if TimekeepingVar is 7 or TimekeepingVar is -1:] [early morning - unused, Darius sleeps in]
 	else if TimekeepingVar is 6 or TimekeepingVar is -2: [mid-morning]
 		if player is in Darius's Crib:
-			say "     Walking into the room through the broken wall of the apartment next door, Darius grins broadly as he finds you waiting for him. 'Looks like someone really needs his fix. What can I do for ya, dawg?'";
+			project the Figure of Darius_face_icon;
+			if HP of Darius is 0: [never seen before]
+				say "     A muscled dalmatian comes into the room through the broken wall of the apartment next door. He seems unconcerned with finding you in his apartment, simply nodding to acknowledge your presence. 'Oh hey, new customer looking for a fix? I'm Darius. What can I do for ya, dawg?'";
+				now HP of Darius is 1;
+			else:
+				say "     Walking into the room through the broken wall of the apartment next door, Darius grins broadly as he finds you waiting for him. 'Looks like someone really needs his fix. What can I do for ya, dawg?'";
 		move Darius to Darius's Crib;
 	else if TimekeepingVar is 5 or TimekeepingVar is -3: [noon]
 		if player is in Darius's Crib:
+			project the Figure of Darius_face_icon;
 			say "     The muscular dalmatian strolls into the kitchen and grabs a can-opener from a drawer, then explains, 'Gotta feed Hannah and my other little bitches.' With a grin on his face, he vanishes through the hole in the wall into the apartment next door, returning a little while later with a big can of [one of]ravioli[or]pineapple[or]peaches[or]beans[or]breakfast meat[or]sausages[or]apple sauce[at random] for himself. Grabbing some plastic cutlery from an industrial sized pack of it, the anthro canine hungrily chows down, eventually throwing the remnants of his meal into a large trashcan and belching in satisfaction.";
 	else if TimekeepingVar is 4 or TimekeepingVar is -4: [mid afternoon]
 		if player is in Darius's Crib:
+			project the Figure of Darius_face_icon;
 			say "     Grabbing a porno mag from a pile in one of his shelves, Darius casually saunters over to his couch and sits back on it, paging through his entertainment and jerking off in an unhurried pace. He doesn't seem to care that you're right there in the room with him and just goes to town, right until the eventual messy finish that adds some more stains to the throw rug in front of the couch.";
 	else if TimekeepingVar is 3 or TimekeepingVar is -5: [evening]
 		if player is in Darius's Crib:
+			project the Figure of Darius_face_icon;
 			say "     'I'm gonna go out for a while,' Darius calls over towards the hole into the next apartment and gets some barks in reply. Then he turns to you and shoos you out of his place of business, pushing the apartment building's front door shut behind you. The lock is still busted, so you could just walk back in, but not before Darius packs his goods away. A short while later, he comes out and walks down the street.";
 			wait for any key;
 			move player to Boundary Street East;
 		else if player is in Entrance to the Red Light District:
+			project the Figure of Darius_face_icon;
 			if HP of Darius is 0: [never seen before]
 				say "     An anthro dalmatian comes walking down the street from the east and casually leans against a wall from where he can easily overlook the whole crossroads area. 'Oi there! I'm Darius,' he calls out to you in greeting, unconcerned about any hostile intent on your part. Looking at the though guy attitude of the male dog, with his muscled upper body, heavy golden neck chain and only a sagging pair of jeans as a sole item of clothing, you can't help but feel like he can indeed take care of himself no matter what.";
 				now HP of Darius is 1;
@@ -150,18 +174,24 @@ an everyturn rule:
 	else if TimekeepingVar is 2 or TimekeepingVar is -6:
 		if HP of Darius is 0: [never seen before]
 			if player is in Darius's Crib:
+				project the Figure of Darius_face_icon;
 				say "     Coming into this place from outside, an anthro dalmatian grins broadly as he finds you waiting for him. 'Hey there, I'm Darius. Looks like someone really needs his fix. What can I do for ya, dawg?'";
 			else if player is in Boundary Street East:
+				project the Figure of Darius_face_icon;
 				say "     An anthro dalmatian comes strolling down the street from the west in an unhurried tempo, then stops for a second to say, 'Hey there, I'm Darius. You look like you could use some of my goods. Wanna come in and buy something?' He doesn't wait for a reply and simply enters an apartment building in the southeast, leaving you to decide if you want to follow after him.";
 			else if player is in Entrance to the Red Light District:
+				project the Figure of Darius_face_icon;
 				say "     Darius pushes himself off the wall he was leaning against and walks off to the east in an unhurried tempo. Watching the muscled canine go, you can't help but feel like he is daring any stupid creature with ideas to attack him.";
 			now HP of Darius is 1;
 		else:
 			if player is in Darius's Crib:
+				project the Figure of Darius_face_icon;
 				say "     Coming into his place from outside, Darius grins broadly as he finds you waiting for him. 'Looks like someone really needs his fix. What can I do for ya, dawg?'";
 			else if player is in Boundary Street East:
+				project the Figure of Darius_face_icon;
 				say "     Darius comes strolling down the street from the west in an unhurried tempo, then enters his apartment building in the southeast, giving you a casual nod as he passes you.";
 			else if player is in Entrance to the Red Light District:
+				project the Figure of Darius_face_icon;
 				say "     Darius pushes himself off the wall he was leaning against and walks off to the east in an unhurried tempo. Watching the muscled canine go, you can't help but feel like he is daring any stupid creature with ideas to attack him.";
 		move Darius to Darius's Crib;
 
@@ -171,6 +201,7 @@ instead of conversing the Darius:
 	say "[DariusTalkMenu]";
 
 to say DariusTalkMenu:
+	project the Figure of Darius_face_icon;
 	LineBreak;
 	say "     What do you want to talk about with Darius?";
 	now sextablerun is 0;
@@ -214,13 +245,9 @@ to say DariusTalkMenu:
 				wait for any key;
 				say "[DariusTalkMenu]";
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if player consents:
-				now sextablerun is 1;
-				say "     You step back from the muscular dalmatian, shaking your head slightly as he gives a questioning look.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You step back from the muscular dalmatian, shaking your head slightly as he gives a questioning look.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
 	clear the screen and hyperlink list;
@@ -241,8 +268,9 @@ instead of fucking the Darius:
 	say "[SexWithDarius]";
 
 to say SexWithDarius:
+	project the Figure of Darius_face_icon;
 	if (lastfuck of Darius - turns < 6): [he got fucked in the last 18 hours = 6 turns]
-		say "     'Yo slut, don't get greedy. I'm saving some of this spunk for Hannah, by breeding bitch,' the dalmatian barks out amusedly. Then he turns away from you, not really interested in sex right now.";
+		say "     'Yo slut, don't get greedy. I'm saving some of this spunk for Hannah, my breeding bitch,' the dalmatian barks out amusedly. Then he turns away from you, not really interested in sex right now.";
 	else if Darius is not in Darius's Crib:
 		say "[DariusStreetBJ]";
 	else: [ready for sex]
@@ -293,13 +321,9 @@ to say DariusSexMenu:
 					say "[DariusSex3]";
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if player consents:
-				now sextablerun is 1;
-				say "     You step back from the muscular dalmatian, shaking your head slightly as he gives a questioning look.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You step back from the muscular dalmatian, shaking your head slightly as he gives a questioning look.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
 	clear the screen and hyperlink list;
@@ -333,7 +357,7 @@ to say DariusStreetBJ:
 				say "Darius letting out a bark and a chuckle before he goes back to dick-slapping your face again. 'Just a street [one of]dog[or]cat[at random]. A regular one, so no need to get your panties in a twist,' the dalmatian explains. You stay in your submissive position for a while, giving Darius all the time he wants to savor you being covered by his cum, until the drug dealer eventually puts his schlong away and leaves you to you clean yourself up.";
 	else: [male + neuter]
 		say "     As you walk up to Darius and offer sex, the dalmatian chuckles heartily and grins at you. 'Wanna do it right out here in the street, eh? Typical cock-gobbling fag!' Bringing one hand on the front of his jeans, the dalmatian gropes his crotch suggestively and looks up and down along the street. Then goes one step further and unzips himself, revealing his furry sheath and the cockhead poking out of it a little bit. 'Better be ready to worship me properly, you man-whore!' With that said, the big man clamps his large hand around the back of your head, pushing you down to his crotch. Given the sudden wrench, you can't help but stumble and fall to your knees as you face-plant against the anthro canine's sheath and balls. He doesn't let go with his hand either, just rubbing your cheek up and down against his junk in a demonstration of dominance that gets the drug dealer hard and erect quite quickly.";
-		say "     'Open up slut!' the anthro canine barks out a command, pulling your head away from his crotch just long enough for opening your mouth. Then he rams his schlong between your lips, forcing it in - ready or not. Darius is leaking pre like a faucet, covering your tongue in his manly, somewhat nutty taste and making it clear that the big dog is really into face-fucking. He starts to push you deeper onto his long schlong with barely any time to get used to the thick canine shaft. Chuckling at your gurgles and choking noises, the dalmatian's length goes down your throat until finally, your nose is buried in the fur of his crotch and it feels like he's halfway to your stomach. Darius holds you pressed against his crotch for a long moment, then allows you to pull back and take a desparate breath, followed by another go.";
+		say "     'Open up slut!' the anthro canine barks out a command, pulling your head away from his crotch just long enough for opening your mouth. Then he rams his schlong between your lips, forcing it in - ready or not. Darius is leaking pre like a faucet, covering your tongue in his manly, somewhat nutty taste and making it clear that the big dog is really into face-fucking. He starts to push you deeper onto his long schlong with barely any time to get used to the thick canine shaft. Chuckling at your gurgles and choking noises, the dalmatian's length goes down your throat until finally, your nose is buried in the fur of his crotch and it feels like he's halfway to your stomach. Darius holds you pressed against his crotch for a long moment, then allows you to pull back and take a desperate breath, followed by another go.";
 		WaitLineBreak;
 		say "     Sliding in and out, the spotted canine takes you hard and fast, only getting more intense as his libido builds up and the need to fuck pushes aside even the miniscule amount of restraint he showed before. 'Take my big dick!' Darius growls in a deep-throated tone as he face-fucks you ever harsher, the satisfaction of burying his bone in a warm and tight cave written on his face. You do your best to service the demanding male, pressing your tongue against his slick manhood and flexing the muscles in your throat every time he pushes in that far. Darius really loves to hold you tight with his dick all the way in, revelling in the sensation of your inner muscles twitching as your air begins to run out.";
 		say "     The tenor of Darius's voice soon gains an air of definite urgency, and his weighty balls smack against your face with full force as the dalmatian suddenly rams himself all the way in. As the pointy cock throbs against your tongue, you feel the weird sensation of him cumming right down your esophagus, creamy whiteness covering its inner walls. Yet you have little time to focus on that as you can feel the bulge of Darius's cock expand all of a sudden, his body trying to knot with the [']bitch['] that got him off. The problem is that he's not balls-deep in a pussy but rather your mouth, and you need to breathe! Both of the large man's hands encircle your head a second after you unsuccessfully try to pull off and Darius shoves your head away from his crotch forcefully.";

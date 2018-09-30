@@ -1,14 +1,19 @@
 Version 1 of CEPark by Stripes begins here.
-[Version 1 - Coded by Stripes to consolidate many of the excess background events]
+[ Version 1.0 - Coded by Stripes to consolidate many of the excess background events ]
 
 "Consolidates a collection of simple and background events into a pair of events to clear up the Park area."
 
+
 Book 1 - CEP1 (Kaleem)
+
+Table of GameEventIDs (continued)
+Object	Name
+Consolidated Events Park CEP1	"Consolidated Events Park CEP1"
 
 Consolidated Events Park CEP1 is a situation.
 The sarea of Consolidated Events Park CEP1 is "Park".
 
-cepark1list is a list of numbers that varies. cepark1list is usually {1, 2, 3, 4, 5}.
+cepark1list is a list of numbers that varies.[@Tag:NotSaved] cepark1list is usually {1, 2, 3, 4, 5}.
 
 Instead of resolving Consolidated Events Park CEP1:
 	if furry is banned or hermaphrodite is banned or girl is banned, remove 3 from cepark1list, if present;
@@ -24,14 +29,6 @@ Instead of resolving Consolidated Events Park CEP1:
 			say "[cepark4]";
 		else if entry 1 of cepark1list is 5:
 			say "[cepark5]";
-[		else if entry 1 of cepark1list is 6:
-			say "[cepark6]";
-		else if entry 1 of cepark1list is 7:
-			say "[cepark7]";
-		else if entry 1 of cepark1list is 8:
-			say "[cepark8]";
-		else if entry 1 of cepark1list is 9:
-			say "[cepark9]";]
 	if cepark1list is empty, now Consolidated Events Park CEP1 is resolved;
 
 
@@ -75,9 +72,11 @@ to say cepark5:
 	remove 5 from cepark1list;
 
 
-
-
 Book 1 - CEP2 (Sarokcat)
+
+Table of GameEventIDs (continued)
+Object	Name
+Consolidated Events Park CEP2	"Consolidated Events Park CEP2"
 
 Consolidated Events Park CEP2 is a situation.
 The sarea of Consolidated Events Park CEP2 is "Park".
@@ -99,16 +98,7 @@ Instead of resolving Consolidated Events Park CEP2:
 			say "[cepark14]";
 		else if entry 1 of cepark2list is 15:
 			say "[cepark15]";
-[		else if entry 1 of cepark2list is 16:
-			say "[cepark16]";
-		else if entry 1 of cepark2list is 17:
-			say "[cepark17]";
-		else if entry 1 of cepark2list is 18:
-			say "[cepark18]";
-		else if entry 1 of cepark2list is 19:
-			say "[cepark19]";]
 	if cepark2list is empty, now Consolidated Events Park CEP2 is resolved;
-
 
 
 Section 10 - Groundskeepers cabin (by Sarokcat)

@@ -82,12 +82,12 @@ to say beatthemino:
 
 Section 2 - Monster Insertion
 
-Table of random critters (continued)
-name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	nocturnal (truth state)	altcombat (text)
---	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
+Table of Random Critters (continued)
+name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	DayCycle	altcombat (text)	BannedStatus (truth state)
+--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
 
 When Play begins:
-	Choose a blank row from Table of random critters;
+	Choose a blank row from Table of Random Critters;
 	now name entry is "Minotaur";
 	now enemy title entry is "";
 	now enemy name entry is "";
@@ -135,8 +135,9 @@ When Play begins:
 	now magic entry is false;
 	now resbypass entry is false;
 	now non-infectious entry is false;
-	blank out the nocturnal entry; [ True=Nocturnal (night encounters only), False=Diurnal (day encounters only), blank for both. ]
-	now altcombat entry is "default"; [ Row used to designate any special combat features, "default" for standard combat. ]
+	now DayCycle entry is 0; [ 0 = Up at all times; 1 = Diurnal (day encounters only); 2 = Nocturnal (night encounters only);]
+	now altcombat entry is "default";
+	now BannedStatus entry is false;
 
 
 
@@ -164,7 +165,7 @@ when play ends:
 			else if player is herm:[HERM]
 				say "Being one of the few hermaphrodite Minotaurs that there are in existence the military scientist are quick to try and figure you out as they run tests over your dual masculine and feminine form. However, when nothing of any real use comes up you find yourself being released without incident, no one seemed really sure if you were still infectious and wasn't particularly caring either way as the military had much bigger fish to fry, and soon you find yourself wandering through the changed world with little purpose. Without much to draw your focus for very long you find yourself aimlessly going from city to city as wanderlust overcomes your senses. Working becomes a bore as you find yourself restless whenever having to sit for long periods of times. The few times that you are able to concentrate on something the raw need to breed makes you lose whatever job you do find as employers are not too interested in their other employees growing bull ears and tails. It finally gets so bad that you end up taking a walk one day and not stopping.";
 				WaitLineBreak;
-				say "Having learned how to scavenge and forage from your time in the city you find yourself able to survive for long periods of time without needing much of the more [']sophisticated['] pleasures in life, yet the need to breed still burns within you. It's only when you come across an eight foot tall ram herm that you find yourself getting fulfilled exactly the way you need to be both physically and emotionally. The other, whose name happens to be Joey, takes you into hir embrace during your long nights on the road and fills you up good and proper before being filled by you in turn. Coming to find an abandoned farmhouse while on your journey together the two of you quickly make this place your new home and settle down to make a life for yourselves. Many travelers, most being disenchanted with the new world because of their mutations as well as a few familiar faces from the city, end coming and staying on your farm and soon a small herd is born. Nights of passion mix with idle daydreaming as the years roll by, but that's good enough for you so long as Joey stays by your side.";
+				say "Having learned how to scavenge and forage from your time in the city, you find yourself able to survive for long periods of time without needing much of the more [']sophisticated['] pleasures in life, yet the need to breed still burns within you. It's only when you come across an eight foot tall ram herm that you find yourself getting fulfilled exactly the way you need to be both physically and emotionally. The other, whose name happens to be Joey, takes you into hir embrace during your long nights on the road and fills you up good and proper before being filled by you in turn. Coming to find an abandoned farmhouse while on your journey together the two of you quickly make this place your new home and settle down to make a life for yourselves. Many travelers, most being disenchanted with the new world because of their mutations as well as a few familiar faces from the city, end coming and staying on your farm and soon a small herd is born. Nights of passion mix with idle daydreaming as the years roll by, but that's good enough for you so long as Joey stays by your side.";
 			else:[FEMALE]
 				say "Having the military screen you for their invasive tests, and then being released subsequently afterwards as not being infectious, despite being an anomaly, you find yourself wandering around the new world without direction. Being a Minotaur with a cunt, something strange in and of itself, you don't know what to do as you feel the masculine urge to dominate and the feminine desire to breed and be bred combat inside of your head and body day in and day out. It's only when you find yourself stumbling over a large farm and scenting the musky odor of several strong bulls that you find some purpose in life once again. The farmer who lives there, a sweet Border Collie with a funny accent, readily agrees to let you stay on her farm, provided that you pull your share of the weight around here.[line break]";
 				WaitLineBreak;

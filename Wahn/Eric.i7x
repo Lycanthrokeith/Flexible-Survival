@@ -113,13 +113,11 @@ Version 5 of Eric by Wahn begins here.
 [   1: Eric and Ryo met                                              ]
 [   2: Eric listened to stories by Ryo                               ]
 
-Eric has a list of text called Traits.
-Eric has a number called Loyalty.
-Eric has a number called OrcPillMpreg. [able to be mpregged?]
-Eric has a text called CurrentBabyDaddy.
-Eric has a number called OffspringCount.
-Eric has a number called PregTimer. [turns counting up till birth]
-Eric has a number called PregCount. [number of previous pregnancies]
+EricOrcPillMpreg is a number that varies. [able to be mpregged?]
+EricCurrentBabyDaddy is a text that varies.
+EricOffspringCount is a number that varies.
+EricPregTimer is a number that varies. [turns counting up till birth]
+EricPregCount is a number that varies. [number of previous pregnancies]
 EricVirginityTaken is a number that varies.
 EricAnalCounter is a number that varies.
 CarlEricInteraction is a number that varies.
@@ -134,6 +132,10 @@ lastConfSvenEricInteraction is a number that varies.
 lastRaneEricInteraction is a number that varies.
 
 Section 1 - Meeting Event
+
+Table of GameEventIDs (continued)
+Object	Name
+Barricaded Lockerroom	"Barricaded Lockerroom"
 
 Barricaded Lockerroom is a situation. The level of Barricaded Lockerroom is 8.
 The sarea of Barricaded Lockerroom is "Campus".
@@ -152,18 +154,26 @@ Instead of resolving a Barricaded Lockerroom:
 			if bodyname of player is "Furling":
 				say "     After some quick talking, you almost had him convinced, but then he opens the door a bit more and peeks outside. After a short gasp from behind the door, it gets slammed shut again, with noises of something heavy pushed against it for good measure. 'Ah, you're one of them - go away, creature!'";
 				say "     Hm, sounds like he really doesn't like your current looks. Maybe you should try this again in a different shape...";
+				now Resolution of Barricaded Lockerroom is 2; [frightened Eric as a furling]
 			else:
 				say "     After some quick talking, you manage to convince the person inside the lockerroom that you're another survivor and not just a feral infectee. You hear some scraping noises from the other side of the door, then it opens and a young man hurriedly waves you inside. He pushes one of the heavy 3-locker units in front of the door to make sure you're not followed.";
 				say "     'Hi, I'm Eric,' the man says, shaking your hand. 'Nice to see not everyone has gone totally bonkers in this city. I couldn't believe the stuff going on out there at first... saw my roommate transform into a big furry thing right in front of my eyes. There wasn't anything human left in him - he even bit me!' He shows you his bandaged arm.";
 				move player to Sports Arena Lockerroom;
 				change southeast exit of Athletic Street to Sports Arena Lockerroom;
 				change northwest exit of Sports Arena Lockerroom to Athletic Street;
-				Now Barricaded Lockerroom is resolved;
+				now Barricaded Lockerroom is resolved;
+				now Resolution of Barricaded Lockerroom is 1; [befriended Eric]
 		else:
 			say "     As you're trying to explain, the person behind the door shouts 'I don't believe you. You're just one of those strange creatures who wants to trick me!' Then the door is pushed closed from the other side.";
+			now Resolution of Barricaded Lockerroom is 3; [failed to convince Eric]
 	else:
 		say "     Deciding not to bother with the crazed fellow further, you head off before anything else notices you poking around.";
+		now Resolution of Barricaded Lockerroom is 99; [disinterest]
 		now Barricaded Lockerroom is resolved;
+
+Table of GameRoomIDs (continued)
+Object	Name
+Sports Arena Lockerroom	"Sports Arena Lockerroom"
 
 Sports Arena Lockerroom is a room. It is fasttravel. It is private.
 The description of Sports Arena Lockerroom is "[lroomdesc]".
@@ -198,9 +208,11 @@ instead of navigating Sports Arena Lockerroom while (libido of Eric is 0 and bod
 
 Section 2 - Eric the Cuntboy Athlete
 
-[Smells, Description, Conversation and NPC Interaction]
+Table of GameCharacterIDs (continued)
+object	name
+Eric	"Eric"
 
-Eric is a man. Eric is in Sports Arena Lockerroom. The HP of Eric is normally 0.
+Eric is a man. Eric is in Sports Arena Lockerroom. The HP of Eric is usually 0.
 The description of Eric is "[EricDesc]".
 The conversation of Eric is { "Mew!" }.
 EricFleeingCountdown is a number that varies.
@@ -210,7 +222,7 @@ instead of sniffing Eric:
 		say "Eric has a pretty nice, masculine smell. Although there's a slight undertone of something else.";
 	else if (thirst of Eric is 1): [pussy revealed]
 		say "Eric has a pretty nice, masculine smell. Underlying that, there's a slight hint of the state of his female genitalia - fertile and ready.";
-	else if (thirst of Eric is 11 and PregTimer of Eric > 12): [heavily pregnant]
+	else if (thirst of Eric is 11 and EricPregTimer > 12): [heavily pregnant]
 		say "Eric has a pretty nice, masculine smell. Underlying that, there's a slight hint of the state of his female genitalia - it's notably different than when you first met him. Of course, his round belly also gives away the fact that he is with child.";
 	else if (thirst of Eric is 11): [pregnant]
 		say "Eric has a pretty nice, masculine smell. Underlying that, there's a slight hint of the state of his female genitalia - it's notably different than when you first met him. Could it be he's expecting?";
@@ -218,7 +230,7 @@ instead of sniffing Eric:
 		say "Eric has a pretty nice, masculine smell. Underlying that, there's a hint of animal-like musk, a bit like a horse.";
 	else if (thirst of Eric is 22): [now with a horse-cock + heat]
 		say "Eric has a pretty nice, masculine smell. Underlying that, there's a hint of animal-like musk, a bit like a horse. There is a stronger scent though that you are able to pick up on, it's intoxicating, with an almost wet heat behind it.";
-	else if (thirst of Eric is 23 and PregTimer of Eric > 12): [heavily pregnant]
+	else if (thirst of Eric is 23 and EricPregTimer > 12): [heavily pregnant]
 		say "Eric has a pretty nice, masculine smell. Underlying that, there's a hint of animal-like musk, a bit like a horse. It's different than the usual scent he carries. It's obvious just by looking at the redheads large belly that he is already with child.";
 	else if (thirst of Eric is 23): [now with a horse-cock + pregnant]
 		say "Eric has a pretty nice, masculine smell. Underlying that, there's a hint of animal-like musk, a bit like a horse. It's different than the usual scent he carries though, could he be pregnant already?";
@@ -226,7 +238,7 @@ instead of sniffing Eric:
 		say "Eric has a pretty nice, masculine smell. Underlying that, there's a hint of a stronger, satyr-like musk.";
 	else if (thirst of Eric is 32): [now with a satyr-cock + heat]
 		say "Eric has a pretty nice, masculine smell. Underlying that, there's a hint of a stronger, satyr-like musk. There is a stronger scent though that you are able to pick up on, it's intoxicating, with an almost wet heat behind it.";
-	else if (thirst of Eric is 33 and PregTimer of Eric > 12): [heavily pregnant]
+	else if (thirst of Eric is 33 and EricPregTimer > 12): [heavily pregnant]
 		say "Eric has a pretty nice, masculine smell. Underlying that, there's a hint of a stronger, satyr-like musk. It's different than the usual scent he carries. It's obvious just by looking at the redheads large belly that he is already with child.";
 	else if (thirst of Eric is 33): [now with a satyr-cock + pregnant]
 		say "Eric has a pretty nice, masculine smell. Underlying that, there's a hint of a stronger, satyr-like musk. It's different than the usual scent he carries though, could he be pregnant already?";
@@ -234,7 +246,7 @@ instead of sniffing Eric:
 		say "Eric has a pretty nice, masculine smell. Underlying that, there's a hint of a powerful, orc-like musk.";
 	else if (thirst of Eric is 42): [now with a orc-cock + heat]
 		say "Eric has a pretty nice, masculine smell. Underlying that, there's a hint of a powerful, orc-like musk. There is a stronger scent though that you are able to pick up on, it's intoxicating, with an almost wet heat behind it.";
-	else if (thirst of Eric is 43 and PregTimer of Eric > 12): [heavily pregnant]
+	else if (thirst of Eric is 43 and EricPregTimer > 12): [heavily pregnant]
 		say "Eric has a pretty nice, masculine smell. Underlying that, there's a hint of a powerful, orc-like musk. It's different than the usual scent he carries. It's obvious just by looking at the redheads large belly that he is already with child.";
 	else if (thirst of Eric is 43): [now with a orc-cock + pregnant]
 		say "Eric has a pretty nice, masculine smell. Underlying that, there's a hint of a powerful, orc-like musk. It's different than the usual scent he carries though, could he be pregnant already?";
@@ -320,11 +332,11 @@ instead of conversing the Eric:
 					WaitLineBreak;
 					say "     You crawl out of the room and make your escape while she's still busy with Eric, having no choice but to concede him to her. With him having accepted being her girlfriend and likely already pregnant from her, there won't be any reason to come back here.";
 					now HP of Eric is 100;
-					remove Eric from play;
+					now Eric is nowhere;
 				else if fightoutcome >= 30: [fled]
 					say "     Taking your legs under your arms, you just run, though as you dash along the corridor you notice Stacy isn't following you. Judging from the loud moans audible from her room, she's too busy fucking Eric... you're pretty sure you lost him for good and won't be seeing the handsome athlete again.";
 					now HP of Eric is 100;
-					remove Eric from play;
+					now Eric is nowhere;
 				else if fightoutcome >= 10 and fightoutcome <= 19: [won]
 					say "     A moment later, the transformed woman collapses on the ground, leaving you the only person standing in her by now totally trashed room. You look over at Eric, who's been reduced to lying on the bed moaning, completely lost in the feelings his changed body is giving him. Seeing him there, legs spread and one hand rubbing the lips of his pussy, two possible choices come to mind. You could just take his virginity now while you can, or do the right thing and bring him to safety in the bunker under the library. (Y = fuck him, N = save him) ";
 					if player consents: [take advantage and take him to the bunker]
@@ -367,7 +379,7 @@ instead of conversing the Eric:
 				WaitLineBreak;
 				say "     You crawl out of the room and make your escape while she's still busy with Eric, having no choice but to concede him to her. With him having accepted being her girlfriend and likely already pregnant from her, there won't be any reason to come back here.";
 				now HP of Eric is 100;
-				remove Eric from play;
+				now Eric is nowhere;
 		else: [try it later]
 			say "     Eric looks visibly deflated as you decline. 'Oh... if you change your mind, I'll be here. But we really should hurry - who knows what's happening to Stacy...'";
 	else if (HP of Eric is 1): [virgin in the bunker]
@@ -442,7 +454,7 @@ to say EricTalkMenu:
 	now sortorder entry is 20;
 	now description entry is "Give Eric a gift";
 	[]
-	if (player is male and "Cocked" is listed in Traits of Eric and orc pill case is owned and OrcPillMpreg of Eric < 2):
+	if (player is male and "Cocked" is listed in Traits of Eric and orc pill case is owned and EricOrcPillMpreg < 2):
 		choose a blank row in table of fucking options;
 		now title entry is "Talk to Eric about the orc pills";
 		now sortorder entry is 21;
@@ -483,13 +495,9 @@ to say EricTalkMenu:
 					say "[EricTalk21]";
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if player consents:
-				now sextablerun is 1;
-				say "     You step back from the young man, shaking your head slightly as he gives a questioning look.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You step back from the young man, shaking your head slightly as he gives a questioning look.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options].";
 	clear the screen and hyperlink list;
@@ -588,14 +596,10 @@ to EricDickOfferingMenu:
 					say "[OrcBrew_Eric]";
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if the player consents:
-				now sextablerun is 1;
-				say "     Undecided about trying out some infected substance, you let him know that you're still looking. He seems a little disappointed, but nods and tells you to keep looking. If you're not certain about giving him one of them, you muse on instead just helping him to accept his new form.";
-				wait for any key;
-				say "[EricTalkMenu]"; [looping back into the menu]
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     Undecided about trying out some infected substance, you let him know that you're still looking. He seems a little disappointed, but nods and tells you to keep looking. If you're not certain about giving him one of them, you muse on instead just helping him to accept his new form.";
+			wait for any key;
+			say "[EricTalkMenu]"; [looping back into the menu]
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options].";
 	clear the screen and hyperlink list;
@@ -881,7 +885,7 @@ instead of trading the pomegranate seed when the current action involves the Eri
 		now Dexterity of Erica is 5;
 		now HP of Eric is 200;
 		move Erica to Bunker;
-		remove Eric from play;
+		now Eric is nowhere;
 		if CarlEricInteraction > 0: [Carl knows Eric]
 			now CarlEricaInteraction is 1; [Carl knew Erica as Eric]
 		if David is in Bunker:
@@ -895,13 +899,13 @@ Instead of fucking the Eric:
 to say BasicEricSex:
 	if HP of Eric is 21 or HP of Eric is 22:
 		setmonster "Centaur Stallion";
-		choose row monster from the table of random critters;
+		choose row monster from the Table of Random Critters;
 	else if HP of Eric is 31 or HP of Eric is 32:
 		setmonster "Satyr";
-		choose row monster from the table of random critters;
+		choose row monster from the Table of Random Critters;
 	else if HP of Eric is 41 or HP of Eric is 42:
 		setmonster "Orc Warrior";
-		choose row monster from the table of random critters;
+		choose row monster from the Table of Random Critters;
 	if (HP of Eric is 0): [virgin - in the lockerroom]
 		if player is male:
 			say "     As you approach Eric and ask him if he wants some fun, his gaze drops down to your crotch and he hesitates. Swallowing hard and turning rather red in the face, he then shakes his head, saying 'I - I can't - I mean - I'm not gay. But thanks for the offer.'";
@@ -916,7 +920,7 @@ to say BasicEricSex:
 			say "     Eric quickly takes off his shoes and socks, then pulls off his shirt and throws it aside, revealing a nicely defined chest. You follow suit, rapidly sliding off your own clothing, then step close to your waiting partner. Running your hands over his chest, you make him gasp for a second as you brush over his nipples. Seems like your handsome cuntboy has gotten quite sensitive there. With a smile on your face you lean down and run your tongue over his chest, then circle each of his nipples with its tip and finally suck on them. Making Eric pant in lust is a lot of fun, and with your nose pressed against his warm skin you also take a deep breath of his masculine scent with its underlying female note.";
 			WaitLineBreak;
 			say "     Feeling Eric's readiness to move on, you soon push him back softly to make him sit, then lie on your camp bed. Then you move your hands to the band of his shorts, pulling them down over his long runner's legs as he raises his ass a bit to let the fabric slide over it. Under them, a flimsy white tanga comes into view, making Eric show a moment of embarrassment again as he says 'My old briefs were too... roomy... in the front.' You lean in for a quick kiss, telling him 'You look really hot in them.' and then slide the thin underwear off him too.";
-			say "     Now fully naked, Eric looks up from the bed to you, his yes inevitably drawn to your by now rock-hard cock. With an inviting smile he spreads his legs for you, the lips of his slightly swollen pussy glistening with his female juices. Eagerly, you climb on the bed with him, stroking his smooth legs as you kneel between them. Eric gasps as your dick touches his pussy the first time, followed by rapid panting as you rub up and down against its folds. Then you put your cock-head against his opening and slowly push forward, moaning in lust yourself as his nether lips spread for you, enveloping your shaft in a warm tight embrace.";
+			say "     Now fully naked, Eric looks up from the bed to you, his eyes inevitably drawn to your by now rock-hard cock. With an inviting smile he spreads his legs for you, the lips of his slightly swollen pussy glistening with his female juices. Eagerly, you climb on the bed with him, stroking his smooth legs as you kneel between them. Eric gasps as your dick touches his pussy the first time, followed by rapid panting as you rub up and down against its folds. Then you put your cock-head against his opening and slowly push forward, moaning in lust yourself as his nether lips spread for you, enveloping your shaft in a warm tight embrace.";
 			if HP of Eric is 10: [virgin]
 				say "     Sliding deeper into him, your progress soon meets resistance as your cock pushes against a soft flexible barrier inside him - Eric's hymen. You lean down and put your arms around him then find his lips with yours and give him a deep kiss. While distracting him with some playful tongue-wrestling, you push forward with your hips, increasing the pressure until you break through the thin flesh and make a real woman - or rather cuntboy - out of him.";
 			WaitLineBreak;
@@ -1101,13 +1105,13 @@ to say BasicEricSex:
 to say EricSexMenu:
 	if HP of Eric is 21 or HP of Eric is 22:
 		setmonster "Centaur Stallion";
-		choose row monster from the table of random critters;
+		choose row monster from the Table of Random Critters;
 	else if HP of Eric is 31 or HP of Eric is 32:
 		setmonster "Satyr";
-		choose row monster from the table of random critters;
+		choose row monster from the Table of Random Critters;
 	else if HP of Eric is 41 or HP of Eric is 42:
 		setmonster "Orc Warrior";
-		choose row monster from the table of random critters;
+		choose row monster from the Table of Random Critters;
 	if HP of Eric < 20:
 		project the Figure of Eric_naked_icon;
 	now sextablerun is 0;
@@ -1243,13 +1247,9 @@ to say EricSexMenu:
 				now lastfuck of Eric is turns;
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if player consents:
-				now sextablerun is 1;
-				say "     You step back from the young man, shaking your head slightly as he gives a questioning look.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You step back from the young man, shaking your head slightly as he gives a questioning look.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options].";
 	clear the screen and hyperlink list;
@@ -1661,7 +1661,7 @@ to say EricSex12_22_32_Female: [male Eric, female player]
 	say "     Though you could almost just stand back and watch them go at it, your own aroused body demands some attention. What do you want to do now? Climb on David's shaft and ride it with your pussy ([link]Y[as]y[end link]), or rather get into some nice 69 action with David ([link]N[as]n[end link])? ";
 	if player consents: [Eric fucks David, David fucks player pussy]
 		setmonster "Human";
-		choose row monster from the table of random critters;
+		choose row monster from the Table of Random Critters;
 		say "     Feeling a deep need to be filled with a hard cock, you get on the bed and straddle David's hips, sinking your pussy over his hard shaft. It feels great to have him inside you, his penis rubbing against your sensitive inner walls. Breathing deeply, you start sliding up and down, slow at first, then getting faster and faster as you fuck yourself on his erection.";
 		WaitLineBreak;
 		say "     Being fucked in the ass and taking your pussy at the same time, it doesn't take too much longer until David's arousal peaks. Moaning loudly, he grips your hips tightly, pulling them down against his hips just as his cock erupts with a huge load, sending burst after burst of cum deep into your body. [fimpregchance] With David's body shaking with each spurt of cum, his anal muscles flexing around Eric's [if HP of Eric is 22]horsecock[else if HP of Eric is 32]satyrcock[end if], he does take the college athlete right with him over the edge. Hearing a gasped 'I'm coming.' from behind, you feel Eric wrap his arms around you to hold on to something as he grinds his hips against David's ass and fills the young soldier with his seed.";
@@ -2209,7 +2209,7 @@ instead of going down from the Grey Abbey Library while (Eric is in Bunker and (
 	say "     As you come down into the bunker, you see Eric standing hunched over at his bunk, busy stuffing clothes and gear into his sports bag. Curious about what's going on, you move closer - only to have the young man visibly flinch and whirl around as he becomes aware of a presence behind him. 'Oh. Hey - it's just you,' the college athlete says, some of the tension leaving his body - but he still barely meets your eyes before looking down again and pressing his lips together. Something is definitively not alright here - there's a certain redness to his eyes and you think you can make out a tear in the corner of one. Silence hangs between you for several seconds, then Eric swallows noticeably and clears his throat. He looks just past you, his gaze resting on another bed as he avoids facing you directly, then says, 'I - I was gonna leave a note. But if you're here, it'll be... better like this. I'm... leaving. I can't thank you enough for everything that you've done for me, but your friend... he... Rane just...'";
 	say "     Eric's breathing becomes quick and shallow as he clearly gets more and more agitated, then bursts out with, 'He comes on to me all the time. And then we fuck! I - I can't stop him. Couldn't. Didn't even try to!' He claws at the air in an gesture of pure frustration, then makes a fist and hits the side of his head lightly. 'With everything that happened to me, I don't even really know how to feel about all this! And, and... then I go along with it all. Is that me? Is it those fucking machines messing with my head? I CAN'T TELL ANYMORE. But it must be! I have to get out of here. I just have to get away from HIM. Anything is better than losing myself and ending as just another fuck-hole for a demon!' Shouting the last few words, Eric snatches up his packed bag and runs past you, not giving you even a second to reply. He's inside the stairwell leading out of the bunker before you can get over your shocked surprise at the outburst.";
 	now Dexterity of Eric is 6; [Eric's gone!]
-	remove Eric from play;
+	now Eric is nowhere;
 
 instead of going down from the Grey Abbey Library while (Eric is in Bunker and (HP of Eric is 12 or HP of Eric is 13 or HP of Eric is 14 or HP of Eric is 15) and Dexterity of Eric is 5 and EricFleeingCountdown - turns > 12):
 	move player to Bunker;
@@ -2218,7 +2218,7 @@ instead of going down from the Grey Abbey Library while (Eric is in Bunker and (
 	project the Figure of Eric_down_icon;
 	say "     As you come down into the bunker, you notice that something is... off. Wondering what it might be, you let your gaze wander through the room, along the walls with their simple lights, the entrances of the restroom and shower, row after row of simple beds. There! Your eyes get drawn to one of them - neatly made and standing empty, not showing any trace that it is in use. Was in use, by Eric, whose sports bag and supplies are also conspicuously gone. A folded piece of paper lies on the drab green blanket, beckoning you to pick it up. As you do so, you see that it is a short goodbye-letter, addressed to you. In it, Eric explains that Rane started fucking him when he wanted, without really asking - something that brought discomfort to the student, still unsure about his trans body and feelings about it all. Worse, Eric writes that he couldn't even start to resist Rane, couldn't bring himself to do it - something he suspects is caused the nanites messing with his head. Since he didn't want to just be the 'available fuck-hole' for a demon and 'lose himself to being a mindless slut', the young man ends with the words that he had to go, leaving the bunker to be 'safe'.";
 	now Dexterity of Eric is 6; [Eric's gone!]
-	remove Eric from play;
+	now Eric is nowhere;
 
 instead of going down from the Grey Abbey Library while (Eric is in Bunker and (HP of Eric is 12 or HP of Eric is 13 or HP of Eric is 14 or HP of Eric is 15) and Dexterity of Eric is 7 and EricFleeingCountdown - turns > 12):
 	move player to Bunker;
@@ -2687,13 +2687,9 @@ to say EricCarlThreesome Sex Menu:
 					say "[EricCarlThreesome8]";
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if player consents:
-				now sextablerun is 1;
-				say "     You step back from the two of them, saying that you just remembered something important you absolutely have to do. They give you questioning looks, then shrug and look at each other. As you hurry off, the two of them start making out, apparently determined to have fun with or without you.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You step back from the two of them, saying that you just remembered something important you absolutely have to do. They give you questioning looks, then shrug and look at each other. As you hurry off, the two of them start making out, apparently determined to have fun with or without you.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options].";
 	clear the screen and hyperlink list;
@@ -3591,7 +3587,7 @@ when play ends:
 		else:
 			say "     When the soldiers come through the city to rescue survivors, you're all taken to a containment facility for medical evaluation and quarantine. Eric receives special notice as he's proven immune to shifts in species, but susceptible to gender transformation. They keep him locked up for testing and prodding for several weeks in an isolated environment, only allowing you to speak over the phone.";
 			say "     When he's finally released, he throws his arms around you and kisses you deeply as he comes out of the exit where you're waiting for him. After some hot and heavy sex in celebration of your reunion, he suggests you go out for a few drinks to unwind after everything you've been through. What you thought might be a quick drink turns into one after another as you start going from bar to bar.";
-			say "     Going from club to club, Eric drinks and parties very heartily. He sneaks off with you for sex at least once at every stop and usually manages to snag a quick fuck from some other lover while he's there as well. Enjoying yourself as well, you're often there beside him with some lover of the moment. Eric's good looks and growing confidence make him very popular, and your sure his strong, virile musk doesn't hurt his chances either. Eric becomes quite the party animal, very popular and always fun to go hang out with, though he's often a little sauced as well. But even then, he's still always able to attract a few lovers for you both the share in some secluded spot whenever you go out on the town together.";
+			say "     Going from club to club, Eric drinks and parties very heartily. He sneaks off with you for sex at least once at every stop and usually manages to snag a quick fuck from some other lover while he's there as well. Enjoying yourself as well, you're often there beside him with some lover of the moment. Eric's good looks and growing confidence make him very popular, and you're sure that his strong, virile musk doesn't hurt his chances either. Eric becomes quite the party animal, very popular and always fun to go hang out with, though he's often a little sauced as well. But even then, he's still always able to attract a few lovers for you both the share in some secluded spot whenever you go out on the town together.";
 	else if ((Eric is in the bunker) and (HP of Eric is 99)): [sex slave cuntboy]
 		if (humanity of player < 10):
 			if player is male:

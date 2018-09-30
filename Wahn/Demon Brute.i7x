@@ -81,7 +81,7 @@ to say DemonBruteVictoryFuck:
 		if DBCaptureQuestVar is 4:
 			say "     The brute stands up, holding you against his broad chest with one massive hand, your pussy still speared on his thick member. As you feel the demon's cum start running out of you, the creature licks you with his long forked tongue. 'I'll just keep fucking you till you're only a whimpering little bitch - and then throw you to the others so they can fill your sloppy holes too! But let's get to more comfortable surroundings first...' With that, your surroundings shimmer and disappear and you find yourself somewhere else. From the fires, screams and horrible scenes you can see all around you, it must be the demon's home in hell - and now yours too. Forever.";
 			now tailname of player is "DBrute Slave";
-			Now facename of player is "DBrute Slave";
+			now facename of player is "DBrute Slave";
 			now skinname of player is "DBrute Slave";
 			now bodyname of player is "DBrute Slave";
 			now cockname of player is "DBrute Slave";
@@ -153,7 +153,7 @@ to say DemonBruteVictoryFuck:
 		if DBCaptureQuestVar is 4:
 			say "     The brute stands up, holding you against his broad chest with one massive hand and your asshole still speared on his thick member. As you feel the demon's cum start running out of you, the creature licks you with his long forked tongue. 'I'll just keep fucking you till you're only a whimpering little bitch - and then throw you to the others so they can fill your sloppy holes too! But let's get to more comfortable surroundings first...' With that, your surroundings shimmer and disappear and you find yourself somewhere else. From the fires, screams and horrible scenes you can see all around you, it must be the demon's home in hell - and now yours too. Forever.";
 			now tailname of player is "DBrute Slave";
-			Now facename of player is "DBrute Slave";
+			now facename of player is "DBrute Slave";
 			now skinname of player is "DBrute Slave";
 			now bodyname of player is "DBrute Slave";
 			now cockname of player is "DBrute Slave";
@@ -507,6 +507,7 @@ instead of trading the demon tooth when the current action involves the Nermine:
 						say "     With skilled fingers, Nermine clamps the tooth into a small metal socket with a loop on the back and pulls a leather string through that. She hands you your new demontooth amulet and leans close to whisper some magical words you can use to summon the captured demon from within.";
 						now DBCaptureQuestVar is 5;   [captured and controlled]
 						now demon brute is tamed;
+						add "Tamed" to Traits of demon brute;
 						LineBreak;
 						say "     (That demon brute is now controlled! You can make him your active companion by typing [bold type][link]pet demon brute[end link][roman type] and initiate sex with him while active by typing [bold type][link]fuck demon brute[end link][roman type]. You can see all the pets and followers you have with the [bold type][link]pet[end link][roman type] command. Pets will lower the XP you gain from battle, but can gain levels themselves to be more useful in a scrap. Want to leave a companion home for a while and go out alone? Use [bold type][link]pet dismiss[end link][roman type], or just [bold type][link]dismiss[end link][roman type])";
 				else:
@@ -536,7 +537,7 @@ to say ChurchDemonCleanse:
 			say "     Then it's time to start. Grasping the demontooth amulet in one hand, you call out the magic words to summon your captive, who materializes in a cloud of purple smoke. Growling at you, as usual, he nevertheless seems a bit distracted, the surroundings seemingly making him itchy. Ordering the large demon to lie down and keep still, you take the first bottle of holy water in hand, pouring some on the washcloth and dab it against his chest. In the instant of contact with the demon's hot skin, the water boils into steam in a violent reaction. The demon chuckles darkly as you pull back your hand. Thankfully there wasn't too much on the washcloth so you didn't burn yourself.";
 			say "     Looks like this requires a bit of a different approach. Taking the plastic water bottle in hand, you gain a few steps distance, then use it to splash the demon. The resulting explosion of steam is about what you'd have expected when aiming a water cannon at molten lava. The bottle is empty pretty soon, and you take another, and another. With all the steam boiling off from the demon, it's getting pretty warm in here and sometimes you can barely see him through the clouds, but it's endurable. You just hope this works and you're not just wasting your time - though you think you noticed some difference, a lessening of the amount of steam, after the sixth bottle. Armed with your next to last one, you step a bit closer, splashing parts of the demon you missed before. Then it's the last bottle, which you upend all over his head and chest, getting only a last little sizzling sound before that too stops.";
 			WaitLineBreak;
-			say "     Looking down on the thoroughly drenched, unconscious demon, you do notice some differences in him. He's a bit lighter purple in the shade of his skin and you could swear that his horns and claws a somewhat smaller and less sharp. Then he sits up, opening his eyes and focuses on you with their now azure blue slitted irises. A curious look comes to his face as he starts to rub his skin, then runs a claw over his arm, leaving a bleeding but shallow scratch. 'That hurts. But why don't I hurt? Inside. I always hurt inside... you made it stop.' Hesitantly, as if he has trouble remembering the expression, he smiles - which still is rather frightening, in light of his many many sharp teeth.";
+			say "     Looking down on the thoroughly drenched, unconscious demon, you do notice some differences in him. He's a bit lighter purple in the shade of his skin and you could swear that his horns and claws a somewhat smaller and less sharp. Then he sits up, opening his eyes and focuses on you with their now azure blue slitted irises. A curious look comes to his face as he starts to rub his skin, then runs a claw over his arm, leaving a bleeding but shallow scratch. 'That hurts. But why don't I hurt? Inside. I always hurt inside... you made it stop.' Hesitantly, as if he has trouble remembering the expression, he smiles - which still is rather frightening, in light of his many, many sharp teeth.";
 			say "     Hey, looks like it worked. Asking the demon what he'd like to do to you if he were free, you get a puzzled expression and a shrug as an answer. Definitively a step forward from threats of dismemberment. With this hopefully leading to a bit nicer a relationship, having a name to talk to him seems appropriate too, so you ask him about it. As it turns out, your captive demon has the unpronounceable name Ba'haz-eu'nizaal't'chha. You decide to just call him [bold type]'Brutus'[roman type], a name he accepts without complaint.";
 			say "     For now, you banish the demon brute back into your amulet with a magical command. Turning towards the door, you see Aaron standing there, smiling as he gives you a thumbs up. Thanking the fox, you follow him as he leads you back out to the main room of the chapel.";
 			now DBCaptureQuestVar is 6;
@@ -548,6 +549,10 @@ to say ChurchDemonCleanse:
 		say "     Since you don't have enough water, you can do nothing but to thank the priestess and maybe come back later once you've collected some more.";
 
 Section 2 - Amulet, Pet & Sex
+
+Table of GameCharacterIDs (continued)
+object	name
+demon brute	"demon brute"
 
 demon brute is a pet. demon brute is a part of the player.
 understand "Brutus" as demon brute.
@@ -715,19 +720,12 @@ to say DBRelationshipTalkMenu:
 					say "[DBTalk2]";
 				WaitLineBreak;
 		else if calcnumber is 0:
-			say "Break off?";
-			LineBreak;
-			say "     ([link]Y[as]y[end link]) - Yes.";
-			say "     ([link]N[as]n[end link]) - No.";
-			if player consents:
-				now sextablerun is 1;
-				if companion of player is demon brute:
-					say "     You step back from the purple demon, shaking your head slightly as he gives a questioning look.";
-				else:
-					say "     You murmur the magic words Nermine told you. With a shrug, the demon brute turns into purple mist and is absorbed by the amulet.";
-				WaitLineBreak;
+			now sextablerun is 1;
+			if companion of player is demon brute:
+				say "     You step back from the purple demon, shaking your head slightly as he gives a questioning look.";
 			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+				say "     You murmur the magic words Nermine told you. With a shrug, the demon brute turns into purple mist and is absorbed by the amulet.";
+			WaitLineBreak;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options].";
 	clear the screen and hyperlink list;
@@ -883,7 +881,7 @@ to say DBTalk2:
 				WaitLineBreak;
 				say "     Still breathing hard from his orgasm and clutching David to his chest with one strong arm Brutus pats over the bed with his other hand, finding your amulet a moment later and raising it into the air by the leather cord it hangs from. A satisfied grin spreads over the demon's tooth-filled mouth, followed by him intoning a long and insanely tongue-twisting sequence of strange words. As he does so, the magical item starts to hum and glow visibly, the orb of brightness around it at first wavering a little bit, then expanding more and more. Finishing the intonation, the purple demon then continues in English, most likely to David's or your benefit. He says, 'I claim this man as mine, as he bears the mark of my seed deep inside him and has readily surrendered his will to mine,' followed by a kiss on the young man's lips. 'We'll be together forever now, my love, my slut, my David!'";
 				say "     With his words still hanging in the air, the sphere of purple light expands to envelop them both and with a flash of brightness, both of them vanish in a cloud of smoke, with swirls through the air in a small vortex, being absorbed by the amulet as it drops onto the bed. After a moment of silence that fills the bunker after the two male's disappearance, you shake yourself out of your paralysis and walk over to the bed, taking the amulet into your possession again. It is pretty hot at first, having gained a glowing band of metal at the base of the tooth now, but that rapidly cools and soon is safe to touch. With interest, you realize that the upper end of Brutus's knocked-out tooth is now ringed by what must be the re-shaped remnant of David's dog tags, as you can see the stamped-in letters 'DAVID JACKSON' on the thin strip of metal.";
-				remove David from play;
+				now David is nowhere;
 				now HP of David is 100;
 				now libido of David is 86;
 			else:
@@ -1436,13 +1434,13 @@ to say DemonBruteSex9: [player ass fucked]
 
 Section 3 - Monster Insertion
 
-Table of random critters (continued)
-name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	nocturnal (truth state)	altcombat (text)
---	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
+Table of Random Critters (continued)
+name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	DayCycle	altcombat (text)	BannedStatus (truth state)
+--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
 
 When Play begins:
 	add {"Demon Brute"} to infections of hellspawn;
-	Choose a blank row from Table of random critters;
+	Choose a blank row from Table of Random Critters;
 	now name entry is "Demon Brute";
 	now enemy title entry is "";
 	now enemy name entry is "";
@@ -1490,8 +1488,9 @@ When Play begins:
 	now magic entry is true;            [ Is this a magic creature? true/false (normally false) ]
 	now resbypass entry is false;       [ Bypasses Researcher bonus? true/false (almost invariably false) ]
 	now non-infectious entry is false;  [ Is this a non-infectious, non-shiftable creature? True/False (usually false) ]
-	blank out the nocturnal entry;      [ True=Nocturnal (night encounters only), False=Diurnal (day encounters only), blank for both. ]
+	now DayCycle entry is 0;      [ 0 = Up at all times; 1 = Diurnal (day encounters only); 2 = Nocturnal (night encounters only);]
 	now altcombat entry is "demonbrute"; [ Row used to designate any special combat features, "default" for standard combat. ]
+	now BannedStatus entry is false;
 
 Table of Game Objects (continued)
 name	desc	weight	object
@@ -1520,7 +1519,7 @@ this is the brfoinc rule: [increasing likelihood of bruteforce attack]
 this is the bruteforce rule:
 	choose row monstercom from the table of critter combat;
 	now alt1chance entry is 5;
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	let rangenum be ( 80 - ( peppereyes * 4 ) );
 	let dam be ( ( wdam entry times a random number from rangenum to 120 ) / 50 );  [double damage]
 	if hardmode is true and a random chance of 1 in ( 10 + peppereyes ) succeeds:

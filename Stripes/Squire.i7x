@@ -16,7 +16,7 @@ Section 1 - Description
 to say squiredesc:
 	setmongender 3; [creature is male]
 	now kpstatus is 0;
-	choose row monster from table of random critters;
+	choose row monster from Table of Random Critters;
 	if "Female Preferred" is listed in feats of player:
 		now sex entry is "Female";
 	else if "Herm Preferred" is listed in feats of player:
@@ -133,7 +133,7 @@ to say losetosquire:
 
 
 to say squirewins_vaginal_shift:
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	if player is herm:
 		say "     The smaller guy gets you down on your back and slides your ass up into his lap. Lifting your [cock size desc of player] cock[if cockname of player is not listed in infections of InternalList] and balls[end if], he smiles as he confirms the presence of your juicy pussy. 'This encounter gets better and better. This fallen knight has a scabbard as well as a sword. ";
 	else:
@@ -175,7 +175,7 @@ to say squirewins_vaginal_shift:
 
 
 to say squirewins_anal_shift:
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	if player is neuter:
 		say "     The smaller guy gets you down on your back and slides your ass up into his lap. Your genderless crotch gives him momentary pause and he's drawn to rub across your nullpatch. 'What kind of knight has neither sword nor scabbard? No wonder you're unworthy to be a knight and [if HP of player > 0]surrendered so easily[else]lost[end if]. You're clearly undeserving of your title,' he says before pushing a few spit-slick fingers into your asshole to stretch you out. After this brief preparation, he gets his erection lined up with your asshole and pushes his dribbling cock into your rear with one confident motion.";
 	else:
@@ -224,7 +224,7 @@ to say squirewins_anal_sq:
 
 
 to say squirewins_ride:
-	say "     The aroused squire pushes you down onto his back and pulls down his pants. Straddling you, he grinds his rear down onto your [cock size desc of player] cock. '[if cock length of player > 15]My master will surely be impressed when I tell him of your formidable size[else if cock length of player >= 10]My master will be quite impressed when I tell him of your size[else if cock length of player > 5]Not quite as grand as my lord's, but it'll still make for a good training session[else]You don't have much to show for yourself, but at least it can be a warm-up to get me limber before a proper training session[end if], [if kpstatus is 3]rogue[else]beast[end if].'";
+	say "     The aroused squire pushes you down onto your back and pulls down his pants. Straddling you, he grinds his rear down onto your [cock size desc of player] cock. '[if cock length of player > 15]My master will surely be impressed when I tell him of your formidable size[else if cock length of player >= 10]My master will be quite impressed when I tell him of your size[else if cock length of player > 5]Not quite as grand as my lord's, but it'll still make for a good training session[else]You don't have much to show for yourself, but at least it can be a warm-up to get me limber before a proper training session[end if], [if kpstatus is 3]rogue[else]beast[end if].'";
 	say "     Aiming your erection to his puckered hole, he lowers himself with [if cock length of player > 15]a groaning effort[else if cock length of player >= 10]a slow moan[else if cock length of player > 5]a soft moan[else]ease[end if] down onto your [cock size desc of player] shaft. It's clear the young man has had his asshole stretched more than a few times. That does not mean he's loose by any means; his inner muscles and anal rings are quite practiced and squeezing and pulling at your [cock of player] rod even as he rides you.";
 	say "     'It is a squire's duty to serve his knight - not that a [if kpstatus is 3]brigand[else]monster[end if] like you would understand duty or honor. But regardless, I shall train hard to I might slake my knight's needs like a proper and loyal squire,' he pants as he grinds down harder. His pace quickens as he relaxes further, taking you hard and deep with increasing lustful zeal.";
 	WaitLineBreak;
@@ -277,12 +277,12 @@ to say beatthesquire:
 
 Section 4 - Monster Insertion
 
-Table of random critters (continued)
-name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	nocturnal (truth state)	altcombat (text)
---	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
+Table of Random Critters (continued)
+name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	DayCycle	altcombat (text)	BannedStatus (truth state)
+--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
 
 When Play begins:
-	Choose a blank row from Table of random critters;
+	Choose a blank row from Table of Random Critters;
 	now name entry is "Squire"; [ Infection/Creature name. Capitalized. ]
 	now enemy title entry is "";
 	now enemy name entry is "";
@@ -330,8 +330,9 @@ When Play begins:
 	now magic entry is false;
 	now resbypass entry is false;
 	now non-infectious entry is false;
-	blank out the nocturnal entry; [ True=Nocturnal (night encounters only), False=Diurnal (day encounters only), blank for both. ]
-	now altcombat entry is "default"; [ Row used to designate any special combat features, "default" for standard combat. ]
+	now DayCycle entry is 0; [ 0 = Up at all times; 1 = Diurnal (day encounters only); 2 = Nocturnal (night encounters only);]
+	now altcombat entry is "default";
+	now BannedStatus entry is false;
 
 [A sample structure for succumbing/surviving messages at the end of the game.]
 [Numerous other examples can be found in existing creature files.]

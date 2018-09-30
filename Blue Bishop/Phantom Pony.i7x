@@ -2,6 +2,10 @@ Version 1 of Phantom Pony by Blue Bishop begins here.
 [Version 1 -- Commissioned]
 "Any time is a good time for a ride!"
 
+Table of GameCharacterIDs (continued)
+object	name
+Blot	"Blot"
+
 Blot is a person. Blot is in Abandoned Storage Room.
 the description of Blot is "[blotlook]".
 the fuckscene of Blot is "[blotfuck]".
@@ -23,8 +27,12 @@ to say blotlook:
 		say "     [italic type][if blotintense < 3]The thing looks completely inanimate.[run paragraph on] You're fairly certain there'll be little to no consequence in using it right now[else if blotintense < 5]The thing appears to be mostly in a mundane state right now, but it seems to subtly become excited as you approach.[run paragraph on] You could probably get away with using it[else if blotintense < 8]The thing seems tinged with a streak of wanton menace.[run paragraph on] You could probably get away with using it, but not for long[else if blotintense < 10]You feel ill at ease near the thing, as though you're being drawn to the tainted object.[run paragraph on] You don't think it'd be particularly wise to use it right now[else]The thing seems to undulate from the corners of your eyes, as though thrumming with an otherworldly need.[run paragraph on] You feel overwhelmingly drawn to the thing, but you'd have to be insane to use it now[end if]...[roman type][line break]";
 	LineBreak;
 
-Northeast of Milking Shed Main Room is Abandoned Storage Room.
+Table of GameRoomIDs (continued)
+Object	Name
+Abandoned Storage Room	"Abandoned Storage Room"
 
+Abandoned Storage Room is a room.
+Abandoned Storage Room is northeast of Milking Shed Main Room.
 The description of Abandoned Storage Room is "     Cordoned off from the rest of the milking shed, not too far from the generator, appears to be somewhat dilapidated and disregarded storage room. Dimly lit, there's a few old, obsolete tools stacked up against the walls, but is otherwise sparsely filled save for a rather jarring, brightly colored fixture at the far end.".
 
 blotintense is a number that varies. blotintense is usually -1;
@@ -157,8 +165,8 @@ to blotbind:
 	libidoeval;
 	now lustatt is libido of player;
 	now calcnumber is -1;
-	let trixieexit be 0;
-	while trixieexit is 0:
+	let Trixieexit be 0;
+	while Trixieexit is 0:
 		if clearnomore is 0, clear the screen;
 		checkboundrecover;
 		if lustatt > 99:
@@ -187,7 +195,7 @@ to blotbind:
 			now bodyname of player is "Blotted";
 			now humanity of player is 0;
 			end the story saying "You are milked perpetually by the toy.";
-			now trixieexit is 1;
+			now Trixieexit is 1;
 		else:
 			let k be 0;
 			now keychar is "INVALID";
@@ -217,7 +225,7 @@ to blotbind:
 					LineBreak;
 					cleanboundmemory;
 					WaitLineBreak;
-					now trixieexit is 1;
+					now Trixieexit is 1;
 				WaitLineBreak;
 				next;
 			else if (obliging is true and (keychar in lower case exactly matches the text "o" or keychar in lower case matches the text "oblige")) or (obliging is false and (keychar in lower case exactly matches the text "a" or keychar in lower case matches the text "abide")) or keychar in lower case exactly matches the text "2":

@@ -214,12 +214,8 @@ to say BeatTheKoballoon:
 				if (nam is "Fellate him"):
 					say "[KoballoonBeaten6]";
 		else if calcnumber is 0:
-			say "Let him go: Leave the koballoon to wallow in his own arousal?";
-			if player consents:
-				say "     Rather than stoop to the lecherous creature's level, you release his form and step away, much to his dismay. 'Aww, well you're no fun!' the koballoon pouts. He blows a raspberry at you before saddling up and bouncing away on his bountiful sack, likely in search of the group that he was separated from. A trail of sticky pre follows his wake, leaving the strong scent of rubber and arousal to remember him by.";
-				now sextablerun is 1;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			say "     Rather than stoop to the lecherous creature's level, you release his form and step away, much to his dismay. 'Aww, well you're no fun!' the koballoon pouts. He blows a raspberry at you before saddling up and bouncing away on his bountiful sack, likely in search of the group that he was separated from. A trail of sticky pre follows his wake, leaving the strong scent of rubber and arousal to remember him by.";
+			now sextablerun is 1;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options].";
 	wait for any key;
@@ -363,18 +359,18 @@ to say KoballoonSexBadEnd:
 
 Section 2 - Monster Insertion
 
-Table of random critters (continued)
-name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	nocturnal (truth state)	altcombat (text)
---	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
+Table of Random Critters (continued)
+name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	DayCycle	altcombat (text)	BannedStatus (truth state)
+--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
 
 [ Adds a blank row to the table, this is immediately filled ;) ]
 When Play begins:
-	Choose a blank row from Table of random critters;
+	Choose a blank row from Table of Random Critters;
 	now name entry is "Koballoon"; [ Infection/Creature name. Capitalized. ]
 	now enemy title entry is "";
 	now enemy name entry is "";
 	now enemy type entry is 0; [non-unique enemy]
-	now attack entry is "[one of]The template attacks you in some abstract manner![or]The template leaves you greater understanding, thereby lowering your resistance to it![or]The template batters you with examples![or]The template firmly makes its point![at random]"; [ Successful attack message ]
+	now attack entry is "[one of]One of the koballoons bounces up behind you swings his mighty cock, knocking you over![or]Disoriented by the koballoons['] constant bouncing, you're caught off-guard by one of them tackling you from the side![or]One of the twisted kobolds strokes its cock until unloading with a loud moan. You barely dodge the blast, only to be caught in the arms of another latex creature and pushed back and forth between their ranks for a while.[or]A koballoon spins as it bounces and laughs. His massive, swinging prick slams against your chest, nearly knocking the wind of you![or]The koballoons push and shove at you while laughing at your predicament. You're left feeling dizzy and disoriented by their playful assault![or]One of the over-endowed kobolds manages to grapple you, holding you tightly to his fore as he bounces around energetically, his massive cock rubbing against your back all the while. By the time he releases you, you're left slick with his lube-like pre, your will to fight faltering.[or]Growing dizzy in the flurry of movements, a koballoon seizes the opportunity to bounce behind you and wrap his arms around your midriff. He grinds his stiff cock against your back, smearing his heady pre into your flesh and nibbling on your neck. After having his fun, you're passed between several other lustful kobolds, who grope and play with you until you finally wrench free.[at random]"; [ Successful attack message ]
 	now defeated entry is "[BeatTheKoballoon]";
 	now victory entry is "[LoseToKoballoon]";
 	now desc entry is "[KoballoonDesc]";
@@ -417,8 +413,9 @@ When Play begins:
 	now magic entry is true;
 	now resbypass entry is false;
 	now non-infectious entry is true;
-	blank out the nocturnal entry;
+	now DayCycle entry is 0;
 	now altcombat entry is "default";
+	now BannedStatus entry is false;
 
 
 Section 3 - Endings

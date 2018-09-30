@@ -1,11 +1,16 @@
 Disorganization by Kaleem mcintyre begins here.
+[not Resolution tagged since it is commented out and needs review]
 
 "Adds a series of events revolving around a military recon unit to Flexible Survival."
 
 Section 1- Disorganization in the ranks
 
+Table of GameEventIDs (continued)
+Object	Name
+Disorganization	"Disorganization"
+
 Disorganization is a situation. The level of Disorganization is 9.
-DRS is a number that varies.
+DRS is a number that varies.[@Tag:NotSaved]
 when play begins:
 	add Disorganization to badspots of furry;
 	add Disorganization to badspots of guy;
@@ -13,7 +18,7 @@ when play begins:
 
 Instead of resolving Disorganization:
 	If drs is 0:
-		say "Walking through the dimly lit alleyways of the city you manage to come across a lump of a figure lying prone on the trash strewn ground. Cautious as to who or rather what this might be, you carefully pad your way over to the thing, ready to run away at a moment's notice. Hoping vehemently that the thing is not some lust drunk mutant taking a nap, you pad closer and closer until the rotting scent of decay actually starts to cloy against your sinuses. When the figure doesn't immediately wake after you poke at it several times, you find yourself calming down slightly as you realize that it's you're dealing with the dead body of a soldier instead of some other kind of freak.";
+		say "Walking through the dimly lit alleyways of the city, you manage to come across a lump of a figure lying prone on the trash strewn ground. Cautious as to who or rather what this might be, you carefully pad your way over to the thing, ready to run away at a moment's notice. Hoping vehemently that the thing is not some lust drunk mutant taking a nap, you pad closer and closer until the rotting scent of decay actually starts to cloy against your sinuses. When the figure doesn't immediately wake after you poke at it several times, you find yourself calming down slightly as you realize that it's you're dealing with the dead body of a soldier instead of some other kind of freak.";
 		say "It's sad that sights like this are becoming normal. Idle curiosity makes you wonder how the armed forces member died out here like this. The spatter of blood around the other's head has you guessing that it must have been a head wound, but you aren't going to flip the person over to find out, the soldier was lying face down so you can only see his/her backside. Pulling backwards and then saying a quiet utterance of a prayer, you somberly turn from the dead figure to leave, however, before you can do so a voice suddenly calls out making you jumping almost a foot into the air.";
 		WaitLineBreak;
 		say "'Come... in... anyone... are... out... please... respond... give... report...!' The feeble and somewhat broken words has you scratching the back of your head in confusion as you rush back over to the soldier to see what the heck's going on. After soothing your racing heart, that is. Kneeling down and then patting the soldier's body you try and decipher where the speaker's voice is coming from before you finally find your answer. Taking a walkie-talkie off of the dead figure, you see a bright green light flashing with an annoyingly fast paced pulse and quickly wonder how to shut the thing off. The last thing you need is for some mutant or another to come around and find you right now. 'I say again, if anybody is out there please respond!' The person on the other end is still nattering on at you and without thinking you push the widest button on the walkie-talkie and then shout into it for the person to shut up!";
@@ -121,7 +126,7 @@ Instead of resolving Disorganization:
 		say "Trying to outrun the creature behind you seems not to be getting anywhere. Having somehow come across a large flock of gryphons that had been busy with something or another you had tried to get away from the collective avian's as fast as humanely possibly. However, with the bird creatures now almost upon you, you have little choice but to stop, grit your teeth together and then prepare for a brutal onslaught. This one is going to be a might bit tough as the large flock of gryphons all rain down on you one after another!";
 		repeat with x running from 1 to 5:
 			challenge "Hermaphrodite Gryphon";
-		say "Having fought off the horde you breath heavily in fatigue while titling your head upwards to watch as the flock flies on about their way. Looking up at the sky while wondering if you'd ever get to live in a world uncorrupted by an out of viral outbreak you find your eyes blinking and then going wide as another group of gryphons flies by in a V-like formation. Not wanting to deal with another group of horny hermaphrodite birds at the moment you scramble over to the closets tree to hide behind and then wait for the assemble avians to pass on by. Once they do however, you find yourself taking tiny steps away from the protection of the tree you're hold up under to look up above and then around you.";
+		say "Having fought off the horde, you breathe heavily in fatigue while titling your head upwards to watch as the flock flies on about their way. Looking up at the sky while wondering if you'd ever get to live in a world uncorrupted by an out of viral outbreak you find your eyes blinking and then going wide as another group of gryphons flies by in a V-like formation. Not wanting to deal with another group of horny hermaphrodite birds at the moment you scramble over to the closets tree to hide behind and then wait for the assemble avians to pass on by. Once they do however, you find yourself taking tiny steps away from the protection of the tree you're hold up under to look up above and then around you.";
 		say "One thing you've learned about living in this city is that it's always best to double check and then triple check your surroundings just to make sure the danger is truly gone. You're not prepared for something to drop onto your head. Wincing as you rub your aching skull, you swear slightly before staring at something winking at you from off of the concrete sidewalk.";
 		say "Not sure at first, since your head hurts so much at the moment to focus clearly, you quickly snatch the thing up and then have a look over it. What you see makes you gape in awe and then sadness. A pair of military dog tags now rest in between your fingertips. It would seem that another of the recon unit has fallen prey to the carnal grips of this depraved cityscape. All you can do is shake your head and then pocket the things before looking back up at where the gryphon flock has just flown by. It's sad really, you won't even be able to tell any of the other survivors, if there are anymore, which of the avian mutants their comrade had become. The mutants all look the same after their transformation, save for a few key features, but you're almost certain that you hadn't noticed anything particular about the assemble group that had passed you by.";
 		increase score by 1;

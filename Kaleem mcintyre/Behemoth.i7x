@@ -53,7 +53,7 @@ to say LoseToBehemoth:
 				decrease humanity of player by 20;
 			else:
 				say "     Inside of the darkened sphere of flesh you find yourself becoming somewhat stickier as the gooey cum of the Behemoth works to break you down against your will. Fearing that you may indeed become nothing more than mutant cum you struggle to try and get out of your prison by kicking and punching at the walls of the pitch ball orb. Your efforts only serves to make the Behemoth thrust its hips up into its paw-like hand as the sensations of you going crazy inside of its sensitive testicle sends the beast's mind into a lustful haze. Stroking and pumping at its cock with hard and fast strokes the Behemoth's balls clench up towards its body, thereby revealing itself feminine sex to the world, taking you with it by proxy. The heat and scent and feel of yourself becoming more and more like cum has your mind losing focus of its original goal and soon you are simply struggling just from the heat stifling your breath as the musky scent air cloys inside of your lungs making your head feel very light all of a sudden.";
-				say "     It takes another minute before things come to an end, but thankfully when it does the Behemoth roars and then pump its hands down onto its long length once more before driving its hips upwards into the air and then cumming hard. With you as somewhat viscous and slimy as you are now you easily slip up through the beast's seminal duct out of its urethra and then over the top of the Behemoth's head. Several sloping arches of cum follow after you and thankfully help to cushion your fall onto the ground as you end up slamming into the grass just hard enough that the wind is knocked out of your lungs. Thankfully enough these important organs, as well any of the other integral parts of you inner system that you would need later, have yet to jellify.";
+				say "     It takes another minute before things come to an end, but thankfully when it does the Behemoth roars and then pump its hands down onto its long length once more before driving its hips upwards into the air and then cumming hard. With you as somewhat viscous and slimy as you are now you easily slip up through the beast's seminal duct out of its urethra and then over the top of the Behemoth's head. Several sloping arches of cum follow after you and thankfully help to cushion your fall onto the ground as you end up slamming into the grass just hard enough that the wind is knocked out of your lungs. Thankfully enough these important organs, as well any of the other integral parts of your inner system that you would need later, have yet to jellify.";
 				say "     Having gone through such a massive ordeal you find yourself collapsing just as the Behemoth in front of you finishes with its orgasm. The beast takes only a few minutes to shiver and then purr in pleasure from the intense orgasm you just helped it out with, but once the beast has gotten control over itself again it pulls its paw-like hands away from its still spurting cock, rolls itself over onto its hands and feet and then gets up to go about its way as if nothing had happened. The Behemoth takes very little interest in you as it pads off about its business, and a good thing to because it takes an hour before your body can solidify itself back together again.";
 				decrease humanity of player by 10;
 
@@ -88,12 +88,12 @@ to say BeatTheBehemoth:
 
 Section 2 - Monster Insertion
 
-Table of random critters (continued)
-name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	nocturnal (truth state)	altcombat (text)
---	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
+Table of Random Critters (continued)
+name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	DayCycle	altcombat (text)	BannedStatus (truth state)
+--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
 
 When Play begins:
-	Choose a blank row from Table of random critters;
+	Choose a blank row from Table of Random Critters;
 	now name entry is "Behemoth"; [ Infection/Creature name. Capitalized. ]
 	now enemy title entry is "";
 	now enemy name entry is "";
@@ -141,8 +141,9 @@ When Play begins:
 	now magic entry is false;
 	now resbypass entry is false;
 	now non-infectious entry is false;
-	blank out the nocturnal entry; [ True=Nocturnal (night encounters only), False=Diurnal (day encounters only), blank for both. ]
-	now altcombat entry is "default"; [ Row used to designate any special combat features, "default" for standard combat. ]
+	now DayCycle entry is 0; [ 0 = Up at all times; 1 = Diurnal (day encounters only); 2 = Nocturnal (night encounters only);]
+	now altcombat entry is "default";
+	now BannedStatus entry is false;
 
 [A sample structure for succumbing/surviving messages at the end of the game.]
 [Numerous other examples can be found in existing creature files.]

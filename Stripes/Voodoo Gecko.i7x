@@ -18,7 +18,7 @@ when play begins:
 
 to say voodoogeckodesc:
 	setmongender 6; [creature is shemale]
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	if "Female Preferred" is listed in feats of player:
 		now sex entry is "Female";
 	else if "Herm Preferred" is listed in feats of player:
@@ -32,7 +32,7 @@ to say voodoogeckodesc:
 		now vgeckoboost is true;
 
 to say losetovoodoogecko:
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	if HP of player > 0:
 		say "     Unwilling to continue resisting her, you drop to your knees";
 	else:
@@ -200,12 +200,12 @@ to say vgeckosex_06:		[oral - pussy]
 
 Section 2 - Monster Insertion
 
-Table of random critters (continued)
-name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	nocturnal (truth state)	altcombat (text)
---	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
+Table of Random Critters (continued)
+name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	DayCycle	altcombat (text)	BannedStatus (truth state)
+--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
 
 When Play begins:
-	Choose a blank row from Table of random critters;
+	Choose a blank row from Table of Random Critters;
 	now name entry is "Voodoo Gecko"; [ Infection/Creature name. Capitalized. ]
 	now enemy title entry is "";
 	now enemy name entry is "";
@@ -253,8 +253,9 @@ When Play begins:
 	now magic entry is true;
 	now resbypass entry is false;
 	now non-infectious entry is false;
-	blank out the nocturnal entry; [ True=Nocturnal (night encounters only), False=Diurnal (day encounters only), blank for both. ]
-	now altcombat entry is "default"; [ Row used to designate any special combat features, "default" for standard combat. ]
+	now DayCycle entry is 0; [ 0 = Up at all times; 1 = Diurnal (day encounters only); 2 = Nocturnal (night encounters only);]
+	now altcombat entry is "default";
+	now BannedStatus entry is false;
 
 
 Section 3 - Drop Item - Gecko Cum
@@ -271,7 +272,7 @@ to say drinkgeckocum:
 	say "     Feeling drawn to the dark power, you quickly open the container of semen and gulp it down before it can dissipate. You moan softly and exhale a puff of violet mist that leaves a musky scent in the air as a rush of arousal wells up inside you. Even as you feel the cum in your belly start to tingle with infected nanites and strange magicks, you can't help but smile darkly at the rush of excitement you experience.";
 	increase libido of player by 5;
 	setmonster "Voodoo Gecko";
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	if "Female Preferred" is listed in feats of player:
 		now sex entry is "Female";
 	else if "Herm Preferred" is listed in feats of player:
@@ -303,7 +304,7 @@ when play ends:
 			say "     Managing to keep your mind at least partially intact until rescue, you exit the city with the military rescue forces. Your altered body is viewed with suspicion by the soldiers, but you are taken along regardless. The military scientist who looks into your case, unable to accept the existence of the forces that have touched you, views you simply as slightly confused by your infection and has you remanded to a short series of counselling sessions before your full release";
 			if humanity of player < 40 and vgeckobeaten > vgeckoloss / 2 and player is pure:
 				say ". Growing tired of the psychobabble by the third session as she tries to tell you that magic doesn't actually exist, something in you clicks into place and purple swirls in your eyes. Drawing upon some innate power you can now connect to, you blast a wave of tangible purple mist from your hands. The magicks that the shrink tried to tell you wasn't real overwhelms her, enslaving her will to yours. After slaking your pent-up lusts upon her body, you have her present you with a clean bill of mental health, accelerating your release.";
-				say "     Once you're released back into society, you continue to maintain your control over the psychiatrist. She makes for a very useful tool as the military has her perform sessions with numerous cases of rescued citizens. Many of those she assesses to be of weaker will or with submissive tendancies as a result of their infection are directed to you as part of their [']rehabilitation[']. This results in you easily collecting a wide array of sex slaves of all types, enslaved to your will by your powers, as they are delivered right to your door. And once the military clean-up of the city is over and your pet shrink is no longer working for them, you [if player is male]breed her into becoming your gecko apprentice and lover[else if player is female]transform her into your gecko apprentice and lesbian lover[else]transform her into your gecko apprentice and lover[end if].";
+				say "     Once you're released back into society, you continue to maintain your control over the psychiatrist. She makes for a very useful tool as the military has her perform sessions with numerous cases of rescued citizens. Many of those she assesses to be of weaker will or with submissive tendencies as a result of their infection are directed to you as part of their [']rehabilitation[']. This results in you easily collecting a wide array of sex slaves of all types, enslaved to your will by your powers, as they are delivered right to your door. And once the military clean-up of the city is over and your pet shrink is no longer working for them, you [if player is male]breed her into becoming your gecko apprentice and lover[else if player is female]transform her into your gecko apprentice and lesbian lover[else]transform her into your gecko apprentice and lover[end if].";
 			else if player is pure:
 				say ". Growing tired of the psychobabble, you eventually relent and fake gradually accepting that the magic was all in your head or the result of nanites. But deep inside you know those dark powers there, even if you cannot quite connect with them. You still have to go through several more sessions, but you are eventually cleared.";
 				say "     Once you're released back into society, you follow leads and rumors of magic. In the wake of events, signs of magicks both new and old become more prevalent. It doesn't take you too long to learn some tricks from others and eventually start to tap into those dark powers inside you. You become the apprentice to a witch woman, helping her in her spells and rituals. It is mostly drudgework, though there's the occasional highlight when she's feeling horny or a customer is made to pay for her services with sexual favors.";

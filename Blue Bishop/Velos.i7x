@@ -4,6 +4,10 @@ Version 1 of Velos by Blue Bishop begins here.
 
 Section 1 - Event
 
+Table of GameEventIDs (continued)
+Object	Name
+Strange Serpent	"Strange Serpent"
+
 Strange Serpent is a situation. The minscore of Strange Serpent is 200.
 The sarea of Strange Serpent is "Mall".
 
@@ -14,6 +18,7 @@ Instead of resolving Strange Serpent:
 		if player is not male_vacant and (insectlarva is false or (insectlarva is true and larvaegg is 2)):
 			say "     '...Ah, looking at you clearly now, it's probably be wise to ignore me for now. Come back in a couple of days day or so. You already look like you've got your hands full.' A little confused, he might be referring to your unconventional pregnancy, though how that has anything to do with anything right now is beyond you. Urging you away, you depart, back from whence you came.";
 			now HP of Velos is 1;
+			now Resolution of Strange Serpent is 1; [talked to Velos, already full]
 		else:
 			say "     'Right, great, you don't look nearly as mentally deranged as the general fare you see down and about this place--though I suppose I could be wrong...' A little ill at ease with this creature, you greet it before it continues. 'I'm really in need of help here; I'm wholly unequipped to depart from this rather unsettling environment, and I need someone to carry me off.'";
 			say "     You're not rightfully sure if you can trust the serpent, but for the sake of argument you infer that you might be up to the task, simple as it seems.";
@@ -64,10 +69,10 @@ Instead of resolving Strange Serpent:
 					if humanity of player > 100, now humanity of player is 100;
 					now libido of player is libido of player / 2;
 					now preghijack is false;
-					repeat with y running from 1 to number of filled rows in table of random critters:
-						choose row y in table of random critters;
+					repeat with y running from 1 to number of filled rows in Table of Random Critters:
+						choose row y in Table of Random Critters;
 						if name entry is "Black Wasp":
-							now area entry is "nowhere";
+							now area entry is "Nowhere";
 							now non-infectious entry is true; [Wasps locked again]
 							break;
 				if player consents:
@@ -83,14 +88,20 @@ Instead of resolving Strange Serpent:
 				now level of Velos is 1;
 				now HP of Velos is 3;
 				now mpreghijack is true;
+				now Resolution of Strange Serpent is 2; [Velos taken in]
 			else:
 				say "     You decide not to help the bizarre creature, stepping away. Thankfully, annoyed as he may appear, it doesn't seem to challenge you for the gesture.";
 				say "     'Right, very well, I'm sure you have more pressing matters to attend to; places to go, eldritch monstrosities to be buggered by, all that sort.' You turn to depart, leaving the serpent in your wake.";
 				now HP of Velos is 2;
+				now Resolution of Strange Serpent is 3; [Velos rejected]
 			now Strange Serpent is resolved;
 
 
 Section 2 - Velos the AssSSSSssserpent
+
+Table of GameCharacterIDs (continued)
+object	name
+Velos	"Velos"
 
 Velos is a person.
 The description of Velos is "[velosdesc]".
@@ -155,7 +166,7 @@ Section 3 - Dragging him Around + Effects
 
 Every turn while HP of Velos > 2:
 	if Velos is not in the location of the player:		[traveling w/player]
-		Now Velos is in the location of the player;
+		now Velos is in the location of the player;
 		say "[one of][link]Velos[as]look Velos[end link] shifts around inside you slightly.[or]You arrive here with [link]Velos[as]look Velos[end link].[or][link]Velos[as]look Velos[end link], roused by you moving about, shifts his position.[or]Your travels elicit some shifting from [link]Velos[as]look Velos[end link].[or][link]Velos[as]look Velos[end link] twitches in response to your travels.[or]You're forced to contend with [link]Velos[as]look Velos[end link][']s subtle protests in lieu of your movement.[cycling]";
 
 
@@ -462,7 +473,7 @@ to say valeriemusing:
 Part 9 - Fang
 
 the vmusings of Fang is "[fangmusing]".
-fangvelos1 is a truth state that varies. fangvelos1 is normally false.
+fangvelos1 is a truth state that varies. fangvelos1 is usually false.
 
 to say fangmusing:
 	if HP of Fang is 1 or HP of Fang is 2:		[Beta-Fang message]
@@ -754,7 +765,7 @@ the vmusings of Nermine is "[nerminemusing]";
 to say nerminemusing:
 	say "     Calling Nermine over, you prod yourself until Velos concedes to your request. The jackal is obviously a little disturbed by the serpent, but isn't particularly surprised.";
 	say "     'I see many maladies in my time, few so strange.'";
-	say "     'Hey, rude! I know my my appearance isn't the least bit flattering, but double check who you're calling a malady!'";
+	say "     'Hey, rude! I know my appearance isn't the least bit flattering, but double check who you're calling a malady!'";
 	say "     'Stranger... I go in back, I might have book for this.' The snake grumbles a bit as the jackal leaves, looking around the strange shop.";
 	say "     'What tacky fare... Did that statue just wink at me back there? I'm really not sure we should be here.' He clams up when Nermine returns, this time with some dusty tome.";
 	say "     'Okay, let Nermine see if she can fix your problem.'";

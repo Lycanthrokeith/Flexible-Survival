@@ -36,19 +36,27 @@ Version 1 of Sidney by Stripes begins here.
 
 Section 0 - Basic NPC Setup
 
+Table of GameCharacterIDs (continued)
+object	name
+Sidney	"Sidney"
+
 Sidney is a woman.
 The description of Sidney is "[sidneydesc]".
 The conversation of Sidney is { "Thanks." }.
 the scent of Sidney is "[sidneyscent]".
-sidneyformtalk is a truth state that varies. sidneyformtalk is normally false.
-sidneyanal is a truth state that varies. sidneyanal is normally false.
-sidneytalk1 is a truth state that varies. sidneytalk1 is normally false.
-sidneytalk2 is a truth state that varies. sidneytalk2 is normally false.
-sidneytalk3 is a truth state that varies. sidneytalk3 is normally false.
-sidneytalk4 is a truth state that varies. sidneytalk4 is normally false.
+sidneyformtalk is a truth state that varies. sidneyformtalk is usually false.
+sidneyanal is a truth state that varies. sidneyanal is usually false.
+sidneytalk1 is a truth state that varies. sidneytalk1 is usually false.
+sidneytalk2 is a truth state that varies. sidneytalk2 is usually false.
+sidneytalk3 is a truth state that varies. sidneytalk3 is usually false.
+sidneytalk4 is a truth state that varies. sidneytalk4 is usually false.
 fangsidney is a truth state that varies. fangsidney is usually false.
 
 Section 1 - Event
+
+Table of GameEventIDs (continued)
+Object	Name
+Meeting Sidney	"Meeting Sidney"
 
 Meeting Sidney is a situation.
 The sarea of Meeting Sidney is "Outside".
@@ -201,7 +209,7 @@ to say sidney_rfv_cap:
 		now level of Sidney is 21;
 		move Sidney to Breakroom;
 		move player to Breakroom;
-		now battleground is "void";
+		now Resolution of Meeting Sidney is 1; [became a vixen]
 		now Meeting Sidney is resolved;
 	else:
 		say "     You give chase, doing your best to follow her up the ladder and race along the rooftops. You go from rooftop to rooftop, going up or down as needed as the two of you go on a zigzagging chase. You're able to keep her in sight for a while, but she's too agile and you fall further and further behind as she takes surprising turns or crosses obstacles you must circumvent. Eventually, she loses you entirely and you have to head back to Sidney with the bad news. The two of you doubt you'll get another chance at her, as she'll be on the lookout for you now and won't let you get close again.";
@@ -236,12 +244,13 @@ to say sidney_otteress_cap:
 				now level of Sidney is 22;
 				move Sidney to Breakroom;
 				move player to Breakroom;
-				now battleground is "void";
+				now Resolution of Meeting Sidney is 2; [became a otter, stayed]
 				now Meeting Sidney is resolved;
 			else:
 				say "     Suggesting that Sidney go with her, she smiles happily and gives her a big hug. 'Oh, that's right! You're family now. Come, you need to meet everyone else. They'll [bold type]love[roman type] you,' she gushes as they share more hugs and kisses, some of which get pretty heated. Bidding you a fond farewell, the two of them climb onto a small scooter the otteress had hidden and zip off towards the shore.";
 				now HP of Sidney is 99;
 				now level of Sidney is 22;
+				now Resolution of Meeting Sidney is 3; [became a otter, left]
 				now Meeting Sidney is resolved;
 		else:
 			say "     As you draw nearer, you start to explain what you want, the otteress listening. 'Get away you're crazy wierdos!' she exclaims suddenly, turning and running off. You try to pursue her, but it's too late. She's got a small scooter stashed nearby that she uses to make her escape. You'll not get another chance to approach her now.";
@@ -268,7 +277,7 @@ to say sidney_otteress_cap:
 			now level of Sidney is 23;
 			move Sidney to Breakroom;
 			move player to Breakroom;
-			now battleground is "void";
+			now Resolution of Meeting Sidney is 2; [became a otter, stayed]
 			now Meeting Sidney is resolved;
 		else:
 			say "     Continuing to talk reassuringly, you draw closer to your target. 'Grab her!' you yell to Sidney and the two of you tackle her. You try your best to get a grip, but the female otter is super-flexible, bending and squirming like a fur-covered slinky. Slipping free of your grip, the two of you stumble over each other as she rushes away. You try to pursue her, but it's too late. She's got a small scooter stashed nearby that she uses to make her escape. You'll not get another chance to approach her now.";
@@ -290,7 +299,7 @@ to say sidney_wusky_cap:
 		now level of Sidney is 71;
 		move Sidney to Breakroom;
 		move player to Breakroom;
-		now battleground is "void";
+		now Resolution of Meeting Sidney is 4; [became a wusky, stayed]
 		now Meeting Sidney is resolved;
 	else if fightoutcome >= 20 and fightoutcome <= 29:
 		say "     After your humiliating defeat and the subsequent abuse, you crawl your way out of the shop as the wolf turns his attention back to his original prize. As Sidney helps you leave, you can hear the snarls of the victorious wolf celebrating by screwing the trapped female. From the sounds of it, there won't be much left of the old wusky by the time he's done.";
@@ -377,8 +386,8 @@ to say sexwithSidney:
 	if HP of Sidney < 3:
 		say "ERROR-Sidney-[HP of Sidney]F: You should not be able to find me yet. Resetting.";
 		now HP of Sidney is 0;
-		remove Sidney from play;
-		if girl is not banned and furry is not banned, now Meeting Sidney is unresolved;
+		now Sidney is nowhere;
+		if girl is not banned and furry is not banned, now Meeting Sidney is active;
 	else if player is neuter:
 		say "     You should settle on a gender of your own before trying to sex up the gender-shifted soldier.";
 	else if lastfuck of Sidney - turns < 6:

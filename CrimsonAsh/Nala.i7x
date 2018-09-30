@@ -8,14 +8,18 @@ Version 1 of Nala by CrimsonAsh begins here.
 
 Section 1 - Events
 
-A Harmless Joke is a situation.
-The sarea of A Harmless Joke is "Nowhere".
+Table of GameEventIDs (continued)
+Object	Name
+Harmless Joke	"Harmless Joke"
+
+Harmless Joke is a situation.
+The sarea of Harmless Joke is "Nowhere".
 
 when play begins:
-	add A Harmless Joke to badspots of girl;
-	add A Harmless Joke to badspots of hellspawn;
+	add Harmless Joke to badspots of girl;
+	add Harmless Joke to badspots of hellspawn;
 
-instead of navigating Grey Abbey Library while (A Harmless Joke is not resolved and HP of Nala is 0 and a random chance of 1 in 3 succeeds):
+instead of navigating Grey Abbey Library while (Harmless Joke is active and Harmless Joke is not resolved and HP of Nala is 0 and a random chance of 1 in 3 succeeds):
 	say "[NavCheck Grey Abbey Library]";
 	if NavCheckReturn is false, stop the action; [can't nav from the player's location, or already there - so we stop this cold]
 	move player to Grey Abbey Library;
@@ -23,7 +27,11 @@ instead of navigating Grey Abbey Library while (A Harmless Joke is not resolved 
 		say "     DEBUG: First Nala Trick on the player - HP of Nala: [HP of Nala][line break]";
 	say "     Walking up to the entrance the library, you reach to open the door leading in. But as you pull it open, you are suddenly drenched in cold water from a bucket set up over the door, soaking you through to the skin. You let out a loud yelp in surprise and start shivering while the bucket makes a hell of a racket as it clatters onto the floor. The whole situation is accompanied by a high-pitched giggling coming from somewhere inside the library. Glancing in that direction, you spot a small figure dart out of a partially opened window and out into the city. Rushing over, you look out after what must have been the trickster who set this trap for you, yet find them nowhere in sight. Grunting and cursing, you reluctantly accept your defeat and head down to the bunker to dry yourself off, now far more weary of doorways.";
 	now HP of Nala is 1; [flag set to remember the progress]
-	now A Harmless Joke is resolved; [event won't happen again]
+	now Harmless Joke is resolved; [event won't happen again]
+
+Table of GameEventIDs (continued)
+Object	Name
+Fool Me Once	"Fool Me Once"
 
 Fool Me Once is a situation.
 The sarea of Fool Me Once is "Nowhere".
@@ -32,13 +40,17 @@ when play begins:
 	add Fool Me Once to badspots of girl;
 	add Fool Me Once to badspots of hellspawn;
 
-after resting while (Fool Me Once is not resolved and player is in Bunker and HP of Nala is 1):
+after resting while (Fool Me Once is active and Fool Me Once is not resolved and player is in Bunker and HP of Nala is 1):
 	say "     Deciding to rest for the next few hours you lay down, closing your eyes slowly drifting to sleep. You dream of your life before the nanobots and the apocalypse, what little you can remember at least. Of previous friends, your old job and your old worries. Suddenly jolted out of your dream by a barrage of ringing and beeping. You nearly launch yourself from your bedding as you swivel around the blaringly loud room for the source of the noises. Set around the room are nearly a dozen alarm clocks, all at full volume and shrieking bells at you. You stand up and stumble around the room confused but intent on ending to the obnoxious noise. Shutting off a few and simply slamming others onto the floor. Soon enough the room is quiet, but the ringing is quickly replaced by a familiar feminine laughter, looking to the doorway you finally get a good look at your prankster.";
 	say "     The girl before you is clearly demonic in nature, she has light red, almost pink skin and only stands a little over two and a half feet tall. The diminutive imp girl flutters around on her small bat-like wings and clawed feet, her hands ending in sharp purple painted nails. The little demon has adorable facial features with a cute button nose, big glossy eyes with violet pupils and crimson hair tied neatly in a pony-tail. Her scorpion-like tail whips around behind her as she moves, the stinger set at the end dripping an unknown yet sweet-smelling liquid. She sports a set of black lingerie seemingly made to fit her small size and delicate curves, her lacy bra filling perfectly out her perky B-cup breasts. She gives you a toothy smile as you examine her, revealing pearly white, pointed teeth.";
 	WaitLineBreak;
 	say "     She lets out another laugh before speaking, 'Hehe you looked like a chicken with its head cut off, running around like mad!' She speaks in a slightly high-pitched yet oddly melodic voice before cracking down and laughing madly at her own prank before she turns and flees at a remarkable speed. Her small wings dart her down the hall and out of the bunker before you can fully register what just happened. You still try to rush after the little runt but she's long gone, her laughter still ringing in the air. Grunting in frustration you head back down to the bunker planning on using what time you have left of your rest productively to end this nuisance. You form a plan to feign sleep next time and catch the imp surprised.";
 	now HP of Nala is 2; [flag set to remember the progress]
 	now Fool Me Once is resolved; [won't happen again]
+
+Table of GameEventIDs (continued)
+Object	Name
+Fool Me Twice	"Fool Me Twice"
 
 Fool Me Twice is a situation.
 The sarea of Fool Me Twice is "Nowhere".
@@ -47,7 +59,7 @@ when play begins:
 	add Fool Me Twice to badspots of girl;
 	add Fool Me Twice to badspots of hellspawn;
 
-after resting while (Fool Me Twice is not resolved and player is in Bunker and HP of Nala is 2):
+after resting while (Fool Me Twice is active and Fool Me Twice is not resolved and player is in Bunker and HP of Nala is 2):
 	say "     Deciding to set your trap as ready to feign rest, you position a blanket across your body to use as a net and close your eyes. You lay waiting for what feels like an hour, just as you're about to give up you hear what sounds like the flapping lightly echoing down the hall. Readying yourself and cracking an eye open you spot the same imp prankster carrying a bucket of suspicious intent. As she makes her way over to your bedside you leap into action, gripping the edge of the blanket and throwing it over her before leaping atop it. You hear a squeal of surprise as the bucket she was holding drops to the floor and the grub-worms inside spill out onto the ground. You pin the struggling bundle of imp and blanket to the floor as she squeals and whines in protest. 'Let me go you big bully!' She yells as you have her fully trapped, her stinger-tipped tail pinned under one of your limbs as it struggles and twists to free itself.";
 	LineBreak;
 	say "     [bold type]What do you do now?[roman type][line break]";
@@ -65,17 +77,20 @@ after resting while (Fool Me Twice is not resolved and player is in Bunker and H
 	if calcnumber is 1:
 		LineBreak;
 		say "[TalkNala]";
+		now Resolution of Fool Me Twice is 1; [talked]
 	else if calcnumber is 2:
 		LineBreak;
 		say "[RapeNala]";
+		now Resolution of Fool Me Twice is 2; [fucked her]
 	else:
 		LineBreak;
 		say "[KickNala]";
+		now Resolution of Fool Me Twice is 3; [threw her out]
 	now Fool Me Twice is resolved;
 
 to say TalkNala:
-	say "     Deciding against doing anything rash, you uncover her head so that you may safely speak face to face. She lets out a whimper and sigh before speaking up in an aggravated voice, 'Did you really have to be so rough, can't you take a joke?!' She complains. You explain that it wasn't very funny to you and glance down at the spilled bucket of worms to give a shudder. She huffs and moans but puts on a bright smile, 'The alarm one was pretty funny, chicken [if player is male]boy[else]girl[end if].' She giggles cutely and you can't help but smirk in return at her diminutive laugh. Her face brightens at your smile. 'Ah hah! See it was funny.' She says smiling widely showing off pearly white fangs.";
-	say "     She crosses her arms, pushing out her perky breasts, 'Now can you let me up big [if player is male]boy[else]girl[end if]?' She asks politely, 'I won't run, I promise.' Reluctantly you get off her blanket swaddled form and help untangle her. After freeing her she flaps her wings so that she's eye level with you. 'Thanks sweetie!' She says bubbly, 'Although you did trap me in the first place so only partial thanks.' She giggles to herself. 'I'm Nala by the by.' She says putting her small clawed hand out to shake.";
+	say "     Deciding against doing anything rash, you uncover her head so that you may safely speak face to face. She lets out a whimper and sigh before speaking up in an aggravated voice, 'Did you really have to be so rough, can't you take a joke?!' She complains. You explain that it wasn't very funny to you and glance down at the spilled bucket of worms to give a shudder. She huffs and moans but puts on a bright smile, 'The alarm one was pretty funny, chicken [if player is male]boy[else]girl[end if].' She giggles cutely and you can't help but smirk in return at her diminutive laugh. Her face brightens at your smile. 'Ah hah! See, it was funny,' she says, smiling widely and showing off pearly white fangs.";
+	say "     She crosses her arms, pushing out her perky breasts. 'Now can you let me up big [if player is male]boy[else]girl[end if]?' she asks politely. 'I won't run, I promise.' Reluctantly, you get off her blanket swaddled form and help untangle her. After freeing her, she flaps her wings so that she's eye level with you. 'Thanks sweetie!' she says in a bubble voice. 'Although you did trap me in the first place, so only partial thanks.' She giggles to herself. 'I'm Nala by the by,' she says, putting her small clawed hand out to shake.";
 	WaitLineBreak;
 	say "     You grasp her soft hand and introduce yourself as well. 'Good to meet ya friend!' She responds with glee before looking you up and down, only now taking in your form. 'Hehe maybe we should do this again, you pinning me down and such.' She covers her mouth with her clawed hand and laughs. 'I have some things to take care of but we should meet up again, you're nicer than most of these fools I play jokes on.' She announces before turning around and flapping out of the room. You have suspicions that these things she needs to take care are more pranks but you keep silent and watch her leave. Hearing echoing down the hall she shouts, 'This is a real swell place you've got here friend, I think I'll be sticking around for a while!' Wait, what? Before you can object she's off, out of the bunker and out of sight... this will prove interesting.";
 	move Nala to Makeshift Rec Room;
@@ -94,6 +109,10 @@ to say KickNala:
 	say "     You pick up the struggling bundle of imp and carry the yelling girl out of the bunker and library. As you reach outside you give the little ball of cloth a kick and watch it tumble and fall into the streets. The imp girl dazedly crawls out from under the blanket and gets to shaky feet as she looks your way with a pouty face before taking off to the sky. You have a feeling that's the last you'll see of the little troublemaker.";
 
 Section 2 - NPC
+
+Table of GameCharacterIDs (continued)
+object	name
+Nala	"Nala"
 
 Nala is a woman. The HP of Nala is usually 0.
 The description of Nala is "[NalaDesc]".
@@ -147,7 +166,7 @@ to say NalaKiss:
 		WaitLineBreak;
 		say "     You thank her for the service but ask about her tail and what it did to you. 'Oh! Don't worry, it's nothing permanent. Just a little defense mechanism we imp girls have.' She gives you a telling smile before speaking again. 'It's also great for mind exploding orgasms, huh?' She finishes by making a pretend explosion with her hands accompanied by sounds. She flies over to where her bed is and takes out a small pipe and begins smoking from it before addressing you again. 'This was fun, well of course it was I'd knew it would be.' She corrects herself. 'Let's do it again sometime and next time you're on bottom.' She points downward before leaning back and taking a few drags from her pipe. You shudder and turn to walk away.";
 	else if player is female:
-		say "     You relent and press your lips back against hers, moving your hand up to place on the back of her head. You open your mouth and allow her tongue entrance as you meet hers halfway with your own. You two tumble with tongues and frisk with hands for a little while longer before she pulls back, slightly out of breath. 'Mmm, that was a good warm up big girl. But it's time to get... serious.' She says whilst she flies around you and stops to examine your backside. She presses clawed hands against your ass spreading your cheeks and yanking down any obstructions in her way. You gasp as she slaps your cheeks a few times, raining light smacks on your tender bottom before unceremoniously shoving her face in between your cheeks.";
+		say "     You relent and press your lips back against hers, moving your hand up to place on the back of her head. You open your mouth and allow her tongue entrance as you meet hers halfway with your own. You two tumble with tongues and frisk with hands for a little while longer before she pulls back, slightly out of breath. 'Mmm, that was a good warm up big girl. But it's time to get... serious,' she says whilst she flies around you and stops to examine your backside. She presses clawed hands against your ass, spreading your cheeks and yanking down any obstructions in her way. You gasp as she slaps your cheeks a few times, raining light smacks on your tender bottom before unceremoniously shoving her face in between your cheeks.";
 		say "     Gasping again as the imps long tongue shoots from her mouth to flick over your anus before plunging into your damp womanhood. You push back against the imps invading face as the reddish-skinned demon motorboats your hindquarters in an exaggerated fashion. Squeezing your cheeks and enthusiastically eating you out the imp swiftly has you approaching orgasm. When you reach your peak Nala buries ever inch of her face she can manage into your ass cheeks and you feel a light sting on your lower back. Nala says something that vibrates through your body but it's unintelligible. You turn to see her tail withdrawing from your back as a sudden burst of pleasure overloads you. You collapse onto the floor, ass still raised in the air with imp face and tongue still working it as an unnaturally powerful orgasm hits you.";
 		WaitLineBreak;
 		say "     Womanly juices soak the demon girl's face as you moan and writhe under her movements. You find yourself spasming in sensitivity as you ride out your climax. In the afterglow of your orgasm you find everything slowly growing dark before realizing you're shutting your eyes. Some time later you awake, still in your state of undress but now with a small warm figure resting on your backside. Turning your head you find Nala has too fallen asleep, using your bottom as cushions to rest on. You lay there for a while longer, feeling exhausted but incredibly satisfied before you turn to shake your little imp awake. She mumbles something about not wanting to get about and squeezes your bottom. After more pestering the both of you manage to get to get up and back in a state of decency.";
@@ -165,7 +184,7 @@ to say NalaFuck:
 		say "     Gazing down at you she removes her lacy panties and fingers her sex above your face. She smells very sweet, a bit like apples with an intense heat that warms your face. She fumbles with her tail, pulling it to her face to give it a kiss. Before your eyes her tail stinger shifts into a red phallic shape. 'There we go, get to licking big girl I'll do the rest!' She exclaims as she drops the rest of her weight down onto your face. You thrust your tongue upward into her steaming hot cauldron sex, slathering her crotch in your saliva. She lets out a sweet little yelp and grips at your breasts to keep herself steady. She twists your nipples and humps downward at your thrusting tongue. Gaining a steady rhythm of her humping downward and you licking at her tasty juices you can feel her long tail caress lower down your body. It moves across your thighs and the large nearly ten inch phallus rubs against your womanhood.";
 		WaitLineBreak;
 		say "     Rubbing her tail penis into your damp lips she coat it in your excitement before pressing into your tunnel. Moaning into her humping thighs as you lick, Nala suddenly thrusts her tail phallus, fully engulfing it in your folds. You moan your pleasure into her burning sex as she continues to thrust into your own. You can feel yourself swiftly approaching climax as you feel the imp speedy her thrusts up. Trying to keep up, you redouble your efforts and suck on her clit, fingering her soaked crotch as you do. Finally Nala hilts her tail cock in your womanhood and you feel yourself explode in climatic bliss. Your mind goes foggy but you manage to stay latched onto Nala's crotch as you ride out your orgasm. Her tail doesn't let up, continues to thrust in and out of your spasming crotch. The little imp follows shortly after, clamping down around your tongue, her pink lips spilling a torrent of tasty over your face as she climaxes.";
-		say "     Nala continues to hump against you and you can hear her giggle, it vibrating through her body. She slows her movement staring down at your soaked mouth before speaking. 'Hehe, good job you pussy-licker you.' She says patting the top of your head. She gets off your torso and lifts her clawed hand to help you up. You take it and get to your wobbly feet, trickles of girl-cum still running down your legs. Nala gives you a slap on the bottom and flies back over to her little bed leaving you to your own devices.";
+		say "     Nala continues to hump against you and you can hear her giggle, it vibrating through her body. She slows her movement staring down at your soaked mouth before speaking. 'Hehe, good job you pussy-licker you,' she says, patting the top of your head. She gets off your torso and lifts her clawed hand to help you up. You take it and get to your wobbly feet, trickles of girl-cum still running down your legs. Nala gives you a slap on the bottom and flies back over to her little bed leaving you to your own devices.";
 
 instead of fucking the Nala:
 	if (lastfuck of Nala - turns < 6): [he got fucked in the last 18 hours = 6 turns]
@@ -220,13 +239,9 @@ to say NalaSexMenu:
 					say "[NalaSex3]";
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if player consents:
-				now sextablerun is 1;
-				say "     You step back from the imp, shaking your head slightly as she gives a questioning look.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You step back from the imp, shaking your head slightly as she gives a questioning look.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
 	clear the screen and hyperlink list;
@@ -243,7 +258,7 @@ to say NalaSex2: [oral on Nala]
 	say "     Gazing down at you she removes her lacy panties and fingers her sex above your face. She smells very sweet, a bit like apples with an intense heat that warms your face. She fumbles with her tail, pulling it to her face to give it a kiss. Before your eyes her tail stinger shifts into a red phallic shape. 'There we go, get to licking big girl I'll do the rest!' She exclaims as she drops the rest of her weight down onto your face. You thrust your tongue upward into her steaming hot cauldron sex, slathering her crotch in your saliva. She lets out a sweet little yelp and grips at your breasts to keep herself steady. She twists your nipples and humps downward at your thrusting tongue. Gaining a steady rhythm of her humping downward and you licking at her tasty juices you can feel her long tail caress lower down your body.";
 	WaitLineBreak;
 	say "     It moves across your thighs and the large nearly ten inch phallus rubs against your womanhood. Rubbing her tail penis into your damp lips she coat it in your excitement before pressing into your tunnel. Moaning into her humping thighs as you lick, Nala suddenly thrusts her tail phallus, fully engulfing it in your folds. You moan your pleasure into her burning sex as she continues to thrust into your own. You can feel yourself swiftly approaching climax as you feel the imp speedy her thrusts up. Trying to keep up, you redouble your efforts and suck on her clit, fingering her soaked crotch as you do. Finally Nala hilts her tail cock in your womanhood and you feel yourself explode in climatic bliss.";
-	say "     Your mind goes foggy but you manage to stay latched onto Nala's crotch as you ride out your orgasm, her tail doesn't let up and continues to thrust in and out of your spasming crotch. The little imp follows shortly after, clamping down around your tongue, her pink lips shoot forth a torrent of tasty climax to cover your face. Nala continues to hump against you and you can hear her giggle, it vibrating through her body. She slows her movement staring down at your soaked mouth before speaking. 'Hehe, good job you pussy licker you.' She says patting the top of your head. She gets off your torso and lifts her clawed hand to help you up. You take it and get to your wobbly feet, trickles of girl-cum still running down your legs. Nala gives you a slap on the bottom and flies back over to her little bed leaving you to your own devices.";
+	say "     Your mind goes foggy but you manage to stay latched onto Nala's crotch as you ride out your orgasm, her tail doesn't let up and continues to thrust in and out of your spasming crotch. The little imp follows shortly after, clamping down around your tongue, her pink lips shoot forth a torrent of tasty climax to cover your face. Nala continues to hump against you and you can hear her giggle, it vibrating through her body. She slows her movement staring down at your soaked mouth before speaking. 'Hehe, good job you pussy licker you,' she says, patting the top of your head. She gets off your torso and lifts her clawed hand to help you up. You take it and get to your wobbly feet, trickles of girl-cum still running down your legs. Nala gives you a slap on the bottom and flies back over to her little bed leaving you to your own devices.";
 
 to say NalaSex3: [Nala fucked]
 	say "     You stride up to the bubbly imp girl and ask if she's in the mood for some fun. She gives you a giggle and places a hand over her mouth. 'Feeling a little randy so you come to little ol' me huh? Well lucky for you I'm always down for a little randiness.' She flaps her wings and darts in your direction, slamming like a heavy pillow into your head locking lips with you and throwing her arms around your head. She thrusts her tongue into your mouth, her long demonic tongue wrapping with your own. Her stinger-tipped tail wraps around your midriff as her small yet surprisingly strong body pushes your willing form against a nearby wall. After a few moments of making out with the little she-devil she pulls back and smiles brightly. 'Mmm, you're going to take care of me aren't you big boy?' She slowly pushes you down unto the floor below and straddles your waist.";

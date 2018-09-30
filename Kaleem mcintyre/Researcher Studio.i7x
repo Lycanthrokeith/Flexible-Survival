@@ -2,6 +2,10 @@ Researcher Studio by Kaleem mcintyre begins here.
 
 Section 1 - Researcher Studio
 
+Table of GameRoomIDs (continued)
+Object	Name
+Researcher Studio	"Researcher Studio"
+
 Researcher Studio is a room. It is private. It is a fasttravel.
 
 The description of Researcher Studio is "A small two story home stands in the middle of the plains like some kind of bizarre guard post. Coming from out of the only chimney up on the roof is a thick line of grayish-white smoke filling up the surrounding area with a strong scent of sulfur, the likes of which is probably keeping away the mutants and other animals running around here. Over by the right side of the house sits is a glittering pool of pure water that glimmers almost ethereally as the wind ripples at its surface. On the other side of the house are large grooves of plants, herbs and fruits growing silently as if in wait to be picked, watered or else pruned by the proprietor of the house.".
@@ -9,10 +13,14 @@ The description of Researcher Studio is "A small two story home stands in the mi
 instead of sniffing Researcher Studio:
 	say "Breathing in the time that mixture of scents you notice that the sharp tang of herbs, smoke, sweet fruit and something calming wafting throughout the air.";
 
-North of Researcher Studio is MainRoom.
+MainRoom is north of Researcher Studio.
 
 
 Section 2 - Main Room
+
+Table of GameRoomIDs (continued)
+Object	Name
+MainRoom	"MainRoom"
 
 MainRoom is a room.
 The description of MainRoom is "Inside of the main room of the studio the large expanse of space has been decorated to both look and feel comfortable as a large and plush beige sofa sits with fluffy green rug lying across the floor underneath legs of the couch. Over by a side door leading to an open kitchen sits a cedar table and black leather chair with a laptop quietly humming on top of the desk's surface. On the other side of the table there is a single door that has been kept open showing off Omio's bedroom. A pair of stairs at the back of the room leads up to a darkened area while opposite of said stairwell a single shut door looms almost arrogantly with a large deadbolt keeping the unknown area locked up tight. Relatively speaking the living space of the studio would look rather inconspicuous had it not been for the large cauldron boiling in the fireplace with gray smoke coming from out of the oversized black pot.".
@@ -21,10 +29,16 @@ Omio is in MainRoom.
 instead of sniffing MainRoom:
 	say "The living area smells faintly of the warm homey scent that one could come to expect from a regular suburban room.";
 
-South of MainRoom is Researcher Studio.
-East of MainRoom is Bedroom.
-West of MainRoom is Kitchen.
-Up of MainRoom is Vacant Upstairs.
+Researcher Studio is south of MainRoom.
+Bedroom is east of MainRoom.
+Kitchen is west of MainRoom.
+
+Table of GameRoomIDs (continued)
+Object	Name
+Vacant Upstairs	"Vacant Upstairs"
+
+Vacant Upstairs is a room.
+Vacant Upstairs is above MainRoom.
 
 
 
@@ -32,6 +46,10 @@ Section 3 - Omio
 
 Omiotalk is a number that varies.
 omq is a number that varies.
+
+Table of GameCharacterIDs (continued)
+object	name
+Omio	"Omio"
 
 Omio is a woman.
 The description of Omio is "Humming to herself while puttering around the main room of her home is the strawberry redhead you met on the plains earlier. Five foot five inches tall, with golden eyes and a blue Chinese-like dress that covers her frame from neck down to her feet, the human-like woman mutters to herself while walking around doing this, that or the other. Her skin is tanned giving her the appearance of someone who is probably native to a southern island somewhere below the equator. Her face is somewhat sharp with clearly defined angles, yet instead of making her seem manly these lines make her more... cute in a girlish like way.".
@@ -116,7 +134,7 @@ Check Omioteatime:
 	If Omio is not visible, say "Excuse me?" instead;
 
 LastOmioteatime is a number that varies. LastOmioteatime is usually 777.
-[Omioteatime is a number that varies.][Does not compile]
+[Omioteatime is a number that varies.][@Tag:NotSaved][Does not compile]
 
 carry out Omioteatime:
 	if lastOmioteatime - turns < 6:
@@ -166,6 +184,10 @@ carry out Omioteatime:
 
 Section 5 - Bedroom
 
+Table of GameRoomIDs (continued)
+Object	Name
+Bedroom	"Bedroom"
+
 Bedroom is a room.
 
 The description of Bedroom is "Omio's bedroom is unexpectedly bare, unlike the main room of the house. A large Japanese futon has been settled onto the hardwood floor back against the far wall of the room in between the only two windows within the sleeping area. Said windows are framed by teal-blue curtains and from the way the linens sway with the rustling of the breeze it's easy to imagine Omio having pleasant dreams in here as the area feels somewhat harmonious... or maybe ethereal in nature. A small nightstand sits over by the left wall with a blue vase placed on top of the stand. A pink flower hangs sleepily from out of the cerulean urn. Above the nightstand hangs a large painting of a ferocious Chinese dragon.".
@@ -174,7 +196,7 @@ Nightstand is in Bedroom. It is fixed in place.
 instead of sniffing Bedroom:
 	say "The lingering scents of wind and earth have mixed into the sleeping area giving it a somewhat otherworldly scent.";
 
-West of Bedroom is MainRoom.
+MainRoom is west of Bedroom.
 
 
 
@@ -204,6 +226,10 @@ Carry out unlocknightstand:
 
 Section 7 - Kitchen
 
+Table of GameRoomIDs (continued)
+Object	Name
+Kitchen	"Kitchen"
+
 Kitchen is a room.
 
 The description of Kitchen is "Omio's kitchenette is made up of ashen walls with a white tiled floor housing a modern style stove and refrigerator with a single chrome sink resting next to said refrigerator. Large wooden cabinets sit on both the top and bottom sides of refrigerator and stove. More than likely the cupboards house a plentiful storage of food for Omio to cook with, yet from the lingering smells filling the area it would seem that the redhead prepares a lot more tea in here than food. Over by the side of the backdoor leading into the plains there stands a large dining table and two comfortable looking chairs with a Chinese styled tea set sitting atop the surface of the table.".
@@ -213,10 +239,14 @@ The invent of Kitchen is { "water bottle", "food", "chips", "tasty peach" }.
 instead of sniffing Kitchen:
 	say "Omio's kitchen smells of herbs and spices all boiled together into various mixes to make soul calming tea.";
 
-East of Kitchen is MainRoom.
+MainRoom is east of Kitchen.
 
 
 Section 8 - VacantUpstairs
+
+Table of GameRoomIDs (continued)
+Object	Name
+VacantUpstairs	"VacantUpstairs"
 
 VacantUpstairs is a room.
 
@@ -227,7 +257,7 @@ instead of sniffing VacantUpstairs:
 
 Glass Window is in Vacant Upstairs.
 
-Down of VacantUpstairs is MainRoom.
+MainRoom is below VacantUpstairs.
 
 
 Section 9 – Glass Window
@@ -253,6 +283,10 @@ Carry out lookingoutwindow:
 
 Section 10 - For the Future
 
+Table of GameEventIDs (continued)
+Object	Name
+For the Future	"For the Future"
+
 For the Future is a situation.
 
 The sarea of For the Future is "Plains".
@@ -274,6 +308,7 @@ Instead of Resolving a For the Future:
 		say " After picking up a pack that you hadn't seen hiding in some of the knee tall grass behind her, you watch as the redhead goes about her way in silent grace. Taking care to watch her until this [']Omio['] becomes a small dot shrinking into the distance you find yourself wondering if you should take the redhead up on her offer for tea. She doesn't seem too bad, if just somewhat ill mannered, so maybe it might be worth the trouble after all? Also, there are some budding questions filling up your mind as you wonder how such a person has survived unchanged for so long. Maybe there is something to be learned from this woman? She said her place was a research studio... right? That shouldn't be too hard to find in the middle of the plains.";
 		now Researcher Studio is known;
 		now For the Future is resolved;
+		now Resolution of For the Future is 1; [fought, won]
 		increase score by 15;
 	else:
 		say "Having lost to the centaur stallion and been [']seeded['] by the mutated horse-like creature, you find yourself slightly annoyed as you start wipe off from the sticky centaur cum flowing down your [if player is female]slightly puffy pussy[else]chest[end if]. An out of nowhere shriek makes your head up just in time to see the woman you had tried to save coming over to you with a small opened jar in her hands. 'Don't move a muscle,' she says excitedly and for some reason you comply by going still as she starts to scoop the white cum up from off of your [if player is female]weeping cunt[else]torso[end if].";
@@ -285,11 +320,9 @@ Instead of Resolving a For the Future:
 		say "'Look, I could go into my whole spiel here, but if you just come to my studio then I'll explain everything. It's over by the northern end of the plains.' Omio hikes a thumb behind herself and then chuckles for some unknown reason. 'If you come I'll even share some tea with you and then tell you the whole story.";
 		say "Not sure what to say you tell Omio that you [italic type]might[roman type] think about it if you can find some time later on. 'That's fine, I can accept that promise.' The strawberry redhead turns away from you and then begins to off on her, however, before she can leave completely you sudden call out to her to ask what she plans to do with that centaur stallion cum you managed to [italic type]acquire[roman type] for her. Omio stops and then shakes her head before turning to regard you. 'Come to my [bold type]Research Studio[roman type] and I'll tell you.' A snicker from the woman has you shuddering slightly as Omio turns to go off about her way, leaving you with your thoughts.";
 		now Researcher Studio is known;
+		now Resolution of For the Future is 2; [fought, lost]
 		now For the Future is resolved;
 		increase score by 15;
-
-
-
 
 [
 when play ends:

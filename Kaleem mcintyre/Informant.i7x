@@ -2,6 +2,10 @@ Informant by Kaleem mcintyre begins here.
 
 Section 1 - Informant
 
+Table of GameEventIDs (continued)
+Object	Name
+Informant	"Informant"
+
 Informant is a situation. The level of Informant is 9.
 
 The sarea of Informant is "High".
@@ -9,7 +13,6 @@ smf is a number that varies.
 when play begins:
 	add Informant to badspots of furry;
 	add Informant to badspots of guy;
-
 
 Instead of resolving a Informant:
 	if smf is 0:
@@ -31,6 +34,10 @@ Instead of resolving a Informant:
 
 Section 2 - Agency
 
+Table of GameRoomIDs (continued)
+Object	Name
+Agency	"Agency"
+
 Agency is a room. It is fasttravel. It is private.
 The description of Agency is "Back behind some of the less prominent buildings of the high rise there stands and old fashion deli that seems to be in good shape, despite the rough times the city is having. At the side of the deli a stone flight of stairs leads down to where a nondescript black door stands in wait for certain... irregular... customers. Pushing the door open you find a cool office with a fan swirling up on the ceiling filling out the strangely expansive room hidden from the rest of the world. A plush red carpet covers the floor of the room while a single desk and chair stands in front of three large bookcases filled to the brim with old tomes. A comfy looking couch sits to the left of the doorway while a gargantuan fish tank filled with multicolored fish and turtles has been positioned onto the right side of the entryway. All in all the room both looks and feels like something pulled out of an old fashion detective novel, especially with the uninteresting door in the back that looks as though it hasn't seen much use in quite a while. Homaru is sitting down at his desk and looking over something.".
 Homaru is in Agency.
@@ -47,12 +54,10 @@ Homarutalk is a number that varies.
 Homarusearch is a number that varies.
 Findfirefighter is a number that varies.
 Fin is a number that varies.
-Apartment 319 is a situation.
-Apartment 319 is resolved.
-DogHouse is a situation.
-DogHouse is resolved.
-Save the Dame is a situation.
-Save the Dame is resolved.
+
+Table of GameCharacterIDs (continued)
+object	name
+Homaru	"Homaru"
 
 Homaru is a man.
 The description of Homaru is "A young man with spiky brown hair and black hooded coat on sits at his desk while [one of]going over some interesting looking notes[or]leafing through information on his computer[or]surveying files that look to be giving him a hard time[or]eating a sandwich[or]chuckling while reading a comic book[at random]. Homaru looks to be somewhere in his twenties, but the feel of the other man makes him seem as though he's about fifty or something. Sharp brown eyes filled with wisdom look up at you as you walk by Homaru and you find it hard not to freeze in place from the look given to you by those dark and seemingly ageless orbs.".
@@ -74,8 +79,8 @@ instead of conversing the Homaru:
 			say "Homaru goes over some of the information highlighted on his screen and then freezes all of a sudden. When the power to the building is cut the brown haired man lets out a line of swear words that might have made a nun blush. 'Unbelievable! Someone's caught onto me!' You ask the other what he means and then get a furious stare in return. 'I think that someone's realized you were trying to find the missing firefighters and have shut me down. I won't be able to find any of them for you now.'";
 			say "Homaru sighs in the darkness and then flops his head down onto his desk in disgust. The lights to the building come back on seconds afterwards, ironically.";
 			say "(This quest requires guy, girl and furry content to advance.)[line break]";
-			Now Homarusearch is 70;
-			Now Homarutalk is 1;
+			now Homarusearch is 70;
+			now Homarutalk is 1;
 		else:
 			say "Rapidly typing on his keyboard, Homaru begins to talk to you without looking up into your [facename of player] face. 'Hey, I was looking through some information that I have on hand and I think I found one of the firefighters you spoke about earlier.' Homaru's words make you stare in awe as you try and think up how the other man could have had this kind of info when you only asked him about it, like ten minutes ago. Unless the other was some kind of fortune teller or prophet that should have been impossible... right? Or maybe he was spying on you?[line break]";
 			say "Pulling out a manila folder Homaru, leafs through the information and then goes about giving you some of the highlights. 'It seems that when things started to get out of hand around this city some of the people here panicked and started moving into shelters, bunkers, barracks, or what have you. However, from the intel I have on hand here, it seems as though some small groups of like-minded mutants began popping up when the outbreak became almost impossible to contain in any one place. After that these said groups worked to grab up as many uninfected people as they can to use them for... well, let's just say no good purposes.'[line break]";
@@ -104,7 +109,7 @@ instead of conversing the Homaru:
 				say "Homaru doesn't say anything else as he sits back down to look at you somewhat helplessly. You get the feeling that the information dealer is trying to be helpful, but at the same time he just seems so... You shake your head and then tell Homaru that you will think about it. At that the other man nods to you.[line break]";
 			now Homarutalk is 1;
 			now Homarusearch is 1;
-			now DogHouse is unresolved;
+			now DogHouse is active;
 			now fin is 1;
 			now Warehouse District is known;
 			increase score by 10;
@@ -221,7 +226,7 @@ to say findfirefighter2:
 	say "Moving his sandwich over out of the way you watch as the informant pulls out a manila folder and then shuffles through it. 'Let's see, the next firefighter that might still be in the city should be at the [bold type]high rise district[roman type]. I believe in the golden temple complex. Don't ask me why they named the place as such. I'm still trying to get information on that on.' You close your mouth just as you were preparing to ask. Smirking up at you Homaru reaches up above the folder to hand you a slip of paper.[line break]";
 	say "Walking over to take the item in question you find three numbers looking up at you. [bold type]319[roman type]? 'That's the apartment number. In case you manage to somehow forget it.' Homaru teases and then closes the manila folder. Putting away his little information file you watch as the brown haired man returns to eating his sandwich, his whole demeanor having changed now that he's no longer focused on business.[line break]";
 	now AptAid is 1;
-	now Apartment 319 is unresolved;
+	now Apartment 319 is active;
 	increase score by 4;
 	now Homarusearch is 3;
 
@@ -235,7 +240,7 @@ to say findfirefighter4:
 	say "Homaru merely shrugs at that and you roll your eyes in reciprocation. 'Anyway, I think that this [bold type]Dame[roman type] is haunting the high rise district as of late. More than likely looking for food and whatnot, so if you were going to look her, trying looking somewhere uptown to find her. Also, you may want to try and go [bold type]incognito[roman type] since there are a lot of chocolate Labs roaming around this part of town.' You ask Homaru what he means by [']incognito[']. 'Let's just say that I have it on good standing that you have a way of assuming different forms without losing your good common sense.' A wave of a hand stops you before you can open your mouth to bark at the other.";
 	say "Like I say, I have it on a [italic type]good hunch[roman type] that if you were to [bold type]take on a chocolate Lab form[roman type] you might be able to save this [bold type]Dame[roman type] a lot easier, provided you've got the strength to face a group of angry Labradors over her.' And with that Homaru gives you a cheeky smile before waving you off about your way. Looking at the other man you again have to wonder just how much this man knows and just why he's amassing such information in the first place. For now though, saving this female firefighter is more important. Time to hit that old dusty trail.";
 	now dam is 1;
-	now Save the Dame is unresolved;
+	now Save the Dame is active;
 	now Homarusearch is 5;
 
 to say findfirefighter5:

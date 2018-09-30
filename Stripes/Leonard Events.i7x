@@ -1,5 +1,6 @@
 Version 2 of Leonard Events by Stripes begins here.
 [version 2.9 - Another one-shot den event]
+[Note: not Resolution flagged yet - use existing variables for now]
 
 "Adds a batch of random events and encounters with Leonard's Pride to Flexible Survival scattered around the city."
 [Note: These will only be accessible after completing Leonard's Quest.]
@@ -486,10 +487,14 @@ Section 1 - Park
 Part 0 - Core Event
 
 leoparklist is a list of numbers that varies. leoparklist is usually {1, 2, 5, 6, 9}.
-Leonardwrdesk is a truth state that varies. Leonardwrdesk is normally false.
-Leonardcabinet is a truth state that varies. Leonardcabinet is normally false.
+Leonardwrdesk is a truth state that varies. Leonardwrdesk is usually false.
+Leonardcabinet is a truth state that varies. Leonardcabinet is usually false.
 
-PridePark is a situation. PridePark is resolved.
+Table of GameEventIDs (continued)
+Object	Name
+PridePark	"PridePark"
+
+PridePark is a situation. PridePark is inactive.
 The sarea of PridePark is "Park".
 
 Instead of resolving PridePark:
@@ -920,8 +925,8 @@ to say leoparkscene11:
 
 to felinebodyshift:
 	[puts Feline as lead monster in case of impregnation]
-	repeat with y running from 1 to number of filled rows in table of random critters:
-		choose row y in table of random critters;
+	repeat with y running from 1 to number of filled rows in Table of Random Critters:
+		choose row y in Table of Random Critters;
 		if name entry is "Feline":
 			now monster is y;
 			break;

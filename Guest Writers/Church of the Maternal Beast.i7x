@@ -4,25 +4,21 @@ Version 4 of Church of the Maternal Beast by Guest Writers begins here.
 
 "This is a complete interaction scene, including monsters, rooms, a few scripted encounters and maybe even an item or two."
 
-[
-the Beach Area is a situation.
-
-After resolving the Beach Area, try looking;
-
-Instead of Resolving the Beach Area:
-	say "After far too many dead ends, and impassible roads, you finally manage to find your way Back to the Beach on one side of the city.";
-	now The Beach Plaza is known;
-	move player to Beach Plaza;
-	now the Beach Area is resolved;
-]
-
 Book 1 - Rooms
+
+Table of GameRoomIDs (continued)
+Object	Name
+Beach Plaza	"Beach Plaza"
 
 Beach Plaza is a Room. "     As you step out of the dirty, ill-kempt street you are met surprised by the sunny scene spread out in front of you, an open and relatively clean plaza with steps leading down to a small stretch of public beach. There are various infected cavorting around in the sand and water, laughing and enjoying themselves. To the north is a church, its wide double doors open and inviting, and to the west is a set of stairs down onto the beach proper.".
 The Beach Plaza is fasttravel.
 The Beach Plaza is not known.
-Beach Exit is a door. Beach Exit is dangerous. The marea of Beach Exit is "Outside". Beach Exit is undescribed. Beach Exit is east of Beach Plaza. East of Beach Exit is Outside Exploration.
+Beach Exit is a door. Beach Exit is dangerous. The marea of Beach Exit is "Outside". Beach Exit is undescribed. Beach Exit is east of Beach Plaza. Outside Exploration is east of Beach Exit.
 [The Beach Plaza is private.]
+
+Table of GameRoomIDs (continued)
+Object	Name
+Public Beach	"Public Beach"
 
 Public Beach is a Room. "[publicbeachdesc]".
 
@@ -31,13 +27,13 @@ to say publicbeachdesc:
 	say "     A few changed faces glance up at you, and a few smile friendlily, but otherwise you're left alone. There seem to be [if daytimer is day]a lot of aquatic infected here[else]quite a few aquatic infected here even at night[end if], otters & dolphins mainly, though one big hunk of an orca does stand out. He's got a whistle around his meaty neck and seems to be acting as the lifeguard here. He looks occupied right now however.";
 	say "     Thanks to the lifeguard, the immediate area on the beach seems peaceful enough, but things seem less supervised (and civilized) should you follow the sandy shoreline [link]southwards[as]south[end link]. Should you rather stay here and perhaps even get a snack, there's a small beach-side restaurant you can go [link]inside[as]in[end link]. The [link]west[end link] leads out onto some sand bars before the water gets too deep and choppy for the casual swimmer as those rocky outcroppings start to appear. To your [link]north[end link] is set of dirty dingy sheds. Should you wish to leave the beach, it is backed by a short block wall to the [link]east[end link] with stairs leading back up to the plaza.";
 
-West of Beach Plaza is Public Beach.
+Public Beach is west of Beach Plaza.
 
 Unsupervised Beach is a door. "The beach continues along to the south, but is unsupervised. Unlike here, you see few people around... perhaps for good reason." Unsupervised Beach is dangerous.
 The marea of Unsupervised Beach is "Beach".
 
-South of Public Beach is Unsupervised Beach.
-South of Unsupervised Beach is UnsupBeach. [Check]
+Unsupervised Beach is south of Public Beach.
+UnsupBeach is south of Unsupervised Beach. [Check]
 
 instead of sniffing the beach plaza:
 	say "The seashore is near. There is salt in the air.";
@@ -45,9 +41,12 @@ instead of sniffing the beach plaza:
 instead of sniffing Public Beach:
 	say "The salt in the air is reminiscent of high tide at the beach.";
 
+Table of GameRoomIDs (continued)
+Object	Name
+Church Hall	"Church Hall"
 
 Church Hall is a room. "     The inside of the Church is dim but not dark - relaxing, one could say. It seems all terribly normal, wooden pews filling much of the long hall, a smattering of heads sitting here and there. There's definitely no lack of space. There are some signs that whatever religion is practiced here, it's not anything you recognize. There are no crosses or other recognizable religious symbols. There are several freshly painted motifs however and they all seem to depict some great stylized beast offering protection and shelter to those near it. At the far end of the church, there seems to be a recessed door that, based on the outside of the building, must lead down some stairs.".
-North of Beach Plaza is Church Hall.
+Church Hall is north of Beach Plaza.
 There is a Notice Board in the Church Hall. It is rooted in place.
 There is a Confession Booth in the Church Hall. "Standing against one wall, the dark wood of the large confession booth catches the eye. It has been modified to allow even a large creature such of those Panther Taurs to fit inside.". It is Rooted in place.
 The invent of Church Hall is { "nullifying powder" }.
@@ -64,12 +63,19 @@ instead of sniffing the Overgrown Block:
 	else:
 		say "This deserted spot smells faintly of the seaside air.";
 
+Table of GameRoomIDs (continued)
+Object	Name
+Dirty Sheds	"Dirty Sheds"
 
 Dirty Sheds is a room. "     Set a way back from the beach, the row of dilapidated sheds were used to store things like lifesaving equipment and other stuff. Now the overlong grass makes it nearly impossible to open the doors, and that is if you could do something about the big rusted padlocks on most of the doors. One seems to have been broken into already however, the door hanging off its hinges and ransacked interior barely visible. Between two of the sheds there is one oddity, a path north has been worn into the overlong grass.".
-north of public beach is Dirty Sheds.
+Dirty Sheds is north of public beach.
+
+Table of GameRoomIDs (continued)
+Object	Name
+Overgrown Block	"Overgrown Block"
 
 Overgrown Block is a room. "[block description]".
-North of Dirty Sheds is overgrown block.
+Overgrown Block is north of Dirty Sheds.
 
 to say block description:
 	if daytimer is night:	[night]
@@ -250,7 +256,7 @@ to Hellhound infect female:
 	now scalevalue of player is 3;
 	now bodydesc of player is "[one of]average[or]normal[or]unchanged[at random]";
 	now bodytype of player is "human";
-	now daycycle of player is 0;
+	now SleepRhythm of player is 0;
 	now cunts of player is 1;
 	now cunt length of player is 6;
 	now cunt width of player is 4;
@@ -286,7 +292,7 @@ to Hellhound infect male:
 	now scalevalue of player is 3;
 	now bodydesc of player is "[one of]average[or]normal[or]unchanged[at random]";
 	now bodytype of player is "human";
-	now daycycle of player is 0;
+	now SleepRhythm of player is 0;
 	now cocks of player is 1;
 	now cock length of player is 6;
 	now the cock width of the player is 4;
@@ -373,13 +379,13 @@ every turn (This is the check Hellhound rule):
 					now scalevalue of player is 3;
 					now bodydesc of player is "[one of]average[or]normal[or]unchanged[at random]";
 					now bodytype of player is "human";
-					now daycycle of player is 0;
+					now SleepRhythm of player is 0;
 				else:
 					now body of player is "appears perfectly human at first. But on your belly there are six nipples, and between your legs rests a swollen, permanently in-heat Hellhound twat";
 					now scalevalue of player is 3;
 					now bodydesc of player is "[one of]average[or]normal[or]unchanged[at random]";
 					now bodytype of player is "human";
-					now daycycle of player is 0;
+					now SleepRhythm of player is 0;
 				say "     Your body doubles over, not in pain, but simply as muscles spasm and reshape. Your form returns to the human body you were born with, plus the additions you sport due to the Hellhound's [']gift['].";
 			if maleHound is True:
 				if player is female:
@@ -433,13 +439,13 @@ every turn (This is the check Hellhound rule):
 					now scalevalue of player is 3;
 					now bodydesc of player is "[one of]bipedal[or]altered[or]twisted[or]animalistic[at random]";
 					now bodytype of player is "[one of]canine[or]dog-like[at random]";
-					now daycycle of player is 0;
+					now SleepRhythm of player is 0;
 				else:
 					now body of player is "that of a bipedal dog, paw-like feet, and stubby-fingered hands with pawpads and dull black claws.";
 					now scalevalue of player is 3;
 					now bodydesc of player is "[one of]bipedal[or]altered[or]twisted[or]animalistic[at random]";
 					now bodytype of player is "[one of]canine[or]dog-like[at random]";
-					now daycycle of player is 0;
+					now SleepRhythm of player is 0;
 				say "     Your body doubles over, not in pain but simply because you can't remain upright as muscles spasm and reshape, your body reforming into a bipedal version of the infernal mutt you submitted to.";
 			if maleHound is True:
 				if player is female:
@@ -491,13 +497,13 @@ every turn (This is the check Hellhound rule):
 					now scalevalue of player is 3;
 					now bodydesc of player is "[one of]quadrapedal[or]altered[or]twisted[or]animalistic[at random]";
 					now bodytype of player is "[one of]canine[or]dog-like[at random]";
-					now daycycle of player is 2;
+					now SleepRhythm of player is 2;
 				else:
 					now body of player is "that of an uncommon mutt, four paw-like feet with wicked black claws, and no hands";
 					now scalevalue of player is 3;
 					now bodydesc of player is "[one of]quadrapedal[or]altered[or]twisted[or]animalistic[at random]";
 					now bodytype of player is "[one of]canine[or]dog-like[at random]";
-					now daycycle of player is 2;
+					now SleepRhythm of player is 2;
 				say "     Your bones seem to heat and grow soft, the action making you collapse onto the ground as they no longer seem to be able to bear your weight. You are forced to lie there for a few minutes as muscles shift and joints pop. Eventually, the changes seem to complete and you're able to pull yourself to your feet, all four feet. You now wear the form of the foul demonic hound that tainted you.";
 			if maleHound is True:
 				if player is female:
@@ -544,7 +550,7 @@ When Play begins:
 Book 4 - Return to the Church
 
 churchenter is a number that varies.
-lastchurchattempt is a number that varies. lastchurchattempt is normally 248.
+lastchurchattempt is a number that varies. lastchurchattempt is usually 248.
 
 instead of going north from the Beach Plaza while hellhoundlevel > 0:
 	if churchenter is 0:
@@ -577,21 +583,21 @@ When play ends:
 		else if bodyname of player is "Wolverine Guard" and facename of player is "Wolverine Guard" and cockname of player is "Wolverine Guard" and skinname of player is "Wolverine Guard" and tailname of player is "Wolverine Guard":		[succumbed to wolverine sex]
 			say "     Your bond as guardian to the Central Library and to your new mate is too strong for the Hellhound's curse, breaking it and allowing you to become a new protector for the library.";
 		else if bodyname of player is "Tigress Hooker" and facename of player is "Tigress Hooker" and cockname of player is "Tigress Hooker" and skinname of player is "Tigress Hooker" and tailname of player is "Tigress Hooker":			[claimed at the tigress motel]
-			Now T is 0; [do nothing statement]
+			now T is 0; [do nothing statement]
 		else if bodyname of player is "Big Tiger" and facename of player is "Big Tiger" and cockname of player is "Big Tiger" and skinname of player is "Big Tiger" and tailname of player is "Big Tiger":							[victory at tigress motel]
-			Now T is 0; [do nothing statement]
+			now T is 0; [do nothing statement]
 		else if bodyname of player is "Big Tigress" and facename of player is "Big Tigress" and cockname of player is "Big Tigress" and skinname of player is "Big Tigress" and tailname of player is "Big Tigress":					[victory at tigress motel]
-			Now T is 0; [do nothing statement]
+			now T is 0; [do nothing statement]
 		else if bodyname of player is "Chocolate Lab" and facename of player is "Chocolate Lab" and cockname of player is "Chocolate Lab" and skinname of player is "Chocolate Lab" and tailname of player is "Chocolate Lab":				[made into Chocolate Lab]
-			Now T is 0; [do nothing statement]
+			now T is 0; [do nothing statement]
 		else if vinetrapped is 1 or vinetrapped is 2:							[full plant TF]
-			Now T is 0; [do nothing statement]
+			now T is 0; [do nothing statement]
 		else if foodvendor is 4:											[food vendor's sex slave]
-			Now T is 0; [do nothing statement]
+			now T is 0; [do nothing statement]
 		else if centrallib is 7:											[captured by librarian harpies]
-			Now T is 0; [do nothing statement]
+			now T is 0; [do nothing statement]
 		else if skunkbeaststatus is 2:										[lost to Skunkbeast Lord]
-			Now T is 0; [do nothing statement]
+			now T is 0; [do nothing statement]
 		else if mousecurse is 1:											[chosen by the mouse-collective]
 			say "     As your mind fades, more and more of your infernal taint comes to the fore, hands becoming paws, face stretching out into a muzzle, coarse dirty fur spreading all over your body. But then Rachel is there, holding you tightly in her small arms, somehow her weak arms able to hold back the powerful force of your infernal pact. As your mate clutches to you, you can feel her mind pushing against that dark power. Soon you can feel somewhere above her mind, greater than it, the collective hive-mind of all the mice, focused on this. Your body starts changing again, becoming more mouse-like this time until you are fully a mouse like your loving mate and the other mice of the collective, though of the same gender as you were before. The darkness fades as the bond of the dark pact is shattered by their mental might, freeing you to become fully one of them instead.";
 			say "[fullmousification]";

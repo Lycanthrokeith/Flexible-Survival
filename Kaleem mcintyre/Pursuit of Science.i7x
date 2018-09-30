@@ -471,6 +471,10 @@ to say omioquest14:
 
 Section 2 - Dream of a Unicorn
 
+Table of GameEventIDs (continued)
+Object	Name
+Dream of a Unicorn	"Dream of a Unicorn"
+
 Dream of a Unicorn is a situation.
 The sarea of Dream of a Unicorn is "Park".
 
@@ -482,9 +486,9 @@ When play begins:
 
 Instead of resolving a Dream of a Unicorn:
 	if omq is 0:
-		say "Walking through the park you find yourself stopping when you notice [if Omiotalk is 1]Omio[else]a redheaded woman in a blue chinese dress[end if] talking to someone hiding in the shadow of a tree. Not sure what's going on you merely watch the two and then blink when both the redhead and the mysterious [']person['] suddenly blink out of existence. Twisting your head around to make sure that you're not dreaming you find that - yep - [if Omiotalk is 1]Omio[else]the strange woman is gone[end if] and the other are gone. Weird.";
+		say "Walking through the park, you find yourself stopping when you notice [if Omiotalk is 1]Omio[else]a redheaded woman in a blue Chinese dress[end if] talking to someone hiding in the shadow of a tree. Not sure what's going on you merely watch the two and then blink when both the redhead and the mysterious [']person['] suddenly blink out of existence. Twisting your head around to make sure that you're not dreaming you find that - yep - [if Omiotalk is 1]Omio[else]the strange woman is gone[end if] and the other are gone. Weird.";
 	else if dre is 1:
-		say "Finding Omio sitting at a table inside of the park you cautiously walk to over to the redhead while flipping your head back and forth to make sure that no roaming mutants pop out on you. Making as much noise as possible to alert her to your presence you almost leap out of your [skin of player] when sharp golden eyes turn to regard you. At seeing that it's just you Omio lets her face until a friendly mask is placed over the redhead's formerly irritated features. 'Oh hey, I was just thinking about you!' With that look on her face you wonder if you should start running about now. When the redhead gets up to stretch you note all of hidden muscles she possesses in her arms as the sleeves of her blue Chinese styled dress slip down her bicep.";
+		say "Finding Omio sitting at a table inside of the park, you cautiously walk to over to the redhead while flipping your head back and forth to make sure that no roaming mutants pop out on you. Making as much noise as possible to alert her to your presence you almost leap out of your [skin of player] when sharp golden eyes turn to regard you. At seeing that it's just you Omio lets her face until a friendly mask is placed over the redhead's formerly irritated features. 'Oh hey, I was just thinking about you!' With that look on her face you wonder if you should start running about now. When the redhead gets up to stretch you note all of hidden muscles she possesses in her arms as the sleeves of her blue Chinese styled dress slip down her bicep.";
 		WaitLineBreak;
 		say "Omio slowly lowers her arms and then walks over to reach out to hug you tightly into her somewhat modest chest. 'I sooo need your help right now.' You try to ask the other what she needs, but sadly it gets muffled into the redhead's warm and slightly comfy feeling bosom. When Omio decides to let you go, some minutes later, you pant slightly as your [facename of player] face is somewhat very sweaty. Despite her size the redhead is both very strong and has a very high body temperature. Odd. 'If you have some time I need you to do me a big favor.'";
 		WaitLineBreak;
@@ -530,10 +534,12 @@ Instead of resolving a Dream of a Unicorn:
 				say "When you come down from off of your high you drop back onto the table and then begin to pant like an overworked freight train. Mind whirling as though you've gone through an unbelievable experience, which technically you have, you blink your eyes open and then look down just in time to see Omio collecting your colorful nectar into a large jar. When the redhead speaks next you can only twitch an eye as Omio's words sink deep into your brain. 'Thanks a lot for this sample! I never would have gotten old Harold to give me anything unless I raised my ass for him. But thankfully I didn't have to do that because you did instead!' The redhead holds up the now capped jar and then pulls out a sharpie to label it. 'With this we can test some new theories to see if unicorn cum actually does extend one's life! Maybe if you feel like it you can work we me and my company later on to see if this is true or not?'";
 				WaitLineBreak;
 				say "You pass out from exhaustion before you can comment on that one and when you wake up you have a hard time remembering what exactly happened, that is, until you find your clothes still in a puddle around you on the floor and your lap sticky with your spilled honey. Blushing slightly as the memories return to you, you quickly get up and then go about your way before any trouble can find you. In your backpack are several extra supplies that had been given over by Omio.";
+			now Resolution of Dream of a Unicorn is 1; [sexual testing]
 		else:
 			LineBreak;
 			say "'Well I suppose we can skip it for today then.' Omio smiles patiently while saying this. The look in her eye is a bit forlorn, but at the same time you don't think you're ready for her to try anything more on your. 'Ok, well, I'm going to be working back at home. If you want to come and help me out again just head there.' Omio winks at you and then moves to take of her gloves and scrubs.";
 			say "When the redhead is done with the clean up portion of the examination she lays out several provisions for you and then turns to go off about her way.";
+			now Resolution of Dream of a Unicorn is 2; [sexual testing denied]
 		increase carried of food by 1;
 		increase carried of water bottle by 1;
 		increase carried of tasty peach by 1;

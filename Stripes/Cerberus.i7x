@@ -1,5 +1,5 @@
 Version 1 of Cerberus by Stripes begins here.
-[ Version 1.2 - Alt attack and Anime Babe vulnerability tweaked]
+[ Version 1.2 - Alt attack and Anime Babe vulnerability tweaked ]
 [Adaptation for Flexible Survival by Stripes]
 [This monster was translated from the multiplayer game automatically by Nuku Valente, but may, most likely, have been written by someone else.]
 [This monster was updated and converted to a more readable format by Stripes. All sexual encounters from MP MUD have been rewritten to fit the game better, all credit to creature idea goes to original author!]
@@ -49,7 +49,7 @@ to say losetocerberus:
 		follow the sex change rule;
 
 to say beatthecerberus:
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	now cerberusarousal is 0;
 	let godoggygo be 0;
 	now cerbfight is 1;
@@ -171,7 +171,7 @@ to say cerberusbodytf:
 
 to say cerberustailtf:
 	if player is male:
-		say "your ass suddenly emits a sharp, painful CRACK as the bones spontaneously and painlessly break. Your hips quiver a little, but you else manage to hold your position as more cracks occur as a new tail forms behind you. It shifts and grows into a thick, demonic tail. At the same time, your groin burns with pain as does the end of your new tail as a small slit appears on the very end of it. You look down and realize that your penis[if cocks of player > 1]es[end if] as well as your testicles have vanished from your crotch, leaving a smooth surface behind. You look at your tail again just in time to see your penis[if cocks of player > 1]es[end if] emerge from the slit at the end of your tail, spurting virile seed excitedly onto the ground as [if cocks of player is 1]it[else]they[end if] settles into place. [if cocks of player is 1]It is[else]They are[end if] exactly the same size and form as before the shift in position. You can feel your balls spreading out in the tail's tissue as well, equal in size as before, but spread out across the whole of your tail to hide them while keeping them ready to perform their duty when needed. But you have a feeling that your dick[smn] will go back where [if cocks of player is 1]it[else]they[end if] belongs if your ass gets mutated again. On the other hand, you could get used to having [if cocks of player is 1]a tailcock[else]a set of tailcocks[end if]";
+		say "your ass suddenly emits a sharp, painful CRACK as the bones spontaneously and painlessly break. Your hips quiver a little, but you else manage to hold your position as more cracks occur as a new tail forms behind you. It shifts and grows into a thick, demonic tail. At the same time, your groin burns with pain as does the end of your new tail as a small slit appears on the very end of it. You look down and realize that your penis[esmn] as well as your testicles have vanished from your crotch, leaving a smooth surface behind. You look at your tail again just in time to see your penis[esmn] emerge from the slit at the end of your tail, spurting virile seed excitedly onto the ground as [if cocks of player is 1]it[else]they[end if] settles into place. [if cocks of player is 1]It is[else]They are[end if] exactly the same size and form as before the shift in position. You can feel your balls spreading out in the tail's tissue as well, equal in size as before, but spread out across the whole of your tail to hide them while keeping them ready to perform their duty when needed. But you have a feeling that your dick[smn] will go back where [if cocks of player is 1]it[else]they[end if] belongs if your ass gets mutated again. On the other hand, you could get used to having [if cocks of player is 1]a tailcock[else]a set of tailcocks[end if]";
 	else:
 		say "your ass emits a loud but painless CRACK as the bones shift, a new growth emerging in the form of a very thick tail with a slit at the very end of it. You don't know yet what that slit is for, but it feels sensitive like an erogenous zone. You get the feeling that something is supposed to be coming out of that slit, but another thought tells you that it will vanish completely if your tail is mutated again by something else";
 
@@ -181,12 +181,12 @@ to say cerberuscocktf:
 
 Section 2 - Monster Insertion
 
-Table of random critters (continued)
-name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	nocturnal (truth state)	altcombat (text)
---	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
+Table of Random Critters (continued)
+name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	DayCycle	altcombat (text)	BannedStatus (truth state)
+--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
 
 When Play begins:
-	Choose a blank row from Table of random critters;
+	Choose a blank row from Table of Random Critters;
 	now name entry is "Cerberus"; [Name of your new Monster]
 	now enemy title entry is "";
 	now enemy name entry is "";
@@ -234,8 +234,9 @@ When Play begins:
 	now magic entry is false;
 	now resbypass entry is false;
 	now non-infectious entry is false;
-	blank out the nocturnal entry; [ True=Nocturnal (night encounters only), False=Diurnal (day encounters only), blank for both. ]
+	now DayCycle entry is 0; [ 0 = Up at all times; 1 = Diurnal (day encounters only); 2 = Nocturnal (night encounters only);]
 	now altcombat entry is "cerberus"; [ Row used to designate any special combat features, "default" for standard combat. ]
+	now BannedStatus entry is false;
 
 
 Section 3 - Alt Attack
@@ -245,7 +246,7 @@ name	combat (rule)	preattack (rule)	postattack (rule)	altattack1 (rule)	alt1chan
 "cerberus"	cerberus rule	--	--	--	--	--	--	--	--	--
 
 this is the cerberus rule:
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	increase cerbmaulcount by 1;
 	if cerbmaulcount is 3:				[tries special attack every third time]
 		now cerbmaulcount is 0;
@@ -254,7 +255,7 @@ this is the cerberus rule:
 		let cmdmgtotal be 0;
 		standardstrike; [head 1]
 		if monsterhit is true:
-			choose row monster from the table of random critters;
+			choose row monster from the Table of Random Critters;
 			let rangenum be ( 80 - ( peppereyes * 4 ) );
 			now cmdmg is 0;
 			now cmdmg is ( ( wdam entry times a random number from rangenum to 120 ) / 133 ); [dmg/hit at 75%]
@@ -267,7 +268,7 @@ this is the cerberus rule:
 			say "The [one of]first[or]right[at random] head misses!";
 		standardstrike; [head 2]
 		if monsterhit is true:
-			choose row monster from the table of random critters;
+			choose row monster from the Table of Random Critters;
 			let rangenum be ( 80 - ( peppereyes * 4 ) );
 			now cmdmg is 0;
 			now cmdmg is ( ( wdam entry times a random number from rangenum to 120 ) / 133 ); [dmg/hit at 75%]
@@ -280,7 +281,7 @@ this is the cerberus rule:
 			say "The [one of]second[or]middle[or]central[at random] head misses!";
 		standardstrike; [head 3]
 		if monsterhit is true:
-			choose row monster from the table of random critters;
+			choose row monster from the Table of Random Critters;
 			let rangenum be ( 80 - ( peppereyes * 4 ) );
 			now cmdmg is 0;
 			now cmdmg is ( ( wdam entry times a random number from rangenum to 120 ) / 133 ); [dmg/hit at 75%]

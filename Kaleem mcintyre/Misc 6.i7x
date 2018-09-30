@@ -5,6 +5,10 @@ Misc 6 by Kaleem mcintyre begins here.
 
 Section 1 - Pegasus
 
+Table of GameEventIDs (continued)
+Object	Name
+Pegasus	"Pegasus"
+
 Pegasus is a situation.
 The sarea of Pegasus is "Plains".
 
@@ -13,6 +17,10 @@ Instead of resolving a Pegasus:
 	now Pegasus is resolved;
 
 Section 2 - Guess that Character One
+
+Table of GameEventIDs (continued)
+Object	Name
+Guess that Character One	"Guess that Character One"
 
 Guess that Character One is a situation.
 The sarea of Guess that Character One is "Campus".
@@ -38,6 +46,10 @@ Section 3 - Guess that Character Two
 
 Section 4 - Guess that Character Three
 
+Table of GameEventIDs (continued)
+Object	Name
+Guess that Character Three	"Guess that Character Three"
+
 Guess that Character Three is a situation.
 The sarea of Guess that Character Three is "Red".
 When play begins:
@@ -53,6 +65,10 @@ Instead of resolving a Guess that Character Three:
 
 
 Section 5 - Scopaesthesia
+
+Table of GameEventIDs (continued)
+Object	Name
+Scopaesthesia	"Scopaesthesia"
 
 Scopaesthesia is a situation.
 scopnum is a number that varies.
@@ -83,7 +99,7 @@ Instead of resolving a Scopaesthesia:
 		now level of Scopaesthesia is 9;
 		increase score by 5;
 	else if scopnum is 3:
-		say "Deciding to relax a bit at the park you find yourself quickly being accosted by several Leopardmen. The growling and snarling felines seem to have a bone to pick with you, preferably the ones both within your body.";
+		say "Deciding to relax a bit at the park, you find yourself quickly being accosted by several Leopardmen. The growling and snarling felines seem to have a bone to pick with you, preferably the ones both within your body.";
 		challenge "Leopardman";
 		challenge "Leopardman";
 		challenge "Leopardman";

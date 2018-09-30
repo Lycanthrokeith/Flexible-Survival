@@ -4,6 +4,10 @@ Version 6 of Sven by Stripes begins here.
 
 Section 1 - Event and Hideaway
 
+Table of GameEventIDs (continued)
+Object	Name
+Hidden Kitty	"Hidden Kitty"
+
 Hidden Kitty is a situation. The level of Hidden Kitty is 5.
 The sarea of Hidden Kitty is "Red".
 when play begins:
@@ -20,7 +24,11 @@ Instead of resolving a Hidden Kitty:
 	now Sven's Place is known;
 	now battleground is "void";
 	increase score by 5;
-	Now Hidden Kitty is resolved;
+	now Hidden Kitty is resolved;
+
+Table of GameRoomIDs (continued)
+Object	Name
+Sven's Place	"Sven's Place"
 
 Sven's Place is a room. It is fasttravel. It is private.
 The description of Sven's Place is "[SvenPlaceDesc]".
@@ -40,10 +48,14 @@ to say SvenPlaceDesc:
 
 Section 2 - Sven the Snowmeow
 
+Table of GameCharacterIDs (continued)
+object	name
+Sven	"Sven"
+
 Sven is a man. Sven is in Sven's Place. The HP of Sven is normally 0.
 The description of Sven is "[SvenDesc]".
 The conversation of Sven is { "Mew!" }.
-lastSvendrink is a number that varies. lastSvendrink is normally 555.
+lastSvendrink is a number that varies. lastSvendrink is usually 555.
 SvenCandyMsg is a number that varies. SvenCandyMsg is usually 0.
 SvenStory1 is a truth state that varies. SvenStory1 is usually false.
 
@@ -281,14 +293,14 @@ to say SvenRescueFight:
 		say "     After the snow leopard has dealt with you, it catches sight of Sven in the stairwell, mewling softly as he plays with himself in his shorts. Too aroused by the show he received and drawn in by the feline's scent, he doesn't flee as it pads over, switching to move on all fours. He moans softly as it nuzzles and licks his face, pulling off his clothes and mounting him right there. He mewls and moans lustfully as he's taken by the strong male, slowly transforming as their loud rutting continues. Recovering enough to get back up, you can see that the humanity's gone from Sven's eyes and he's succumb to his infection. As there is nothing else you can do for him than to wish him well, you slink away quietly to nurse your wounds and search elsewhere.";
 		now HP of Sven is 99;
 		move Sven to dark basement;
-		remove Sven from play;
+		now Sven is nowhere;
 		move player to Entrance to the Red Light District;
 		decrease score by 20;
 	else:
 		say "     Unwilling to continue fighting the snow leopard, you turn and flee. But he does not pursue you, instead turning his attention to Sven, who is curled up at the top of the stairwell, watching the battle. Aroused by the sight and scent of the snow leopard, he is fondling himself in his shorts and does not try to run as the creature pads over on all fours. Sven moans softly as it nuzzles and licks his face, pulling off his clothes and mounting him right there. You turn away and continue to make your escape, sure that there will soon be another of those sexy snow leopards prowling the area.";
 		now HP of Sven is 99;
 		move Sven to dark basement;
-		remove Sven from play;
+		now Sven is nowhere;
 		move player to Entrance to the Red Light District;
 		decrease score by 20;
 
@@ -296,7 +308,7 @@ to say SvenRescueFight:
 An everyturn rule:
 	if HP of Sven > 0 and HP of Sven < 4 and lastSvendrink - turns > 20 and skipturnblocker is 0:
 		now HP of Sven is 100;
-		remove Sven from play;
+		now Sven is nowhere;
 		say "You briefly remember Sven and have a sinking feeling that something's happened to him.";
 	if HP of Sven is 8 and Candy is in Bunker and lastSvendrink - turns > 11:
 		now HP of Sven is 9;
@@ -342,8 +354,8 @@ the fuckscene of Sven is "[SexWithSven]".
 
 to say SexWithSven:
 	[puts Snow Leopard as lead monster in case of impregnation]
-	repeat with y running from 1 to number of filled rows in table of random critters:
-		choose row y in table of random critters;
+	repeat with y running from 1 to number of filled rows in Table of Random Critters:
+		choose row y in Table of Random Critters;
 		if name entry is "Snow Leopard":
 			now monster is y;
 			break;
@@ -812,6 +824,10 @@ to say ConfidentSvenSex05:	[Blow job]
 	say "     Eventually, when Sven's cum-shots have ebbed off and no stimulation of his prostate can milk any more out of his long cock, you pull off him with a half-full mouth of feline seed that you purposefully didn't swallow. The purring student finds himself pulled close to you as you stand up, then gets a taste of his own load in an eagerly accepted bout of making out. Sven purrs loudly in your arms as your tongues wrestle back and forth, spreading a snowball of cum and spit between the two of you. Eventually, you pull apart and quickly swallow so both of you can pant for breath. Smiling, your friend tells you, 'Wow, that was... just wow.' He purrs loudly as he gives you a tight hug, then stumbles over to the closest bed and throws himself on it to recover his energy.";
 
 Section 4 - Svetlana
+
+Table of GameCharacterIDs (continued)
+object	name
+Svetlana	"Svetlana"
 
 Svetlana is a woman. The description of Svetlana is "[SvetlanaDesc]".
 The conversation of Svetlana is { "Mew!" }.

@@ -18,6 +18,11 @@ CloudKnowledge is a number that varies.
 StewartLocationCounter is a number that varies.
 
 [Room Declaration]
+
+Table of GameRoomIDs (continued)
+Object	Name
+The Clouds	"The Clouds"
+
 The Clouds is a room. It is private.
 The description of The Clouds is "[CloudDesc]"
 
@@ -44,6 +49,10 @@ instead of going Down from The Clouds:
 		say "     You direct yourself over to the edge of the clouds, taking a peek downward to confirm that there is a pool below you, as you do not wish to be a pancake on the ground. Thankfully there is a pool below you so you mentally prepare yourself. As you do this you suddenly hear cheering behind you, specifically people asking you to do a cannonball. With a shrug of your shoulders you decide to oblige them. Taking a couple steps back you start off into a run before launching yourself off the edge. Once airborne you are spinning in the air, wondering why the fuck you jumped off a cluster of clouds hundreds of feet in the air. Thankfully you do not go splat on the pavement, instead landing in the pool, causing an eruption of water to spray all the students at the pool. With an ecstatic smile, you clamber on out of the liquid and go on your way, ignoring the naiads yelling at you for wasting their water.";
 		move player to Athletic Street;
 
+Table of GameRoomIDs (continued)
+Object	Name
+Stewart's Room	"Stewart's Room"
+
 Stewart's Room is a room. It is private.
 The description of Stewart's Room is "[StewartRoomDesc]"
 
@@ -64,6 +73,10 @@ an everyturn rule:
 	if StewartLocationCounter is 9:
 		now StewartLocationCounter is 1;
 
+Table of GameCharacterIDs (continued)
+object	name
+Stewart	"Stewart"
+
 Stewart is a man.
 The description of Stewart is "[StewartDesc]".
 The conversation of Stewart is { "<this is nothing but a placeholder!>" }.
@@ -83,12 +96,12 @@ instead of conversing the Stewart:
 	if Stewart is in The Clouds and StewartRelationship < 1:
 		say "     When you approach what looks to be a male harpy, he turns his head towards you from his position on the ground and smiles. 'Hey there! You look new around here,' the guy says rather cheerfully. You admit that this is your first time actually visiting this place and are rather intrigued as to how everyone is standing on clouds. 'Oh, that. Well from what I know, apparently there's supposed to be a magical place around here that basically solidifies the clouds.' He chuckles. You tilt your head at that answer, not understanding exactly what he means. 'I can sympathize with your confusion, I only know of that information by secondhand. Anyways I'm Stewart, if you ever want to talk with me I'm usually here in the morning but move to the library mid day,' the guy informs you before saying that he hopes to see you again.";
 		now StewartRelationship is 1;
-		now Hanging out on the Green is not resolved;
+		now Hanging out on the Green is active;
 	else if Stewart is in Tenvale College Library and StewartRelationship < 1:
 		say "     The person you approach appears to be studying rather furiously, if the large amount of books surrounding him says something. He notices you rather quickly which prompts a question for him. 'Hey, you wouldn't happen to know how to derive a multi-variable function?' he asks rather wearily. Before you can answer, he lets out a sigh followed a verbal apology. 'I'm so sorry, it's just that I have like five different exams coming up within the next week and it's driving me crazy. If you can't tell, currently I'm trying to study for calculus.' The male groans. A thought passes by in your head that perhaps you could help him study to ease the already huge mental burden the guy has.";
 		say "     You can tell how stressed he is by two things. One, the bags under his eyes which inform you that he's sleep deprived. Lastly, the five or so coffee cups that have been drained of their caffeine filled contents. 'Anyways, I'm Stewart, a guy harpy if you can't tell by my legs. Before you ask, I can freely transform my arms back and forth,' he explains, showing you by setting down his book before doing so and then changing back. Quickly after he says this though, the male apologizes once more and tells you he needs to get back to studying.";
 		now StewartRelationship is 1;
-		now Hanging out on the Green is not resolved;
+		now Hanging out on the Green is active;
 	else if Stewart is in The Clouds:
 		say "     Stewart smiles when he sees you approach before kindly asking you what you need.";
 		wait for any key;
@@ -139,13 +152,9 @@ to say StewartTalkMenu:
 					say "[StewartStudying]";
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if player consents:
-				now sextablerun is 1;
-				say "     You shake your head, which prompts a confused look from him but he shrugs and returns to what he was doing.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You shake your head, which prompts a confused look from him but he shrugs and returns to what he was doing.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
 	clear the screen and hyperlink list;
@@ -237,13 +246,9 @@ to say StewartSexMenu:
 					say "[StewartSex3]";
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if player consents:
-				now sextablerun is 1;
-				say "     You step away from Stewart who sends you a frustrated look. You're not sure if it's because you interrupted his reading or because you didn't commit.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You step away from Stewart who sends you a frustrated look. You're not sure if it's because you interrupted his reading or because you didn't commit.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
 	clear the screen and hyperlink list;

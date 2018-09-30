@@ -55,7 +55,7 @@ to say FeralMuttDesc:
 to say LoseToFeralDog:
 	if HP of player > 0: 								  [DID THE PLAYER SUBMIT? - YES]
 		if player is herm: 			  [Yes = HERM Identified!]
-			say "     Backing up you place your arms up and lay your back down on the cold ground below, fully submitting to the canine beast. Before you can act further, surging forward the dog tears off your underclothes with sharp canines. Leaping atop your form at a moments notice the mutts cock has since grown to its full eight inch erectness with a bulging red knot at the base. Thrusting wildly at your tummy the feral covers your neck and face in doggy kisses and slobber. The musky smell of the beast filling your senses and better judgement as he finds home in your cunt. Throwing your head back at the sudden penetration the dog hilts himself to the knot inside you in one lucky hump before he pulls back and resumes thrusting. As the dog's exotic red cock ruts into your tender sex the feral beast continues to lick and kiss your face and neck. Hammering into you, your overcome with a feral base lust and start to moan and yip like a bitch in heat.";
+			say "     Backing up you place your arms up and lay your back down on the cold ground below, fully submitting to the canine beast. Before you can act further, surging forward the dog tears off your underclothes with sharp canines. Leaping atop your form at a moments notice the mutts cock has since grown to its full eight inch erectness with a bulging red knot at the base. Thrusting wildly at your tummy the feral covers your neck and face in doggy kisses and slobber. The musky smell of the beast filling your senses and better judgement as he finds home in your cunt. Throwing your head back at the sudden penetration the dog hilts himself to the knot inside you in one lucky hump before he pulls back and resumes thrusting. As the dog's exotic red cock ruts into your tender sex the feral beast continues to lick and kiss your face and neck. Hammering into you, you're overcome with a feral base lust and start to moan and yip like a bitch in heat.";
 			say "     Taking advantage of your parted lips the beast slips his long canine tongue into your mouth as his rough tongue tangles with your own. It explores every inch of your mouth and waves of tasty slobber follows, only further exciting you. As the feral beast essentially spit roasts you, he begins to speed up, humping with incredible speed into your receptive cunt. Letting his tongue withdraw from your mouth with a trail of saliva the mutt bites down on your neck, enough to hold you firmly but not enough to draw blood. With one final massive thrust the dog hilts himself in you again and continues to push, popping his huge swollen knot into your soaked cunt you let out a shriek of pleasure and clamp down around his hot doggy cock and climax. You shoot your own load all over your chest as you spasm around the canine's member. Following with you and stuck firmly inside your heavenly sex the feral cums as well. Pumping load after load of fertile canine cum into you the dog growls into your neck as he breeds you like a good bitch.";
 			fimpregchance;
 			WaitLineBreak;
@@ -87,11 +87,11 @@ to say LoseToFeralDog:
 			mimpregchance;
 	increase FeralMuttDominance by 1; [one extra step towards dominance]
 	if FeralMuttDominance > 2:
-		now Mutt Pack Attack is not resolved; [active when they reach level 3 dominance]
+		now Mutt Pack Attack is active; [active when they reach level 3 dominance]
 	else:
-		now Mutt Pack Attack is resolved; [inactive when they're not dominant enough]
+		now Mutt Pack Attack is inactive; [inactive when they're not dominant enough]
 	if FeralMuttDominance > -3:
-		now Mutt Pack Submission is resolved; [inactive when they're not subby enough]
+		now Mutt Pack Submission is inactive; [inactive when they're not subby enough]
 
 
 to say BeatTheFeralMutt:
@@ -152,20 +152,16 @@ to say FeralDogSexMenu:
 					say "[FuckFeralMutt]";
 				decrease FeralMuttDominance by 1;
 				if FeralMuttDominance > -3:
-					now Mutt Pack Submission is resolved; [inactive when they are less than 3x submissive]
+					now Mutt Pack Submission is inactive; [inactive when they are less than 3x submissive]
 				else:
-					now Mutt Pack Submission is not resolved; [active when they're sufficiently subby]
+					now Mutt Pack Submission is active; [active when they're sufficiently subby]
 				if FeralMuttDominance < 3:
-					now Mutt Pack Attack is resolved; [inactive when they're not dominant enough]
+					now Mutt Pack Attack is inactive; [inactive when they're not dominant enough]
 				wait for any key;
 		else if calcnumber is 0:
-			say "Break off the conversation?";
-			if player consents:
-				now sextablerun is 1;
-				say "     You step back from the [FeralMuttFurColor] [FeralMuttCurrentBreed], shaking your head slightly as he gives a questioning look.";
-				wait for any key;
-			else:
-				say "Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+			now sextablerun is 1;
+			say "     You step back from the [FeralMuttFurColor] [FeralMuttCurrentBreed], shaking your head slightly as he gives a questioning look.";
+			wait for any key;
 		else:
 			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
 	clear the screen and hyperlink list;
@@ -205,12 +201,12 @@ to say FuckFeralMutt:
 		say "     Seeing your opportunity for a display of dominance, you position yourself behind the dazed mutt. Fishing out your hardening length, you give yourself a few strokes whilst holding the flanks of the beaten mutt in place. Pressing the tip of your malehood against the wild dog's anal ring, you slowly push into the tight warm confines, making the mutt below you whine in a mix of pain and pleasure. After a few gentle thrusts, the horny beast is panting and leaning back against your hips. You can feel his gripping confines tighten around you as he shoots his load onto the cold ground below. His canine cock twitches and pulses as it slowly deflates, dripping a little more cum onto the soaked dirt beneath.";
 		say "     Far from satisfied though you don't let up, you pound the feral's ass until you reach your own pleasant climax and fill the barely conscious hound up with thick spunk. It fills his back passage to the brim and spurts out, drooling down the base of your slowly softening member. Pushing the beast off your cock you stand up triumphant over the creature. You take a few moments to enjoy the sight of the creamed and abused ass of the [FeralMuttCurrentBreed] before you continue on your way, quite satisfied.";
 
-Table of random critters (continued)
-name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	nocturnal (truth state)	altcombat (text)
---	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
+Table of Random Critters (continued)
+name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	DayCycle	altcombat (text)	BannedStatus (truth state)
+--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
 
 When Play begins:
-	Choose a blank row from Table of random critters;
+	Choose a blank row from Table of Random Critters;
 	now name entry is "Feral Mutt";
 	now enemy title entry is "";
 	now enemy name entry is "";
@@ -258,18 +254,19 @@ When Play begins:
 	now magic entry is false;
 	now resbypass entry is false;
 	now non-infectious entry is true;
-	blank out the nocturnal entry; [ True=Nocturnal (night encounters only), False=Diurnal (day encounters only), blank for both. ]
+	now DayCycle entry is 0; [ 0 = Up at all times; 1 = Diurnal (day encounters only); 2 = Nocturnal (night encounters only);]
 	now altcombat entry is "default";
+	now BannedStatus entry is false;
 
 
 Section 3 - Mutt Pack
 
-Table of random critters (continued)
-name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	nocturnal (truth state)	altcombat (text)
---	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
+Table of Random Critters (continued)
+name	enemy title	enemy name	enemy type	attack	defeated	victory	desc	face	body	skin	tail	cock	face change	body change	skin change	ass change	cock change	str	dex	sta	per	int	cha	sex	HP	lev	wdam	area	cocks	cock length	cock width	breasts	breast size	male breast size	cunts	cunt length	cunt width	libido	loot	lootchance	scale (number)	body descriptor (text)	type (text)	magic (truth state)	resbypass (truth state)	non-infectious (truth state)	DayCycle	altcombat (text)	BannedStatus (truth state)
+--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--	--;
 
 When Play begins:
-	Choose a blank row from Table of random critters;
+	Choose a blank row from Table of Random Critters;
 	now name entry is "Mutt Pack";
 	now enemy title entry is "Mutt Pack";
 	now enemy name entry is "";
@@ -317,14 +314,19 @@ When Play begins:
 	now magic entry is false;
 	now resbypass entry is false;
 	now non-infectious entry is true;
-	blank out the nocturnal entry; [ True=Nocturnal (night encounters only), False=Diurnal (day encounters only), blank for both. ]
+	now DayCycle entry is 0; [ 0 = Up at all times; 1 = Diurnal (day encounters only); 2 = Nocturnal (night encounters only);]
 	now altcombat entry is "default";
+	now BannedStatus entry is false;
 
 
 Section 4 - Mutt Pack Events
 
+Table of GameEventIDs (continued)
+Object	Name
+Mutt Pack Submission	"Mutt Pack Submission"
+
 Mutt Pack Submission is a situation.
-Mutt Pack Submission is resolved.
+Mutt Pack Submission is inactive. [activated by fighting the mutt pack]
 The sarea of Mutt Pack Submission is "Junkyard".
 
 when play begins:
@@ -339,9 +341,11 @@ Instead of resolving a Mutt Pack Submission:
 	if player consents:
 		LineBreak;
 		say "[PackSubmissionScenes]";
+		now Resolution of Mutt Pack Submission is 1; [accepted their submission]
 	else:
 		LineBreak;
 		say "     You shake your head and begin backing up slowly. At first you expect them to try and take what they want, but they just whine a little while they watch you leave.";
+		now Resolution of Mutt Pack Submission is 2; [rejected their submission]
 
 to say PackSubmissionScenes:
 	if player is herm: [herms]
@@ -385,8 +389,12 @@ to say PackSubmissionScenes:
 		say "     You shoot your load directly into his ass. Soaking it in your seed and causing the dog your fucking to howl in delight and loll his tongue out. His ass quivers around your member as you shoot the last ropes of your jism into your mutt. Seemingly unmoving and passed out you pull your cock from the abused ass of the dog. Your cock is still rock hard and as you look around you see the other four dogs with their backs turned and presenting they're winking assholes to you. A few of them shake in anticipation and you feel yourself driven forward, moving and thrusting your member in another mutt's ass.";
 		say "     You fuck the new dog raw, pounding him hard before pulling out and cumming on his furry back. Then you take the next, then the next, and finally you fuck the last beast surrounding you until you're surrounded by panting, cum covered canines. You yourself are staggering and drained dry from the pack of dogs. You wipe your cock clean on the ass of your final conquest and stand up slowly, stretching and giving one last look at the pack of mutts before smiling and heading off, eager to run into another pack.";
 
+Table of GameEventIDs (continued)
+Object	Name
+Mutt Pack Attack	"Mutt Pack Attack"
+
 Mutt Pack Attack is a situation.
-Mutt Pack Attack is resolved.
+Mutt Pack Attack is inactive.
 The sarea of Mutt Pack Attack is "Junkyard".
 
 when play begins:
@@ -411,10 +419,12 @@ Instead of resolving a Mutt Pack Attack:
 			say "     Not slowing his humping he hammers at your ass, his squirting canine pre-cum lubing you up and sending stings of pleasure through you as he goes. You moan loudly and shut your eyes only to have a shadow go over your head and a musky head brush over your ass. Opening your eyes you see the golden shepherd has walked over your head and parked himself there. His nearly foot long canine cock waiting and throbbing expectantly for service. Not wanting to disappoint you open your mouth and move your tongue down the length of his musky meat. You then lean in and take the tip of the knotted cock in your mouth.";
 		WaitLineBreak;
 		say "[PackDominanceScenes]";
+		now Resolution of Mutt Pack Attack is 1; [submitted to them]
 	else:
 		LineBreak;
 		say "     Hell no, you're not laying down like a bitch! You ready yourself for a fight.";
 		challenge "Mutt Pack";
+		now Resolution of Mutt Pack Attack is 2; [fought them]
 
 to say PackDominanceScenes:
 	setmonster "Feral Mutt";

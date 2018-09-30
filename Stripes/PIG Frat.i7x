@@ -7,6 +7,10 @@ piginitiation is a number that varies.
 
 Section 1 - Initial Event
 
+Table of GameEventIDs (continued)
+Object	Name
+Frat House	"Frat House"
+
 Frat House is a situation. The level of Frat House is 3.
 The sarea of Frat House is "Campus".
 when play begins:
@@ -23,6 +27,10 @@ Instead of resolving a Frat House:
 
 
 Section 2 - Phi Iota Gamma Frat House
+
+Table of GameRoomIDs (continued)
+Object	Name
+Phi Iota Gamma	"Phi Iota Gamma"
 
 Phi Iota Gamma is a room. It is fasttravel. It is private.
 The description of Phi Iota Gamma is "[phiiotagammadesc]".
@@ -140,7 +148,7 @@ to say pig_fratinitiation:
 	if "Strong Psyche" is listed in feats of player, increase humanity of player by a random number between 4 and 8;
 	if "Weak Psyche" is listed in feats of player, decrease humanity of player by a random number between 4 and 8;
 	setmonster "Piggy";
-	choose row monster from the table of random critters;
+	choose row monster from the Table of Random Critters;
 	now tailname of player is "Piggy";
 	now facename of player is "Piggy";
 	now skinname of player is "Piggy";
@@ -178,6 +186,10 @@ to say pig_fratinitiation:
 
 
 Section 4 - Frat Members
+
+Table of GameCharacterIDs (continued)
+object	name
+frat members	"frat members"
 
 frat members is a person.
 The description of frat members is "     There's a varied set of frat members and their sow girlfriends having fun in and around the frat house. Plump and messy pigs, some are drinking or having sex while others are simply lounging about or sleeping off their last bender. Most are nude, though a couple of them have a college jersey or frat sweater stretched over their rounded bodies. Despite, or perhaps because of, their messy and crude behavior, a part of you finds joining in on their fun quite appealing.".

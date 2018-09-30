@@ -5,6 +5,10 @@ Version 2 of Cindy by Stripes begins here.
 
 Section 1 - Sunny Snacks
 
+Table of GameRoomIDs (continued)
+Object	Name
+Sunny Snacks	"Sunny Snacks"
+
 Sunny Snacks is a room.
 Sunny Snacks is northeast of Public Beach.
 The description of Sunny Snacks is "[sunnysnacksdesc]".
@@ -16,6 +20,10 @@ to say sunnysnacksdesc:
 
 
 Section 2 - Cindy
+
+Table of GameCharacterIDs (continued)
+object	name
+Cindy	"Cindy"
 
 Cindy is a woman. Cindy is in Sunny Snacks.
 The description of Cindy is "[cindydesc]".
@@ -211,7 +219,7 @@ instead of going west from Beach Plaza when ( HP of Cindy is 4 and a random chan
 				say "     From the sounds outside, it seems the Spartan assault is over. The two of you head back out and Circe starts tidying up the patio with your help. The beachgoers begin to return after the raid and soon life returns to its new version of normal on this beach.";
 				increase carried of soda by 3;
 		increase score by 20;
-		remove Cindy from play;
+		now Cindy is nowhere;
 		move Circe to Sunny Snacks;
 		move player to Sunny Snacks;
 		now HP of Cindy is 6;
@@ -222,6 +230,10 @@ instead of going west from Beach Plaza when ( HP of Cindy is 4 and a random chan
 
 
 Section 5 - Circe
+
+Table of GameCharacterIDs (continued)
+object	name
+Circe	"Circe"
 
 Circe is a woman.
 The description of Circe is "[circedesc]".
@@ -294,11 +306,11 @@ to cindycheck:
 		if Circe is in Sunny Snacks, say "DEBUG - Circe | HP: [HP of Circe].";
 	if HP of Cindy < 6 and Circe is in Sunny Snacks:
 		say "ERROR - Circe shouldn't be here. Swapping.";
-		remove Circe from play;
+		now Circe is nowhere;
 		move Cindy to Sunny Snacks;
 	if HP of Cindy > 5 and Cindy is in Sunny Snacks:
 		say "ERROR - Cindy shouldn't be here. Swapping.";
-		remove Cindy from play;
+		now Cindy is nowhere;
 		move Circe to Sunny Snacks;
 
 Section 8 - Testing - Not for release

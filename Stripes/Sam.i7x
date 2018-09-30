@@ -39,6 +39,10 @@ Version 2 of Sam by Stripes begins here.
 
 Section 1 - Event
 
+Table of GameEventIDs (continued)
+Object	Name
+Another Researcher	"Another Researcher"
+
 Another Researcher is a situation.
 The sarea of Another Researcher is "Outside".
 when play begins:
@@ -73,6 +77,10 @@ Instead of resolving Another Researcher:
 
 Section 2 - Mini-Lab
 
+Table of GameRoomIDs (continued)
+Object	Name
+Mini-Lab	"Mini-Lab"
+
 Mini-Lab is a room. It is fasttravel. It is private.
 The description of Mini-Lab is "[minilabdesc]".
 The invent of Mini-Lab is { "cot" }.
@@ -101,11 +109,15 @@ to say minilabdesc:
 
 Section 3 - Sam the Researcher
 
+Table of GameCharacterIDs (continued)
+object	name
+Sam	"Sam"
+
 Sam is a man. Sam is in Mini-Lab.
 The description of Sam is "[samdesc]".
 The conversation of Sam is { "Thanks." }.
 the scent of Sam is "[samscent]".
-samformtalk is a truth state that varies. samformtalk is normally false.
+samformtalk is a truth state that varies. samformtalk is usually false.
 
 to say samscent:
 	if HP of Sam <= 4:
@@ -243,12 +255,12 @@ Instead of conversing the Sam:
 			else if fightoutcome >= 20 and fightoutcome <= 29:
 				say "     Unable to get up due to your injuries, you cannot stop Sam as he goes on a rampage, roaring angrily. He tosses the bottle you intended for him against a wall, splattering its contents across the concrete. 'You piece of scum. I trusted you, but you're no better than Rick in the end. I don't want to have anything to do with you ever again,' he roars as he shakes you so roughly you black out from the pain. By the time you come to, he's gathered up his remaining supplies and equipment and has left the library for good. It is some time before your body's healed enough for you to get up, leaving you plenty of time to wonder if you made the right decision while you watch a patch of pink fur grow on the wall.";
 				now HP of Sam is 98;
-				remove Sam from play;
+				now Sam is nowhere;
 				dragontaur_active; [activate Dragontaur creature]
 			else:
 				say "     Rather than keep fighting Sam, you begin a tactical retreat, leading Sam out of the library[if the number of booked people + number of bunkered people > 2] while the others cautiously stay out of the way[else if the number of booked people + number of bunkered people is 2] while your other friend there stays out of the way[end if]. Once outside, Sam growls in frustration and takes to the air on his large wings. 'You piece of scum. You're no better than Rick. I don't want to have anything to do with you ever again,' he roars, unleashing a large gout of fire into the air before flying off. With him safely gone, you dump out the vial fluid that's come between you both and wonder if you made the right decision.";
 				now HP of Sam is 98;
-				remove Sam from play;
+				now Sam is nowhere;
 				dragontaur_active; [activate Dragontaur creature]
 		else:
 			LineBreak;
@@ -314,12 +326,12 @@ Instead of conversing the Sam:
 			else if fightoutcome >= 20 and fightoutcome <= 29:
 				say "     Unable to get up due to your injuries, you cannot stop Sam as she goes on a rampage, growling angrily. She tosses the bottle you intended for her against a wall, splattering its contents across the concrete. 'You piece of scum. I trusted you, but you're no better than Rick in the end. I don't want to have anything to do with you ever again,' she snarls as she shakes you so roughly you black out from the pain. By the time you come to, she's gathered up her remaining supplies and equipment and has left the library for good. It is some time before your body's healed enough for you to get up, leaving you plenty of time to wonder if you made the right decision while you watch a patch of blue scales grow on the wall.";
 				now HP of Sam is 99;
-				remove Sam from play;
+				now Sam is nowhere;
 				vixentaur_active; [activate Vixentaur creature]
 			else:
 				say "     Rather than keep fighting Sam, you begin a tactical retreat, leading Sam out of the library[if the number of booked people + number of bunkered people > 2] while the others cautiously stay out of the way[else if the number of booked people + number of bunkered people is 2] while your other friend there stays out of the way[end if]. Once outside, Sam snarls in frustration and quickly bounds down the hill. 'You piece of scum. You're no better than Rick. I don't want to have anything to do with you ever again,' she growls as she's leaving. With her safely gone, you dump out the vial fluid that's come between you both and wonder if you made the right decision.";
 				now HP of Sam is 99;
-				remove Sam from play;
+				now Sam is nowhere;
 				vixentaur_active; [activate Vixentaur creature]
 		else:
 			LineBreak;
@@ -350,7 +362,7 @@ Instead of conversing the Sam:
 Section 4 - Confrontation at the Mini-Lab
 
 minilabfight is a number that varies.
-featherready is a truth state that varies. featherready is normally false.
+featherready is a truth state that varies. featherready is usually false.
 
 instead of navigating Mini-Lab while HP of Sam is 4:
 	if carried of eagle feather >= 2:
@@ -410,14 +422,14 @@ to assaultonminilab:
 			decrease humanity of player by 20;
 			if libido of player > 100, now libido of player is 100;
 			now HP of Sam is 100;
-			remove Sam from play;
+			now Sam is nowhere;
 			now Mini-Lab is unknown;
 			move player to Grey Abbey Library;
 		else:
 			say "     Rather than continue to risk yourself in a losing fight, you make a break for the basement hatch and run away. Leaving Sam to his feline fate, you head back to the library to consider your next course of action.";
 			WaitLineBreak;
 			now HP of Sam is 100;
-			remove Sam from play;
+			now Sam is nowhere;
 			now Mini-Lab is unknown;
 			move player to Grey Abbey Library;
 	else if calcnumber is 2:
@@ -455,7 +467,7 @@ to assaultonminilab:
 				now scalevalue of player is 5;
 				now bodydesc of player is "silky";
 				now bodytype of player is "feline";
-				now daycycle of player is 0;
+				now SleepRhythm of player is 0;
 				end the story saying "Surrendering to Rick the tigertaur you willing become another breeder kitty for the herm.";
 				wait for any key;
 				now battleground is "void";
@@ -479,7 +491,7 @@ to assaultonminilab:
 			decrease humanity of player by 20;
 			if libido of player > 100, now libido of player is 100;
 			now HP of Sam is 100;
-			remove Sam from play;
+			now Sam is nowhere;
 			now Mini-Lab is unknown;
 			move player to Grey Abbey Library;
 	else if calcnumber is 3:
@@ -491,7 +503,7 @@ to assaultonminilab:
 		increase carried of soda by 1;
 		decrease humanity of player by 12;
 		now HP of Sam is 100;
-		remove Sam from play;
+		now Sam is nowhere;
 		now Mini-Lab is unknown;
 		move player to Grey Abbey Library;
 	else if calcnumber is 4:
@@ -501,7 +513,7 @@ to assaultonminilab:
 		decrease morale of player by 3;
 		decrease score by 25;
 		now HP of Sam is 100;
-		remove Sam from play;
+		now Sam is nowhere;
 		now Mini-Lab is unknown;
 		move player to Grey Abbey Library;
 
@@ -762,8 +774,8 @@ Part 2 - Dragon Sex
 
 to say samdragonfirsttime:
 	[puts Dragontaur as lead monster in case of impregnation]
-	repeat with y running from 1 to number of filled rows in table of random critters:
-		choose row y in table of random critters;
+	repeat with y running from 1 to number of filled rows in Table of Random Critters:
+		choose row y in Table of Random Critters;
 		if name entry is "Dragontaur":
 			now monster is y;
 			break;
@@ -782,8 +794,8 @@ to say samdragonoral:
 
 to say samdragonfuck:
 	[puts Dragontaur as lead monster in case of impregnation]
-	repeat with y running from 1 to number of filled rows in table of random critters:
-		choose row y in table of random critters;
+	repeat with y running from 1 to number of filled rows in Table of Random Critters:
+		choose row y in Table of Random Critters;
 		if name entry is "Dragontaur":
 			now monster is y;
 			break;
@@ -797,8 +809,8 @@ to say samdragonfuck:
 
 to say samdragontaurfuck:
 	[puts Dragontaur as lead monster in case of impregnation]
-	repeat with y running from 1 to number of filled rows in table of random critters:
-		choose row y in table of random critters;
+	repeat with y running from 1 to number of filled rows in Table of Random Critters:
+		choose row y in Table of Random Critters;
 		if name entry is "Dragontaur":
 			now monster is y;
 			break;
@@ -966,8 +978,8 @@ to say samDVfuck2_bottom:
 Section 6 - Subroutines and Functions
 
 to vixentaur_active:
-	repeat with y running from 1 to number of filled rows in table of random critters:
-		choose row y in table of random critters;
+	repeat with y running from 1 to number of filled rows in Table of Random Critters:
+		choose row y in Table of Random Critters;
 		if name entry is "Vixentaur":
 			now monster is y;
 			now non-infectious entry is false;
@@ -975,8 +987,8 @@ to vixentaur_active:
 			break;
 
 to dragontaur_active:
-	repeat with y running from 1 to number of filled rows in table of random critters:
-		choose row y in table of random critters;
+	repeat with y running from 1 to number of filled rows in Table of Random Critters:
+		choose row y in Table of Random Critters;
 		if name entry is "Dragontaur":
 			now monster is y;
 			now non-infectious entry is false;
@@ -984,8 +996,8 @@ to dragontaur_active:
 			break;
 
 to DVtaur_active:
-	repeat with y running from 1 to number of filled rows in table of random critters:
-		choose row y in table of random critters;
+	repeat with y running from 1 to number of filled rows in Table of Random Critters:
+		choose row y in Table of Random Critters;
 		if name entry is "Dracovixentaur":
 			now monster is y;
 			now non-infectious entry is false;
@@ -994,8 +1006,8 @@ to DVtaur_active:
 
 to tripletaur_active:
 	let found be 0;
-	repeat with y running from 1 to number of filled rows in table of random critters:
-		choose row y in table of random critters;
+	repeat with y running from 1 to number of filled rows in Table of Random Critters:
+		choose row y in Table of Random Critters;
 		if name entry is "Vixentaur" or name entry is "Dragontaur" or name entry is "Dracovixentaur":
 			now monster is y;
 			now non-infectious entry is false;
@@ -1043,14 +1055,14 @@ when play ends:
 			if HP of Sam >= 10 and HP of Sam <= 29: [Dragontaur - survival]
 				say "     Shortly before the military forces arrive to rescue everyone, Sam informs you that he will not be coming, having decided he'd prefer to stay in the city. He thanks you again for your help and makes plans to take over living in the library once you're gone. From there, he continues his work and his sexual enjoyment of the fallen city's diverse pleasures. He breeds many new dragontaur whelps as his powerful body allows him to mount many a lustful creature. He even locates Rick again and takes particular pleasure in breeding several clutches of whelps in her tigertaur body.";
 				if HP of Sam >= 13:
-					say "     Before you depart, Sam imparts his research data and vial collection to you, asking that you provide it to the university which had arranged it. He provides you with his research permits and a letter explaining that you're taking over delivery of his permitted research work. There is some screening involved with getting them out, but [if hospquest is 13 and HP of doctor matt >= 12]you do agree to secretly pass along a copy of it all to Dr. Matt to help with his research[else if hospquest > 13]you do manage to slip a copy of everything to Dr. Mouse before the delivery. He's quite pleased with the gift you've managed to obtain and rewards you greatly for it[else]RSX's involvement in the grant keeps it from being confiscated by the military[end if]. You collect a nice reward for your work, helping you get back on your feet in whatever new life you choose.";
+					say "     Before you depart, Sam imparts his research data and vial collection to you, asking that you provide it to the university which had arranged it. He provides you with his research permits and a letter explaining that you're taking over delivery of his permitted research work. There is some screening involved with getting them out, but [if hospquest is 13 and HP of Doctor Matt >= 12]you do agree to secretly pass along a copy of it all to Dr. Matt to help with his research[else if hospquest > 13]you do manage to slip a copy of everything to Dr. Mouse before the delivery. He's quite pleased with the gift you've managed to obtain and rewards you greatly for it[else]RSX's involvement in the grant keeps it from being confiscated by the military[end if]. You collect a nice reward for your work, helping you get back on your feet in whatever new life you choose.";
 			else if HP of Sam >= 30 and HP of Sam <= 49: [Vixentaur - survival]
 				say "     Shortly before the military forces arrive to rescue everyone, Samantha informs you that she will not be coming, having decided she'd prefer to stay in the city. She thanks you again for your help and makes plans to take over living in the library once you're gone. From there, she continues her work and her sexual enjoyment of the fallen city's diverse pleasures. She births many new vixentaur kits as her lustful body is mounted by many a horny creature. She even locates Rick again and takes particular pleasure in letting the tigertaur sire several of her litters.";
 				if HP of Sam >= 33:
-					say "     Before you depart, Samantha imparts her research data and vial collection to you, asking that you provide it to the university which had arranged it. She provides you with her research permits and a letter explaining that you're taking over delivery of her permitted research work. There is some screening involved with getting them out, but [if hospquest is 13 and HP of doctor matt >= 12]you do agree to secretly pass along a copy of it all to Dr. Matt to help with his research[else if hospquest > 13]you do manage to slip a copy of everything to Dr. Mouse before the delivery. He's quite pleased with the gift you've managed to obtain and rewards you greatly for it[else]RSX's involvement in the grant keeps it from being confiscated by the military[end if]. You collect a nice reward for your work, helping you get back on your feet in whatever new life you choose.";
+					say "     Before you depart, Samantha imparts her research data and vial collection to you, asking that you provide it to the university which had arranged it. She provides you with her research permits and a letter explaining that you're taking over delivery of her permitted research work. There is some screening involved with getting them out, but [if hospquest is 13 and HP of Doctor Matt >= 12]you do agree to secretly pass along a copy of it all to Dr. Matt to help with his research[else if hospquest > 13]you do manage to slip a copy of everything to Dr. Mouse before the delivery. He's quite pleased with the gift you've managed to obtain and rewards you greatly for it[else]RSX's involvement in the grant keeps it from being confiscated by the military[end if]. You collect a nice reward for your work, helping you get back on your feet in whatever new life you choose.";
 			else if HP of Sam >= 50 and HP of Sam <= 69: [Dracovixentaur - survival]
 				say "     Shortly before the military forces arrive to rescue everyone, Sammie informs you that she will not be coming, having decided she'd prefer to stay in the city. She thanks you again for your help and makes plans to take over living in the library once you're gone. From there, she continues her work and her sexual enjoyment of the fallen city's diverse pleasures. She births numerous offspring as her lustful body is mounted by many a horny creature and sires others in those she mounts. She even locates Rick again and takes particular pleasure in letting the tigertaur sire several of her litters as long as she can breed her ex-partner in return. Sammie's children are a collection of male dragontaurs, female vixentaurs and herm dracovixentaurs.";
 				if HP of Sam >= 53:
-					say "     Before you depart, Sammie imparts her research data and vial collection to you, asking that you provide it to the university which had arranged it. She provides you with her research permits and a letter explaining that you're taking over delivery of her permitted research work. There is some screening involved with getting them out, but [if hospquest is 13 and HP of doctor matt >= 12]you do agree to secretly pass along a copy of it all to Dr. Matt to help with his research[else if hospquest > 13]you do manage to slip a copy of everything to Dr. Mouse before the delivery. He's quite pleased with the gift you've managed to obtain and rewards you greatly for it[else]RSX's involvement in the grant keeps it from being confiscated by the military[end if]. You collect a nice reward for your work, helping you get back on your feet in whatever new life you choose.";
+					say "     Before you depart, Sammie imparts her research data and vial collection to you, asking that you provide it to the university which had arranged it. She provides you with her research permits and a letter explaining that you're taking over delivery of her permitted research work. There is some screening involved with getting them out, but [if hospquest is 13 and HP of Doctor Matt >= 12]you do agree to secretly pass along a copy of it all to Dr. Matt to help with his research[else if hospquest > 13]you do manage to slip a copy of everything to Dr. Mouse before the delivery. He's quite pleased with the gift you've managed to obtain and rewards you greatly for it[else]RSX's involvement in the grant keeps it from being confiscated by the military[end if]. You collect a nice reward for your work, helping you get back on your feet in whatever new life you choose.";
 
 Sam ends here.
